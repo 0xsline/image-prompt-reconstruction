@@ -14,9 +14,10 @@
 
 <p align="center"><sub>Agent Skill · v5 · 12 张参考图 · 6 类场景 · 6 组生成对比</sub></p>
 
-| 原图 | 反推提示词 → GPT Image 2 |
-|:---:|:---:|
-| <img src="examples/s21/source.jpg" width="420" alt="有长桌与排椅的餐厅原图"> | <img src="examples/s21/generated.webp" width="420" alt="v5 生成的餐厅，花团和桌椅细节改变"> |
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s21/source.jpg" width="420" alt="有长桌与排椅的餐厅原图"></td><td width="50%" align="center"><img src="examples/s21/generated.webp" width="420" alt="v5 生成的餐厅，花团和桌椅细节改变"></td></tr>
+</table>
 
 餐厅示例：桌椅关系保留，花团、灯具和桌腿细节仍有变化。右图只接收反推英文，没有输入原图。
 
@@ -78,9 +79,10 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 <details>
 <summary><strong>食物 · 松饼的占比变化</strong></summary>
 
-| 原图 | 反推提示词 → GPT Image 2 |
-|:---:|:---:|
-| <img src="examples/s17/source.jpg" width="360" alt="皱纸中的原始松饼照片"> | <img src="examples/s17/generated.webp" width="360" alt="v5 提示词生成的松饼，主体变大"> |
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s17/source.jpg" width="360" alt="皱纸中的原始松饼照片"></td><td width="50%" align="center"><img src="examples/s17/generated.webp" width="360" alt="v5 提示词生成的松饼，主体变大"></td></tr>
+</table>
 
 颜色、纸杯和顶部裂口保留，但松饼与纸杯的外接框面积约占画面的 62%，原图约 48.3%，超过预设容差。
 
@@ -91,9 +93,10 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 <details>
 <summary><strong>动物 · 斑点保留，姿态改变</strong></summary>
 
-| 原图 | 反推提示词 → GPT Image 2 |
-|:---:|:---:|
-| <img src="examples/s19/source.jpg" width="360" alt="草地上的斑点小兽原图"> | <img src="examples/s19/generated.webp" width="360" alt="v5 生成的小兽，姿态和边界改变"> |
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s19/source.jpg" width="360" alt="草地上的斑点小兽原图"></td><td width="50%" align="center"><img src="examples/s19/generated.webp" width="360" alt="v5 生成的小兽，姿态和边界改变"></td></tr>
+</table>
 
 生成图保留了斑点、草地和大致朝向，但动物的姿态、位置和轮廓范围不同。识别出动物类别不等于复现它在画面中的状态。
 
@@ -104,9 +107,10 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 <details>
 <summary><strong>建筑 · 整体轮廓与局部细节</strong></summary>
 
-| 原图 | 反推提示词 → GPT Image 2 |
-|:---:|:---:|
-| <img src="examples/s23/source.jpg" width="360" alt="街角尖顶建筑原图"> | <img src="examples/s23/generated.webp" width="360" alt="v5 生成的街角建筑，窗格和装饰重构"> |
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s23/source.jpg" width="360" alt="街角尖顶建筑原图"></td><td width="50%" align="center"><img src="examples/s23/generated.webp" width="360" alt="v5 生成的街角建筑，窗格和装饰重构"></td></tr>
+</table>
 
 大轮廓和位置符合 4 条预设条件，窗户、装饰和其它建筑细部仍被重新组合。这里检查的是有限的可见关系，不是建筑测绘精度。
 
@@ -117,9 +121,10 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 <details>
 <summary><strong>汽车 · 配色与款式的区别</strong></summary>
 
-| 原图 | 反推提示词 → GPT Image 2 |
-|:---:|:---:|
-| <img src="examples/s25/source.jpg" width="360" alt="铜红色老式汽车原图"> | <img src="examples/s25/generated.webp" width="360" alt="v5 生成的老式汽车，车头和车身比例不同"> |
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s25/source.jpg" width="360" alt="铜红色老式汽车原图"></td><td width="50%" align="center"><img src="examples/s25/generated.webp" width="360" alt="v5 生成的老式汽车，车头和车身比例不同"></td></tr>
+</table>
 
 红白配色和街景关系保留，车身边界超出预设容差，车头结构与具体款式也不同。这类结果不能作为商品同款展示图。
 
@@ -130,9 +135,10 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 <details>
 <summary><strong>绘画 · 人物尺度与笔触漂移</strong></summary>
 
-| 原图 | 反推提示词 → GPT Image 2 |
-|:---:|:---:|
-| <img src="examples/s27/source.jpg" width="360" alt="海浪与遇险者绘画原图"> | <img src="examples/s27/generated.webp" width="360" alt="v5 生成的海浪场景，人物木筏放大，质感更写实"> |
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s27/source.jpg" width="360" alt="海浪与遇险者绘画原图"></td><td width="50%" align="center"><img src="examples/s27/generated.webp" width="360" alt="v5 生成的海浪场景，人物木筏放大，质感更写实"></td></tr>
+</table>
 
 前后层次保留，但人物与木质残骸变大，画面占比和绘画质感不符。生成图更细致，不代表更接近原画。
 
