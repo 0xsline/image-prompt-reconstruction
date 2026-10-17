@@ -23,7 +23,7 @@
 
 [英文原文](examples/s21/prompt.txt) · [检查记录](examples/s21/case.json) · 原图：Wilfredor，CC0 1.0，[来源与完整署名](ATTRIBUTION.md#sources)。
 
-> 本页案例统一用 `openai-codex/gpt-6-astra` 反推、GPT Image 2 生图。展示真实差异，不代表精确复刻或找回原作者提示词。
+> 反推模型为 `openai-codex/gpt-6-astra`，六组对比的生图模型为 GPT Image 2。展示真实差异，不代表精确复刻或找回原作者提示词。
 
 ## 快速开始
 
@@ -74,10 +74,9 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 
 ## 更多案例
 
-以下五组与页首餐厅示例使用相同指令和模型。点击类别展开，左侧是原图，右侧是反推后生成的图。
+以下五组与页首餐厅示例使用相同指令和模型，全部直接展示。左侧是原图，右侧是反推后生成的图。
 
-<details>
-<summary><strong>食物 · 松饼的占比变化</strong></summary>
+### 食物 · 松饼的占比变化
 
 <table width="100%">
 <tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
@@ -88,10 +87,8 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 
 [英文原文](examples/s17/prompt.txt) · [检查记录](examples/s17/case.json) · 原图：W.carter，CC BY-SA 4.0，[来源与完整署名](ATTRIBUTION.md#sources)。
 
-</details>
 
-<details>
-<summary><strong>动物 · 斑点保留，姿态改变</strong></summary>
+### 动物 · 斑点保留，姿态改变
 
 <table width="100%">
 <tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
@@ -102,10 +99,8 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 
 [英文原文](examples/s19/prompt.txt) · [检查记录](examples/s19/case.json) · 原图：Charles J. Sharp，CC BY-SA 4.0，[来源与完整署名](ATTRIBUTION.md#sources)。
 
-</details>
 
-<details>
-<summary><strong>建筑 · 整体轮廓与局部细节</strong></summary>
+### 建筑 · 整体轮廓与局部细节
 
 <table width="100%">
 <tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
@@ -116,10 +111,8 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 
 [英文原文](examples/s23/prompt.txt) · [检查记录](examples/s23/case.json) · 原图：Aciarium，CC BY 4.0，[来源与完整署名](ATTRIBUTION.md#sources)。
 
-</details>
 
-<details>
-<summary><strong>汽车 · 配色与款式的区别</strong></summary>
+### 汽车 · 配色与款式的区别
 
 <table width="100%">
 <tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
@@ -130,10 +123,8 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 
 [英文原文](examples/s25/prompt.txt) · [检查记录](examples/s25/case.json) · 原图：© Frank Schulenburg / CC BY-SA 4.0，[来源与完整署名](ATTRIBUTION.md#sources)。
 
-</details>
 
-<details>
-<summary><strong>绘画 · 人物尺度与笔触漂移</strong></summary>
+### 绘画 · 人物尺度与笔触漂移
 
 <table width="100%">
 <tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
@@ -144,11 +135,32 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 
 [英文原文](examples/s27/prompt.txt) · [检查记录](examples/s27/case.json) · 原作：Ivan Aivazovsky，来源标记 PD-Art，[地域条件与来源](ATTRIBUTION.md#sources)。
 
-</details>
+
+## 更多反推样图
+
+以下六张也是公开评测集中的原图，均已保存英文提示词，**仅反推、未生图**。这里不作为生成效果对比。
+
+<table width="100%">
+<tr><th width="50%">食物 · 扭结面包与餐布</th><th width="50%">动物 · 海豚群俯拍</th></tr>
+<tr>
+<td width="50%" align="center" valign="top"><a href="examples/s18/source.jpg"><img src="examples/s18/source.jpg" width="360" alt="仅反推样图：扭结面包与餐布"></a><br><a href="examples/s18/prompt.txt">英文提示词</a> · <a href="examples/s18/case.json">记录</a><br><sub>W.carter · CC0 1.0</sub></td>
+<td width="50%" align="center" valign="top"><a href="examples/s20/source.jpg"><img src="examples/s20/source.jpg" width="360" alt="仅反推样图：海豚群俯拍"></a><br><a href="examples/s20/prompt.txt">英文提示词</a> · <a href="examples/s20/case.json">记录</a><br><sub>Giles Laurent · CC BY-SA 4.0</sub></td>
+</tr>
+<tr><th width="50%">室内 · 窗前双椅与边桌</th><th width="50%">建筑 · 夜间壳形屋顶</th></tr>
+<tr>
+<td width="50%" align="center" valign="top"><a href="examples/s22/source.jpg"><img src="examples/s22/source.jpg" width="360" alt="仅反推样图：窗前双椅与边桌"></a><br><a href="examples/s22/prompt.txt">英文提示词</a> · <a href="examples/s22/case.json">记录</a><br><sub>Crisco 1492 · CC BY-SA 4.0</sub></td>
+<td width="50%" align="center" valign="top"><a href="examples/s24/source.jpg"><img src="examples/s24/source.jpg" width="360" alt="仅反推样图：夜间壳形屋顶建筑"></a><br><a href="examples/s24/prompt.txt">英文提示词</a> · <a href="examples/s24/case.json">记录</a><br><sub>Diliff · CC BY-SA 3.0</sub></td>
+</tr>
+<tr><th width="50%">交通 · 蓝色载人三轮车</th><th width="50%">绘画 · 几何静物</th></tr>
+<tr>
+<td width="50%" align="center" valign="top"><a href="examples/s26/source.jpg"><img src="examples/s26/source.jpg" width="360" alt="仅反推样图：蓝色载人三轮车"></a><br><a href="examples/s26/prompt.txt">英文提示词</a> · <a href="examples/s26/case.json">记录</a><br><sub>Luo Shaoyang · CC BY 2.0</sub></td>
+<td width="50%" align="center" valign="top"><a href="examples/s28/source.jpg"><img src="examples/s28/source.jpg" width="360" alt="仅反推样图：几何静物绘画"></a><br><a href="examples/s28/prompt.txt">英文提示词</a> · <a href="examples/s28/case.json">记录</a><br><sub>Fernand Léger · PD-Art，地域条件见署名页</sub></td>
+</tr>
+</table>
 
 [查看全部 12 个案例文件](examples/) · [原图署名与许可](ATTRIBUTION.md)
 
-另有 6 张仅完成文字反推，未生成图片。下载完整仓库后，双击 `examples/index.html` 可离线切换、放大和复制提示词。[GitHub 上的 HTML 文件](examples/index.html) 显示源码，不是在线画廊。
+下载完整仓库后，双击 `examples/index.html` 可离线切换、放大和复制提示词。[GitHub 上的 HTML 文件](examples/index.html) 显示源码，不是在线画廊。
 
 ## 模型与评测
 
