@@ -1,0 +1,8 @@
+.DS_Store
+.env
+.env.*
+/.agents/
+/output/
+/reconstruction/
+/prompt_en.txt
+/record.json

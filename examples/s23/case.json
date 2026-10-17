@@ -1,0 +1,150 @@
+{
+  "id": "s23",
+  "category": "建筑外观",
+  "title": "街角尖顶建筑",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Kaiserfeldgasse_8_Leoben_06-2025.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Kaiserfeldgasse_8_Leoben_06-2025.jpg/1280px-Kaiserfeldgasse_8_Leoben_06-2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "author": "Aciarium",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "width": 1280,
+    "height": 853,
+    "sha256": "9aef4317474786b964ce039c0f912b3a2fbe3ead36fbce0b89225faf4bb5f16f"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "6516882259d7c46bd1eecd65cb56605b623a90d4a5f60b0d1c87f003dd6cdcc0",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "7fc78a8965fe04f2ab7900b423bd37734d8816e32bb656147055775d56364625",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0"
+  },
+  "checks": [
+    {
+      "id": "s23-1",
+      "description": "主建筑数量与位置",
+      "expected": "一栋浅黄色街角建筑居中，两个立面向左右展开；一座尖顶角塔位于画面中央上部，不考核边缘其他楼房数量",
+      "tolerance": null
+    },
+    {
+      "id": "s23-2",
+      "description": "主体包围盒和画面占比（AI视觉粗估，坐标为距左/上边的百分比；面积为bbox面积，非分割面积）",
+      "expected": {
+        "subject": "浅黄色主建筑含角塔，不含右邻浅黄平顶楼及前景树木",
+        "bboxPercent": [
+          18,
+          3,
+          86,
+          94
+        ],
+        "bboxAreaPercent": 61.9
+      },
+      "tolerance": {
+        "bboxEdgesPercentagePoints": 5,
+        "bboxAreaPercentagePoints": 5
+      }
+    },
+    {
+      "id": "s23-3",
+      "description": "遮挡与前后关系",
+      "expected": "左侧树冠遮住主建筑左下立面；路灯和停靠车辆位于立面之前，街道路面位于底部",
+      "tolerance": null
+    },
+    {
+      "id": "s23-4",
+      "description": "建筑关键结构和颜色",
+      "expected": "浅黄与奶白石饰立面；深灰细长尖顶角塔，底层连续拱形门窗，上层矩形窗配三角或装饰窗楣",
+      "tolerance": null
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s23-1",
+        "status": "supported",
+        "evidence": "'pale yellow corner building'; 'projecting corner tower ... near the horizontal center'; 'left wing' 与 'long right facade'。",
+        "reason": "明确交代单栋浅黄街角主楼、中央尖塔及左右两翼。"
+      },
+      {
+        "id": "s23-2",
+        "status": "supported",
+        "evidence": "主楼明确为横向18%–86%、纵向3%–95%，邻楼另列。",
+        "reason": "与冻结边界最大差1个百分点；由文字边界计算矩形面积约62.6%，与61.9%相差约0.7个百分点，两种容差均满足。",
+        "observedBBox": [
+          0.18,
+          0.03,
+          0.86,
+          0.95
+        ],
+        "observedBBoxAreaPercent": 62.6,
+        "measurementBasis": "caption_explicit_extents"
+      },
+      {
+        "id": "s23-3",
+        "status": "supported",
+        "evidence": "'tree mass ... partially hiding the left wing'; 'streetlight poles rise in front'; 'Parked cars ... along the right curb'; 'asphalt junction along the bottom'。",
+        "reason": "树对左翼的遮挡、立面前路灯及车辆、底部路面均有明确描述。"
+      },
+      {
+        "id": "s23-4",
+        "status": "supported",
+        "evidence": "'pale yellow'、'pale cream wall panels'、'slender dark pointed roof'、'rectangular windows above arched ground-floor openings'、'window pediments'。",
+        "reason": "浅黄奶白立面、深色细尖塔顶、底层拱口和上层带装饰窗楣矩形窗均覆盖；未要求复刻各雕饰。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s23-1",
+        "status": "pass",
+        "evidence": "生成图为一栋居中浅黄街角楼，尖顶角塔在中央上部，两侧立面向左右展开。",
+        "reason": "满足冻结数量和大体位置，不把附加屋顶装饰计作另一栋主建筑。"
+      },
+      {
+        "id": "s23-2",
+        "status": "pass",
+        "evidence": "不计树和右邻平顶楼，主楼可见轮廓粗估横向16%–86%、纵向1%–90%。",
+        "reason": "四边与冻结标注相差约2、2、0、4个百分点；bbox面积约62%，与61.9%接近，均在冻结容差内。",
+        "observedBBox": [
+          0.16,
+          0.01,
+          0.86,
+          0.9
+        ],
+        "observedBBoxAreaPercent": 62,
+        "uncertainty": "边界目测约±1个百分点；左下有树遮挡，只据可见建筑轮廓估计。"
+      },
+      {
+        "id": "s23-3",
+        "status": "pass",
+        "evidence": "大树覆盖左下立面；浅色路灯在树及建筑之前；车辆沿右立面停靠；道路占底部。",
+        "reason": "全部要求的遮挡与前后层次保留。"
+      },
+      {
+        "id": "s23-4",
+        "status": "pass",
+        "evidence": "浅黄奶白立面、深灰尖塔、连续底层拱形开口、上层矩形窗及三角/曲线装饰窗楣可见。",
+        "reason": "全部冻结结构颜色条件满足，但生成图额外繁化屋顶和雕饰，不代表立面细部完全一致。"
+      }
+    ],
+    "conclusion": "四项文字与四项生成检查均在本轮有限标准内通过；街角双立面、尖塔和道路层次保留，但屋顶、窗饰与树冠明显重构，不能视为建筑精确复刻。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "The linked source license applies; attribution retained. No endorsement or clearance of non-copyright rights is implied.",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}

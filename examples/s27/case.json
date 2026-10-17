@@ -1,0 +1,150 @@
+{
+  "id": "s27",
+  "category": "绘画插画",
+  "title": "海浪与木筏绘画",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Aivazovsky,_Ivan_-_The_Ninth_Wave.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Aivazovsky%2C_Ivan_-_The_Ninth_Wave.jpg/1280px-Aivazovsky%2C_Ivan_-_The_Ninth_Wave.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "author": "Ivan Aivazovsky",
+    "license": "Public domain; PD-Art / author died 1900, life+100 or fewer; US pre-1931",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "width": 1280,
+    "height": 845,
+    "sha256": "4050764e79cd0f36fbc3188ec759036debbd32afca97327cd77239814a069c97"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "a01571a34ea38785e45f9753f9a1b684c461bd56868f30bbfdf2e23dced0438c",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "63d4a14c52ca729982e1a2f089d9a07f2d74cf1889d107435864f9de721a6df0",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0"
+  },
+  "checks": [
+    {
+      "id": "s27-1",
+      "description": "有限主体位置",
+      "expected": "仅考核下部偏左一组抓住木质残骸的人物，整体很小；一人向上举着红色布状物；不要求精确数清重叠人群",
+      "tolerance": null
+    },
+    {
+      "id": "s27-2",
+      "description": "主体包围盒和画面占比（AI视觉粗估，坐标为距左/上边的百分比；面积为bbox面积，非分割面积）",
+      "expected": {
+        "subject": "人群与木质残骸（画框内可见部分）",
+        "bboxPercent": [
+          23,
+          77,
+          55,
+          100
+        ],
+        "bboxAreaPercent": 7.4
+      },
+      "tolerance": {
+        "bboxEdgesPercentagePoints": 3,
+        "bboxAreaPercentagePoints": 3
+      }
+    },
+    {
+      "id": "s27-3",
+      "description": "前后层次与遮挡",
+      "expected": "人物骑伏在前景木质残骸上，残骸下部被浪和下画框截断；较高绿色浪峰在人物后方，亮天空更远",
+      "tolerance": null
+    },
+    {
+      "id": "s27-4",
+      "description": "可见绘画媒介和颜色",
+      "expected": "明显为绘画：云层为柔化叠涂色块、浪花为细碎笔触，表面带均匀画布/颜料质感而非照片；橙红云层包围中央偏右亮黄色天空，海浪深绿",
+      "tolerance": null
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s27-1",
+        "status": "supported",
+        "evidence": "'small cluster ... clinging to a low wooden raft near the bottom center-left'；一人 'raises an arm holding a small red scrap'。",
+        "reason": "小人物群在下部偏左、抓附木质支撑及举红布全部明确。"
+      },
+      {
+        "id": "s27-2",
+        "status": "supported",
+        "evidence": "木筏bbox为23%–55%、84%–100%；人群为38%–48%、78%–91%。",
+        "reason": "二者并集为23%–55%、78%–100%，面积约7.0%，各边和面积均满足冻结±3个百分点。",
+        "observedBBox": [
+          0.23,
+          0.78,
+          0.55,
+          1.0
+        ],
+        "observedBBoxAreaPercent": 7.0,
+        "measurementBasis": "union_of_caption_explicit_extents"
+      },
+      {
+        "id": "s27-3",
+        "status": "supported",
+        "evidence": "人群抓附木筏；'closest timbers cut by the bottom crop'、'partly submerged'；大浪在画面中层，'distant glowing center' 在后。",
+        "reason": "人物与木筏关系、浪水和底框截断，以及高浪在后、亮天空更远的层次均明确。"
+      },
+      {
+        "id": "s27-4",
+        "status": "partial",
+        "evidence": "'painted seascape'、'visibly painted, softly blended clouds with more finely worked water and spray'、橙红云围亮黄开口和深绿海浪。",
+        "reason": "绘画、云水处理与颜色有依据，但没有明确全图均匀画布/颜料质感；不能把绘画标签等同于完整媒介质感子条件。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s27-1",
+        "status": "fail",
+        "evidence": "下部偏左人物仍抓伏木筏，一人举红布；但人物与木筏显著放大，形成突出的近景主体。",
+        "reason": "位置和动作通过，原图人物整体很小这一子条件未保留，不能按部分满足判通过。"
+      },
+      {
+        "id": "s27-2",
+        "status": "fail",
+        "evidence": "人群加木筏可见轮廓粗估横向14%–60%、纵向70%–100%。",
+        "reason": "左边约偏9个百分点、顶边约偏7个百分点、右边约偏5个百分点，超过冻结3个百分点；bbox面积约14%也超过7.4%±3个百分点。",
+        "observedBBox": [
+          0.14,
+          0.7,
+          0.6,
+          1.0
+        ],
+        "observedBBoxAreaPercent": 14,
+        "uncertainty": "木材与飞沫交界难分，边界约±2个百分点；即使取保守边界仍不能全部满足冻结容差。"
+      },
+      {
+        "id": "s27-3",
+        "status": "pass",
+        "evidence": "人物骑伏在近景木筏，木筏被浪与底框截断；大绿色浪峰在其后，更远是黄色亮天空。",
+        "reason": "全部指定的前后关系和截断保留；尺寸变化由独立几何检查判失败。"
+      },
+      {
+        "id": "s27-4",
+        "status": "fail",
+        "evidence": "橙红云、偏右亮黄天空和深绿浪仍在；但云层硬而高细节、泡沫和光照接近高反差数字拟真效果，缺少原图均匀画布/颜料表面和柔化叠涂色块感。",
+        "reason": "颜色通过不能抵消媒介外观失败；判断针对可见质感，不推测实际制作媒介。"
+      }
+    ],
+    "conclusion": "文字大部分布局信息被保留，但未充分约束均匀绘画表面；生成图保留举红布与海天层次，却明显放大人物木筏，并转向高细节数字拟真质感，主体尺度与媒介检查失败。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "Commons marks the artwork public domain: artist died in 1900; life plus 100 years or fewer, and US publication before 1931. Commons considers the faithful 2D reproduction public domain in the US; reuse may be restricted in other jurisdictions. See https://commons.wikimedia.org/wiki/Commons:Reuse_of_PD-Art_photographs .",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}

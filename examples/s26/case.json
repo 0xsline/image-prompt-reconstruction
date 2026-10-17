@@ -1,0 +1,136 @@
+{
+  "id": "s26",
+  "category": "交通工具",
+  "title": "蓝色载人三轮车",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Three_wheeler_in_Pingyao.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Three_wheeler_in_Pingyao.jpg/1280px-Three_wheeler_in_Pingyao.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "author": "Luo Shaoyang",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "width": 1280,
+    "height": 856,
+    "sha256": "cd0043c08a34abc9371bc4df443155ee5efa1374610e5ad1d01b5e72017fa590"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "1317705a38ba1e368b00eaf40a88db630b95ae18ca1e8d5de7f182080ad1c5f2",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": null,
+  "checks": [
+    {
+      "id": "s26-1",
+      "description": "主体数量与位置",
+      "expected": "一辆蓝色三轮货车正面居中驶来，单前轮位于车头正下方；车后载有一群人，不考核人群精确总数",
+      "tolerance": null
+    },
+    {
+      "id": "s26-2",
+      "description": "主体包围盒和画面占比（AI视觉粗估，坐标为距左/上边的百分比；面积为bbox面积，非分割面积）",
+      "expected": {
+        "subject": "车辆本体，含镜子和轮子但不含乘客",
+        "bboxPercent": [
+          34,
+          50,
+          66,
+          98
+        ],
+        "bboxAreaPercent": 15.4
+      },
+      "tolerance": {
+        "bboxEdgesPercentagePoints": 5,
+        "bboxAreaPercentagePoints": 5
+      }
+    },
+    {
+      "id": "s26-3",
+      "description": "前后遮挡关系",
+      "expected": "乘客的上身从驾驶室上方露出，下身被蓝色车厢和驾驶室挡住；车辆位于深色门洞之前",
+      "tolerance": null
+    },
+    {
+      "id": "s26-4",
+      "description": "车辆关键结构颜色",
+      "expected": "蓝色短驾驶室，大块近矩形挡风玻璃，两侧矩形灯组；一只中央前轮以及两侧后轮可见",
+      "tolerance": null
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s26-1",
+        "status": "supported",
+        "evidence": "'frontal ... bright blue three-wheeled open-bed truck'、'single central front wheel'、'cargo-bed passengers rise above the cab'，整体横向33%–66%。",
+        "reason": "蓝色三轮车正面居中、中央单前轮及后载人群均明确；不据文字判真实运动状态。"
+      },
+      {
+        "id": "s26-2",
+        "status": "partial",
+        "evidence": "33%–66%、38%–98%明确给的是 'truck and its passengers'；驾驶室仅说 'begins around the middle'。",
+        "reason": "不能把含乘客整体bbox当成排除乘客、包括后视镜与轮子的车辆本体bbox；车体起点和镜子范围没有完整单列。",
+        "observedBBox": null,
+        "observedBBoxAreaPercent": null,
+        "measurementBasis": "caption_target_bbox_not_fully_specified",
+        "partialExtent": {
+          "truckAndPassengersBBox": [
+            0.33,
+            0.38,
+            0.66,
+            0.98
+          ],
+          "truckAndPassengersBBoxAreaPercent": 19.8
+        }
+      },
+      {
+        "id": "s26-3",
+        "status": "partial",
+        "evidence": "'passengers rise above the cab'、'partly obscured passenger'、车在 'large dark ornamental gateway' 下，街道在后。",
+        "reason": "驾驶室上方人群和门洞背景支持，但没有明确群体下身被蓝色车厢和驾驶室挡住的关系；仅个别人部分遮挡不足覆盖该子条件。"
+      },
+      {
+        "id": "s26-4",
+        "status": "partial",
+        "evidence": "蓝色驾驶室、'broad windshield'、'silver rectangular headlamps' 与 'single central front wheel'。",
+        "reason": "没有明确挡风玻璃的近矩形形状，也未交代两侧后轮可见；三轮车类别不能代替两后轮的可见性描述。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s26-1",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "按协议未生图，不判断视觉复现。"
+      },
+      {
+        "id": "s26-2",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "没有生成图可估计边界与面积。",
+        "observedBBox": null,
+        "observedBBoxAreaPercent": null
+      },
+      {
+        "id": "s26-3",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "按协议未生图，不判断视觉复现。"
+      },
+      {
+        "id": "s26-4",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "按协议未生图，不判断视觉复现。"
+      }
+    ],
+    "conclusion": "文字保留正面蓝色三轮车、上方人群与门洞纵深，但车辆独立占比、群体下身遮挡及后轮可见性未充分明确；无生成结果。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "The linked source license applies; attribution retained. No endorsement or clearance of non-copyright rights is implied.",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}

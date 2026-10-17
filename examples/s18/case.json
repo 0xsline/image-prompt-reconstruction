@@ -1,0 +1,131 @@
+{
+  "id": "s18",
+  "category": "食物餐饮",
+  "title": "扭结面包与餐布",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Cardamom_buns.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Cardamom_buns.jpg/1920px-Cardamom_buns.jpg",
+    "author": "W.carter",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "width": 1920,
+    "height": 1322,
+    "sha256": "97c930c6ab9c1eb6aca90e1a5f0da464b19985b769a670e78b79987d6c52274d"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "39cab794fbc3be3f8737f42e1f1d9eba3ed073235c3f1391b2d12e020702a0cf",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": null,
+  "checks": [
+    {
+      "id": "s18-count-position",
+      "description": "可观察主体计数与位置",
+      "expected": "一只深棕盘位于中右；盘外左下可辨认两只完整扭结面包；不要求数清盘内被遮挡个体。",
+      "tolerance": "位置约±5个百分点；指定子集计数不容差"
+    },
+    {
+      "id": "s18-occupancy",
+      "description": "盘中面包堆及盘的画面占比（外接框）",
+      "expected": {
+        "bbox": [
+          0.27,
+          0.11,
+          0.92,
+          0.76
+        ],
+        "areaPercent": 42.3
+      },
+      "tolerance": {
+        "bboxEdgePercentagePoints": 5,
+        "areaPercentagePoints": 5
+      }
+    },
+    {
+      "id": "s18-occlusion",
+      "description": "遮挡及前后关系",
+      "expected": "前排面包遮住后排，盘沿从下方露出；左下盘外面包位于红白布上。",
+      "tolerance": null
+    },
+    {
+      "id": "s18-structure-color",
+      "description": "类别关键结构及颜色",
+      "expected": "金黄色扭结面包表面有砂糖颗粒，红白格织布包围下半幅，左上露出木台。",
+      "tolerance": "允许轻微色温差，不允许替换关键颜色或结构"
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s18-count-position",
+        "status": "supported",
+        "evidence": "plate ... toward the right；two additional rolls ... separately ... lower left；dark reddish-brown plate",
+        "reason": "单盘中右与盘外左下两只均明确。"
+      },
+      {
+        "id": "s18-occupancy",
+        "status": "supported",
+        "evidence": "main pile 27%–92%,11%–73%；plate 30%–91%,40%–76%",
+        "reason": "堆与盘的联合框为27%–92%、11%–76%，面积约42%，四边与面积均符合冻结值。",
+        "observedBBox": [
+          0.27,
+          0.11,
+          0.92,
+          0.76
+        ],
+        "observedBBoxAreaPercent": 42,
+        "measurementBasis": "英文两个明确框的联合框"
+      },
+      {
+        "id": "s18-occlusion",
+        "status": "supported",
+        "evidence": "thin curved rim ... along the front；overlapping bread；some showing only sections beneath their neighbors；two additional rolls ... on ... cloth",
+        "reason": "前后面包重叠、下方露盘沿与盘外面包在布上均有明确描述。"
+      },
+      {
+        "id": "s18-structure-color",
+        "status": "partial",
+        "evidence": "golden twisted bread rolls；fine sparkling granules；red-orange and white checked cloth；wooden surface ... upper left",
+        "reason": "颜色、扭结、织布位置及木台均明确，颗粒仅称sparkling granules，未明确为冻结条件中的砂糖；不推断颗粒成分。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s18-count-position",
+        "status": "not_generated",
+        "evidence": "本例没有生成图像。",
+        "reason": "本样本没有生图，不判断复现。"
+      },
+      {
+        "id": "s18-occupancy",
+        "status": "not_generated",
+        "evidence": "本例没有生成图像。",
+        "reason": "无生成图可估框。",
+        "observedBBox": null,
+        "observedBBoxAreaPercent": null
+      },
+      {
+        "id": "s18-occlusion",
+        "status": "not_generated",
+        "evidence": "本例没有生成图像。",
+        "reason": "本样本没有生图，不判断复现。"
+      },
+      {
+        "id": "s18-structure-color",
+        "status": "not_generated",
+        "evidence": "本例没有生成图像。",
+        "reason": "本样本没有生图，不判断复现。"
+      }
+    ],
+    "conclusion": "文字保留右侧盘堆、左下两只、联合尺度与遮挡，颗粒外观保留但砂糖身份未明确；无生图，不能据文字判断复现。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "The linked source license applies; attribution retained. No endorsement or clearance of non-copyright rights is implied.",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}

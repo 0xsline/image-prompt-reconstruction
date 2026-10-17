@@ -1,0 +1,136 @@
+{
+  "id": "s24",
+  "category": "建筑外观",
+  "title": "夜间壳形屋顶建筑",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_-_Dec_2008.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Sydney_Opera_House_-_Dec_2008.jpg/1280px-Sydney_Opera_House_-_Dec_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0 (selected from dual-license options)",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "width": 1280,
+    "height": 707,
+    "sha256": "489eb86409b8058e282d37a6e518a2739420275342d4c0c13fe980f553be0391"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "f81872690066e898064800e5cfceb52d28d58bc5f43b7250c10d94352f4e5130",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": null,
+  "checks": [
+    {
+      "id": "s24-1",
+      "description": "主建筑位置与形状组",
+      "expected": "一组相连的白色壳片屋顶建筑位于中下部，最高壳片在中央附近，右侧有较小壳片组",
+      "tolerance": null
+    },
+    {
+      "id": "s24-2",
+      "description": "主体包围盒和画面占比（AI视觉粗估，坐标为距左/上边的百分比；面积为bbox面积，非分割面积）",
+      "expected": {
+        "subject": "主建筑屋顶与墙体，不计外围码头与水面",
+        "bboxPercent": [
+          20,
+          33,
+          75,
+          79
+        ],
+        "bboxAreaPercent": 25.3
+      },
+      "tolerance": {
+        "bboxEdgesPercentagePoints": 5,
+        "bboxAreaPercentagePoints": 5
+      }
+    },
+    {
+      "id": "s24-3",
+      "description": "前后景层次",
+      "expected": "水面和垂直灯光倒影在建筑前方，密集亮窗城市楼群在后方",
+      "tolerance": null
+    },
+    {
+      "id": "s24-4",
+      "description": "建筑结构及夜间颜色",
+      "expected": "多个尖顶弧形白色屋面相互叠置，屋面下为暖黄亮窗；天空及水面整体深蓝黑",
+      "tolerance": null
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s24-1",
+        "status": "supported",
+        "evidence": "'overlapping white sail-shaped roofs'; 主屋顶位于22%–75%宽、34%–70%高；'tall pointed curved shells' 与右端 'smaller pair ... separated ... by a low section'。",
+        "reason": "明确为中下部白色相连屋面组、中央附近高壳片及右侧小组。"
+      },
+      {
+        "id": "s24-2",
+        "status": "partial",
+        "evidence": "屋顶单独给22%–75%、34%–70%；'podium and waterfront platform' 合并给15%至右边缘、65%–83%。",
+        "reason": "没有为排除外围码头后的屋顶加墙体给出完整边界；不能把屋顶bbox或包含码头的平台bbox冒充冻结主体bbox。",
+        "observedBBox": null,
+        "observedBBoxAreaPercent": null,
+        "measurementBasis": "caption_target_bbox_not_fully_specified",
+        "partialExtent": {
+          "roofOnlyBBox": [
+            0.22,
+            0.34,
+            0.75,
+            0.7
+          ],
+          "roofOnlyBBoxAreaPercent": 19.1
+        }
+      },
+      {
+        "id": "s24-3",
+        "status": "supported",
+        "evidence": "'nearest ... water' 携带 'elongated white and muted gold reflections below the quay lights'；其后为 'dense distant skyline ... yellow and white windows'。",
+        "reason": "水和纵向拉长倒影在前、密集亮窗楼群在后的层次明确。"
+      },
+      {
+        "id": "s24-4",
+        "status": "partial",
+        "evidence": "白色重叠尖曲壳片、'Warm golden glazing ... beneath the roofs'、'dark blue-gray sky' 与 'Dark harbor water'。",
+        "reason": "结构、暖窗及暗色夜景有依据，但水面仅说暗，未明确冻结条件中的蓝黑色；不以部分颜色覆盖算全部支持。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s24-1",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "按协议未生图，不判断视觉复现。"
+      },
+      {
+        "id": "s24-2",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "没有生成图可估计边界与面积。",
+        "observedBBox": null,
+        "observedBBoxAreaPercent": null
+      },
+      {
+        "id": "s24-3",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "按协议未生图，不判断视觉复现。"
+      },
+      {
+        "id": "s24-4",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "按协议未生图，不判断视觉复现。"
+      }
+    ],
+    "conclusion": "文字保留屋面群的主次、夜景亮窗和水岸纵深；主体墙体与码头被合并量化，无法确认完整建筑占比，水面蓝黑色也未充分说明；未生图，不能声称复现。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "Photo licensed CC BY-SA 3.0, selected from the author’s offered licenses. The source page also cites Australian Copyright Act sections 65–68 for depictions of the building; this is not a worldwide clearance of architecture or other rights.",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}

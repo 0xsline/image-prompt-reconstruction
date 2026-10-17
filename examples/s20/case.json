@@ -1,0 +1,126 @@
+{
+  "id": "s20",
+  "category": "动物",
+  "title": "海豚群俯拍",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:009_Pod_of_Spinner_dolphins_swimming_in_the_Indian_ocean_Photo_by_Giles_Laurent.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/009_Pod_of_Spinner_dolphins_swimming_in_the_Indian_ocean_Photo_by_Giles_Laurent.jpg/1920px-009_Pod_of_Spinner_dolphins_swimming_in_the_Indian_ocean_Photo_by_Giles_Laurent.jpg",
+    "author": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "width": 1920,
+    "height": 1440,
+    "sha256": "35a8c29c419831d6af8fa47e1053599dcb9ee9f1c4ce785701d7e8e38e4e4779"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "c577f93fce8579f9e1f8e34dd4d46304733f5023a27eca70ce736f95e63de9ac",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": null,
+  "checks": [
+    {
+      "id": "s20-count-position",
+      "description": "可观察主体计数与位置",
+      "expected": "只评上方三只分离海豚：约位于x20%、34%、60%；最右一只最高，均头朝画面上方。",
+      "tolerance": "位置约±5个百分点；指定子集计数不容差"
+    },
+    {
+      "id": "s20-occupancy",
+      "description": "上方中央偏右独立海豚的画面占比（外接框）",
+      "expected": {
+        "bbox": [
+          0.58,
+          0.035,
+          0.625,
+          0.25
+        ],
+        "areaPercent": 1.0
+      },
+      "tolerance": {
+        "bboxEdgePercentagePoints": 5,
+        "areaPercentagePoints": 5
+      }
+    },
+    {
+      "id": "s20-occlusion",
+      "description": "遮挡及前后关系",
+      "expected": "中央偏下四只较亮海豚周围出现白色水花；两侧较淡青色海豚在水下，无陆地遮挡。",
+      "tolerance": null
+    },
+    {
+      "id": "s20-structure-color",
+      "description": "类别关键结构及颜色",
+      "expected": "俯视蓝青海水，海豚细长灰背与叉形尾鳍；主体间留有明显水面间隙。",
+      "tolerance": "允许轻微色温差，不允许替换关键颜色或结构"
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s20-count-position",
+        "status": "partial",
+        "evidence": "highest animal ... just right of center；two more ... upper-left and upper-middle；all ... head-up",
+        "reason": "上方三只及最右最高和朝上明确，但未明确约x20%、34%、60%的各自位置；upper-middle不足以确认x34%±5%。"
+      },
+      {
+        "id": "s20-occupancy",
+        "status": "partial",
+        "evidence": "Individual dolphins ...3% to 5% ... width and17% to23% ... height；highest animal ... just right of center near the top；formation top3%",
+        "reason": "个体宽高范围给出约0.5%–1.2%的矩形面积，但不是指定海豚的完整四边框，不能确认其每条边均在容差内。",
+        "observedBBox": null,
+        "observedBBoxAreaPercent": null,
+        "measurementBasis": "仅有全体通用宽高范围，不能伪造指定个体框"
+      },
+      {
+        "id": "s20-occlusion",
+        "status": "supported",
+        "evidence": "四个central dolphins逐一定位，each accompanied by white bubbles ... splashes；softer cyan silhouettes below the water；no shoreline or horizon",
+        "reason": "四只水花主体与水下淡青个体及无陆地均明确。"
+      },
+      {
+        "id": "s20-structure-color",
+        "status": "partial",
+        "evidence": "straight-down ... turquoise-blue；silver-gray ... streamlined bodies；horizontally spread tail flukes；water ... between every animal",
+        "reason": "俯视海色、细长灰背和间隙明确，但水平展开尾鳍未明确叉形轮廓，不把方向词当形状全部支持。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s20-count-position",
+        "status": "not_generated",
+        "evidence": "本例没有生成图像。",
+        "reason": "未生图，不判断复现。"
+      },
+      {
+        "id": "s20-occupancy",
+        "status": "not_generated",
+        "evidence": "本例没有生成图像。",
+        "reason": "无生成图可估框。",
+        "observedBBox": null,
+        "observedBBoxAreaPercent": null
+      },
+      {
+        "id": "s20-occlusion",
+        "status": "not_generated",
+        "evidence": "本例没有生成图像。",
+        "reason": "未生图，不判断复现。"
+      },
+      {
+        "id": "s20-structure-color",
+        "status": "not_generated",
+        "evidence": "本例没有生成图像。",
+        "reason": "未生图，不判断复现。"
+      }
+    ],
+    "conclusion": "文字保留俯视海豚群、四处水花及水下层次，但指定三只的横向位置、指定个体四边及叉尾形状未全部明确；无生成图证据。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "The linked source license applies; attribution retained. No endorsement or clearance of non-copyright rights is implied.",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}

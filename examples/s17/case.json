@@ -1,0 +1,149 @@
+{
+  "id": "s17",
+  "category": "食物餐饮",
+  "title": "松饼近景",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Plain_vanilla_muffin_in_Tuntorp.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Plain_vanilla_muffin_in_Tuntorp.jpg/1920px-Plain_vanilla_muffin_in_Tuntorp.jpg",
+    "author": "W.carter (Ann-Sophie Qvarnström)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "width": 1920,
+    "height": 1280,
+    "sha256": "33be61b36a31c6c04aedf19d6a52cad39163a246775057ca786e95eee9cab275"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "be820434940a4c1f7bc5f7fe530543a2db3c90b289599c7394a2804ca25a7f6b",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "7a47b0aa78306b61e02e8fdb1533a34b8f18cd566c2650cc63f7fb684fcb73b5",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0"
+  },
+  "checks": [
+    {
+      "id": "s17-count-position",
+      "description": "可观察主体计数与位置",
+      "expected": "画面中央偏下仅一个完整松饼，四周是皱纸；不计边缘零星纸杯。",
+      "tolerance": "位置约±5个百分点；指定子集计数不容差"
+    },
+    {
+      "id": "s17-occupancy",
+      "description": "松饼及纸杯的画面占比（外接框）",
+      "expected": {
+        "bbox": [
+          0.14,
+          0.19,
+          0.82,
+          0.9
+        ],
+        "areaPercent": 48.3
+      },
+      "tolerance": {
+        "bboxEdgePercentagePoints": 5,
+        "areaPercentagePoints": 5
+      }
+    },
+    {
+      "id": "s17-occlusion",
+      "description": "遮挡及前后关系",
+      "expected": "前侧褶皱纸杯遮住松饼下半部，后侧杯沿位于松饼之后。",
+      "tolerance": null
+    },
+    {
+      "id": "s17-structure-color",
+      "description": "类别关键结构及颜色",
+      "expected": "金棕色圆顶，中上部有浅黄色开裂；无糖霜、无水果装饰。",
+      "tolerance": "允许轻微色温差，不允许替换关键颜色或结构"
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s17-count-position",
+        "status": "supported",
+        "evidence": "one round golden-brown cake；完整框14%–83%、19%–90%；surrounded entirely by crumpled white and cream wrapping paper",
+        "reason": "明确为单个完整主体，中心略偏下，四周皱纸。"
+      },
+      {
+        "id": "s17-occupancy",
+        "status": "supported",
+        "evidence": "complete cake-and-liner silhouette ... 14% to 83% ... 19% to 90%",
+        "reason": "四边均在冻结容差内；由明确文字框计算的矩形面积约49%，与48.3%相差约0.7个百分点。",
+        "observedBBox": [
+          0.14,
+          0.19,
+          0.83,
+          0.9
+        ],
+        "observedBBoxAreaPercent": 49,
+        "measurementBasis": "英文明确边界，不是生成图测量"
+      },
+      {
+        "id": "s17-occlusion",
+        "status": "supported",
+        "evidence": "rear pleated rim rises above the cake；near rim overlaps its lower edge and descends into a rounded, shadowed base",
+        "reason": "前杯沿覆盖下部、后杯沿位于后侧两项均明确。"
+      },
+      {
+        "id": "s17-structure-color",
+        "status": "partial",
+        "evidence": "domed cake top；split across the upper middle ... pale yellow ... crumb；no ... additional food",
+        "reason": "圆顶、金棕色及中上浅黄裂口明确，但未明确排除糖霜；不能将正文没提糖霜直接算作无糖霜条件已支持。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s17-count-position",
+        "status": "pass",
+        "evidence": "完整生成图只有一个松饼，位于中央略偏下，四周为皱纸。",
+        "reason": "主体数量及中心位置符合限定子集与位置容差。"
+      },
+      {
+        "id": "s17-occupancy",
+        "status": "fail",
+        "evidence": "生成图杯纸顶缘约9%–10%高度，底缘约94%–95%，左右约13%和86%。",
+        "reason": "上边缘比冻结19%高约9–10个百分点，超出5个百分点；矩形面积约62%也明显超出43.3%–53.3%。",
+        "observedBBox": [
+          0.13,
+          0.1,
+          0.86,
+          0.95
+        ],
+        "observedBBoxAreaPercent": 62,
+        "uncertainty": "边界视觉估计约±1–2个百分点；不影响失败结论。"
+      },
+      {
+        "id": "s17-occlusion",
+        "status": "pass",
+        "evidence": "前方竖褶杯纸挡住下部糕体，后侧杯纸沿在圆顶后方露出。",
+        "reason": "两个前后关系均可见。"
+      },
+      {
+        "id": "s17-structure-color",
+        "status": "pass",
+        "evidence": "金棕色圆顶、上中部浅黄色开裂，无糖霜或水果。",
+        "reason": "全部冻结结构颜色条件满足；裂口比原图更大更分叉，不代表细节完全复刻。"
+      }
+    ],
+    "conclusion": "保留单个松饼、皱纸环境和前后杯沿及核心颜色；生成主体明显放大，上方留白减少，尺度项失败。裂口形状与原图不同，文字也未明确覆盖无糖霜条件。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "The linked source license applies; attribution retained. No endorsement or clearance of non-copyright rights is implied.",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}

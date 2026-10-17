@@ -1,0 +1,144 @@
+{
+  "id": "s21",
+  "category": "室内空间",
+  "title": "餐厅长桌与排椅",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Dining_room_at_the_inn_Dans_les_bras_de_Morph%C3%A9e%2C_located_on_%C3%8Ele_d%27Orl%C3%A9ans.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Dining_room_at_the_inn_Dans_les_bras_de_Morph%C3%A9e%2C_located_on_%C3%8Ele_d%27Orl%C3%A9ans.jpg/1920px-Dining_room_at_the_inn_Dans_les_bras_de_Morph%C3%A9e%2C_located_on_%C3%8Ele_d%27Orl%C3%A9ans.jpg",
+    "author": "Wilfredor",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "width": 1920,
+    "height": 1280,
+    "sha256": "438496ff1d771be6a16a9338773cd11d6a0ee21365751e404810598a170721e6"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "05fb4c252c91de5a3ddd91aeb9dcbdfeb8daaddd0c6c8b5ec0e04d4b2c61ce75",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "0960fde487571b0d54131e128abc15daf652b8d925caf4d0c1214edba36e9fc4",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0"
+  },
+  "checks": [
+    {
+      "id": "s21-count-position",
+      "description": "可观察主体计数与位置",
+      "expected": "长餐桌斜向从左后延伸到右前，右侧是一排大窗；仅检查近侧四把连续椅背，不要求全屋椅子计数。",
+      "tolerance": "位置约±5个百分点；指定子集计数不容差"
+    },
+    {
+      "id": "s21-occupancy",
+      "description": "餐桌与周围白椅家具组的画面占比（外接框）",
+      "expected": {
+        "bbox": [
+          0.1,
+          0.23,
+          0.9,
+          0.97
+        ],
+        "areaPercent": 59.2
+      },
+      "tolerance": {
+        "bboxEdgePercentagePoints": 5,
+        "areaPercentagePoints": 5
+      }
+    },
+    {
+      "id": "s21-occlusion",
+      "description": "遮挡及前后关系",
+      "expected": "近侧椅背遮住桌沿和桌面局部，远侧椅子在桌后；吊灯悬于餐桌上方。",
+      "tolerance": null
+    },
+    {
+      "id": "s21-structure-color",
+      "description": "类别关键结构及颜色",
+      "expected": "奶白色木椅带交叉靠背，木地板暖棕色，右侧窗外绿色植物，桌面摆杯碟与花。",
+      "tolerance": "允许轻微色温差，不允许替换关键颜色或结构"
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s21-count-position",
+        "status": "partial",
+        "evidence": "long rectangular dining table receding ... lower-right ... upper-left；windows ... right wall；Around ten ... chairs；nearest chair backs ... diagonal",
+        "reason": "餐桌方向和右窗明确，但没有指定近侧连续四把椅背；全屋约十把不能替代冻结子集计数。"
+      },
+      {
+        "id": "s21-occupancy",
+        "status": "partial",
+        "evidence": "tabletop10%–90%,30%–57%；nearest chair59%–87%,37%–97%；legs ... almost to the bottom",
+        "reason": "桌面和一把椅子框明确，但家具组整体顶部23%及其联合四边没有完整约束，不能拿桌面框替代家具组框。",
+        "observedBBox": null,
+        "observedBBoxAreaPercent": null,
+        "measurementBasis": "未给出整个家具组四边，拒绝用局部框充当整体"
+      },
+      {
+        "id": "s21-occlusion",
+        "status": "partial",
+        "evidence": "nearest plane contains chair backs ... middle plane ... table setting；chandeliers hang above the table",
+        "reason": "前后层次与上方吊灯明确，但近侧椅背遮桌沿及桌面局部、远侧椅子在桌后没有全部明确写出。"
+      },
+      {
+        "id": "s21-structure-color",
+        "status": "partial",
+        "evidence": "Cream chairs ... open crossed or slatted backs；honey-brown floor；windows overlooking green foliage；floral arrangements ... white cups, plates",
+        "reason": "颜色、地板、绿植与杯碟花明确，但靠背给出crossed or slatted的可选结构，未固定交叉靠背全部条件。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s21-count-position",
+        "status": "pass",
+        "evidence": "桌子从左后斜向右前，右边整排大窗；近侧长边可辨四个连续椅背，右前端椅另计。",
+        "reason": "限定近侧子集四把及场景方向均符合；没有以全屋数量替代。"
+      },
+      {
+        "id": "s21-occupancy",
+        "status": "pass",
+        "evidence": "只计桌椅家具，不含桌上花和后方柜子，联合框约x11%–94%、y26%–100%。",
+        "reason": "四边偏差约1、3、4、3个百分点，各在5以内；矩形面积约61%，在54.2%–64.2%范围内。底部出现裁切仍在该数值容差内，不等于完整轮廓复刻。",
+        "observedBBox": [
+          0.11,
+          0.26,
+          0.94,
+          1.0
+        ],
+        "observedBBoxAreaPercent": 61,
+        "uncertainty": "视觉边界约±1个百分点，面积约±2个百分点；此项仅按冻结bbox容差判断。"
+      },
+      {
+        "id": "s21-occlusion",
+        "status": "pass",
+        "evidence": "近侧椅背挡住局部桌沿及桌面，远侧椅子在桌后露出，吊灯在桌上方。",
+        "reason": "三项前后关系均满足。"
+      },
+      {
+        "id": "s21-structure-color",
+        "status": "pass",
+        "evidence": "奶白木椅有明显交叉背、暖棕木地板、右窗外绿色树叶、桌上杯碟和花。",
+        "reason": "冻结条件全部可见；花团明显变大、桌面布置更密并非本项通过即完整保真。"
+      }
+    ],
+    "conclusion": "生成图在四项冻结条件内通过，包括限定近侧四椅与宽容差家具框；但花团变大、布置更密、桌腿和近端椅被下边裁切，房间背景及灯具改变，不能称整体精确复刻。文字四项均仅部分覆盖。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "The linked source license applies; attribution retained. No endorsement or clearance of non-copyright rights is implied.",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}

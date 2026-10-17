@@ -1,0 +1,149 @@
+{
+  "id": "s19",
+  "category": "动物",
+  "title": "草地斑点小兽",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Eastern_quoll_%28Dasyurus_viverrinus%29_fawn_morph_Esk_Valley.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Eastern_quoll_%28Dasyurus_viverrinus%29_fawn_morph_Esk_Valley.jpg/1920px-Eastern_quoll_%28Dasyurus_viverrinus%29_fawn_morph_Esk_Valley.jpg",
+    "author": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "width": 1920,
+    "height": 1280,
+    "sha256": "f030bb8f2308a4f4cfa51e35d6a0dadfe472e3b6ebb135acc80f721844c6927a"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "009185cf4604b97b51ab7b846cdc7a30c3b7f996a667ab2ba4cb5b108422defe",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "997fe703d773955ff2c2ab6e3ea17ebe15a1e0964c0ed70b69cc88f68ab6fc1d",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0"
+  },
+  "checks": [
+    {
+      "id": "s19-count-position",
+      "description": "可观察主体计数与位置",
+      "expected": "一只斑点小兽位于左中，头朝右，耳朵竖起；右侧留有草地。",
+      "tolerance": "位置约±5个百分点；指定子集计数不容差"
+    },
+    {
+      "id": "s19-occupancy",
+      "description": "动物头身四肢、不含尾巴与胡须的画面占比（外接框）",
+      "expected": {
+        "bbox": [
+          0.13,
+          0.16,
+          0.61,
+          0.87
+        ],
+        "areaPercent": 34.1
+      },
+      "tolerance": {
+        "bboxEdgePercentagePoints": 5,
+        "areaPercentagePoints": 5
+      }
+    },
+    {
+      "id": "s19-occlusion",
+      "description": "遮挡及前后关系",
+      "expected": "前景草叶遮住脚部与下腹边缘；尾巴向右伸在身体后方。",
+      "tolerance": null
+    },
+    {
+      "id": "s19-structure-color",
+      "description": "类别关键结构及颜色",
+      "expected": "灰褐毛皮上有白色圆斑，鼻头粉红，眼睛黑亮，背景上方近黑。",
+      "tolerance": "允许轻微色温差，不允许替换关键颜色或结构"
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s19-count-position",
+        "status": "supported",
+        "evidence": "single small spotted mammal ... left of center ... face turned ... right；Two large upright ears；more open grass at right",
+        "reason": "单只、左中、朝右、竖耳和右侧草地均明确。"
+      },
+      {
+        "id": "s19-occupancy",
+        "status": "supported",
+        "evidence": "main body, head, and ears ...14% to 61% ...16% to 87%；尾巴另述",
+        "reason": "主体框与冻结框仅左边差1个百分点，矩形面积约33%，符合两种容差。",
+        "observedBBox": [
+          0.14,
+          0.16,
+          0.61,
+          0.87
+        ],
+        "observedBBoxAreaPercent": 33,
+        "measurementBasis": "英文主体明确边界；尾巴另计"
+      },
+      {
+        "id": "s19-occlusion",
+        "status": "partial",
+        "evidence": "grass blades partially obscure the feet；tail lies behind ... body and extends rightward",
+        "reason": "脚部草遮挡和尾巴右伸在后均明确，但未明确草叶遮住下腹边缘。"
+      },
+      {
+        "id": "s19-structure-color",
+        "status": "partial",
+        "evidence": "gray-brown ... irregular white spots；smooth pink nose；glossy dark eye；broad nearly black band",
+        "reason": "毛色、鼻眼与近黑背景明确，白斑称irregular，未明确冻结条件的圆斑形状；不将泛称白斑当圆斑已全部覆盖。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s19-count-position",
+        "status": "fail",
+        "evidence": "单只竖耳朝右小兽及右侧草地保留；头身四肢中心约x30%、y44%，原冻结框中心约x37%、y52%。",
+        "reason": "数量朝向正确，但整体左移、上移均约7–8个百分点，超过约±5个百分点位置容差，不能以部分符合判通过。"
+      },
+      {
+        "id": "s19-occupancy",
+        "status": "fail",
+        "evidence": "不含尾巴胡须，生成动物约从x6%至53%、y7%至81%。",
+        "reason": "左、上、右边界分别偏约7、9、8个百分点；面积接近冻结值不能抵消边界失败。",
+        "observedBBox": [
+          0.06,
+          0.07,
+          0.53,
+          0.81
+        ],
+        "observedBBoxAreaPercent": 35,
+        "uncertainty": "边缘约±1–2个百分点，面积约±3个百分点；上边缘明确超差。"
+      },
+      {
+        "id": "s19-occlusion",
+        "status": "pass",
+        "evidence": "近景草叶遮住两前脚及腹部最低边缘；长尾由身体后方向右伸展。",
+        "reason": "两个遮挡关系均可见。"
+      },
+      {
+        "id": "s19-structure-color",
+        "status": "pass",
+        "evidence": "灰褐皮毛白色近圆斑、粉红鼻、黑亮眼、上方近黑背景均可见。",
+        "reason": "冻结颜色结构满足，但生成兽更修长、白斑更密、耳朵比例改变，不能扩展成物种或外形精确复刻。"
+      }
+    ],
+    "conclusion": "保留朝右竖耳、斑点毛皮、粉鼻黑眼及草地遮挡，生成动物明显左上移，位置和边界项失败；身形、耳朵与白斑分布也不同。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "The linked source license applies; attribution retained. No endorsement or clearance of non-copyright rights is implied.",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}

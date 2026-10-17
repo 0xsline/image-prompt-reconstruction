@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' file:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>通用反推 · 公开案例画廊</title>
+<style>
+:root{--paper:#f6f6f2;--surface:#fff;--ink:#202c28;--muted:#59655f;--line:#d9ded7;--accent:#225947;--tint:#e7eee7;--stage:#eeefea;--warning:#79452d}
+*{box-sizing:border-box;scrollbar-width:thin;scrollbar-color:#a3b5a7 var(--paper)}[hidden]{display:none!important}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}::selection{background:#c9dfcf;color:var(--ink)}a{color:var(--accent);text-underline-offset:4px;overflow-wrap:anywhere}button,textarea{font:inherit;color:inherit}button,a{touch-action:manipulation}button,summary{cursor:pointer}button:disabled{cursor:wait;opacity:.6}:focus-visible{outline:3px solid var(--accent);outline-offset:4px}main{max-width:1440px;margin:auto;padding:38px 40px}header{display:flex;justify-content:space-between;gap:28px;border-bottom:1px solid var(--line);padding-bottom:24px}h1{font-size:30px;line-height:1.3;margin:0 0 14px}h2{font-size:21px;line-height:1.4;margin:0 0 12px}h3{font-size:17px;margin:0}p{margin:8px 0 16px}.intro{max-width:70ch;color:var(--muted);margin-bottom:0}.top-links{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;align-content:flex-start}.overview{margin:24px 0;color:var(--muted)}section{margin-top:32px}.section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:16px}.section-heading p{color:var(--muted);font-size:13px}.sample-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.sample-button{border:1px solid var(--line);background:var(--surface);border-radius:6px;text-align:left;padding:12px 14px;min-height:72px}.sample-button:hover{background:var(--tint)}.sample-button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:white}.sample-button span{display:block}.sample-meta{font-size:12px;margin-top:4px;opacity:.85}.note{color:var(--muted);max-width:85ch}.frames{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}.frames.single{grid-template-columns:minmax(0,1fr);max-width:660px}figure{margin:0;min-width:0}figcaption{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin:0 0 10px}figcaption span{font-size:12px;color:var(--muted)}.image-button{display:block;width:100%;aspect-ratio:var(--ratio);height:auto;border:1px solid var(--line);border-radius:6px;background:var(--stage);padding:0;overflow:hidden;position:relative}.image-button img{width:100%;height:100%;display:block;object-fit:contain}.zoom-hint{position:absolute;right:10px;bottom:10px;background:var(--surface);color:var(--ink);padding:3px 9px;border:1px solid var(--line);border-radius:4px;font-size:12px}.image-link{display:inline-block;margin-top:8px;font-size:13px}.empty,.error{padding:16px;background:var(--tint);border:1px solid var(--line);border-radius:6px}.error{color:var(--warning)}.table-scroll{overflow:auto;border-top:1px solid var(--line)}table{width:100%;min-width:850px;border-collapse:collapse;font-size:14px}caption{text-align:left;color:var(--muted);padding:10px 0}th,td{text-align:left;vertical-align:top;padding:16px 14px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}thead th{background:var(--tint)}tbody th{width:23%;font-weight:500}td{width:38.5%}td p{margin:8px 0}.status{font-weight:600;color:var(--accent)}.status-fail,.status-contradicted{color:var(--warning)}.status-partial,.status-uncertain,.status-not_generated{color:var(--muted)}.detail{white-space:pre-wrap;overflow-wrap:anywhere}.small{font-size:12px;color:var(--muted)}details{border-top:1px solid var(--line);padding:14px 0}summary{font-weight:600}.original-text{white-space:pre-wrap;overflow-wrap:anywhere;max-width:100ch;line-height:1.85;margin:18px 0}.actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:16px 0}.action{border:1px solid var(--accent);border-radius:5px;padding:8px 15px;background:var(--surface);color:var(--accent);min-height:44px}.action:hover{background:var(--tint)}.primary{background:var(--accent);color:white}.primary:hover{background:#183f33}dl{display:grid;grid-template-columns:130px minmax(0,1fr);gap:8px 18px;margin:16px 0}dt{color:var(--muted)}dd{margin:0;overflow-wrap:anywhere}.credits{display:grid;grid-template-columns:1fr 1fr;gap:32px}.credits>div{min-width:0}textarea{width:100%;height:220px;padding:12px;border:1px solid var(--accent);background:var(--surface);caret-color:var(--accent)}footer{margin-top:36px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:13px}dialog{width:min(1200px,96vw);max-height:96vh;padding:16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px}dialog::backdrop{background:rgb(16 25 20 / .8)}.dialog-bar,.dialog-bottom{display:flex;justify-content:space-between;gap:16px;align-items:center}.dialog-image{display:block;max-width:100%;width:auto;height:auto;max-height:75vh;object-fit:contain;margin:14px auto}.dialog-bottom{font-size:13px;color:var(--muted)}
+@media(max-width:1000px){main{padding:28px 24px}.sample-list{grid-template-columns:repeat(3,minmax(0,1fr))}header{display:block}.top-links{margin-top:18px}}
+@media(max-width:650px){main{padding:22px 16px}h1{font-size:25px}.sample-list{grid-template-columns:repeat(2,minmax(0,1fr))}.sample-button{padding:10px}.frames{grid-template-columns:1fr;gap:22px}.credits{grid-template-columns:1fr;gap:20px}.section-heading{display:block}.section-heading p{margin-top:0}dl{grid-template-columns:94px minmax(0,1fr);gap:8px 12px}.dialog-bar strong{font-size:13px}.dialog-bar button{flex-shrink:0}.dialog-bottom{flex-wrap:wrap}.top-links{gap:10px 18px}th,td{padding:12px}}
+</style>
+</head>
+<body>
+<main>
+<header><div><h1>通用反推 · 公开案例画廊</h1><p class="intro">固定同一条 v5 指令，从图片反推可复用的英文描述。原图、文字覆盖与实际生图分别呈现；保留失败与局限，不把文字支持等同于图像复现。</p></div><nav class="top-links" aria-label="项目文档"><a href="../README.md">项目说明</a><a href="../SKILL.md">完整 Skill</a><a href="../ATTRIBUTION.md">来源与许可</a></nav></header>
+<p id="load-error" class="error" role="alert" hidden></p>
+<div id="app" hidden>
+<p id="overview" class="overview"></p>
+<section aria-labelledby="samples-title"><div class="section-heading"><h2 id="samples-title">选择案例</h2><p>每类两张 · 保留首次输出</p></div><nav id="sample-list" class="sample-list" aria-label="案例选择"></nav></section>
+<section aria-labelledby="sample-title"><div class="section-heading"><h2 id="sample-title"></h2><p id="sample-meta"></p></div><p id="model-summary" class="note"></p><p class="note">同等画框由原图长宽比决定，完整显示，不裁剪、不拉伸。点击图片放大；画框一致不代表主体占比一致。</p><div id="frames" class="frames"></div><p id="missing" class="empty" hidden></p><p id="conclusion"></p></section>
+<section aria-labelledby="checks-title"><h2 id="checks-title">冻结检查项与实际结果</h2><p class="note">数量、位置、占比与遮挡分别核对。边界是 AI 视觉粗估，不是人工标注或像素分割；矩形框面积不等于物体像素面积。未生成与不确定均不计为通过。</p><div class="table-scroll" tabindex="0" role="region" aria-label="冻结检查结果，可横向滚动"><table><caption>原图条件、文字支持、实际生图分别记录</caption><thead><tr><th scope="col">冻结原图条件</th><th scope="col">英文描述检查</th><th scope="col">实际生图检查</th></tr></thead><tbody id="checks"></tbody></table></div></section>
+<section aria-labelledby="prompt-title"><h2 id="prompt-title">英文原始描述</h2><p class="note">保留完整原文，不逐图改写。复制的内容与下载的 prompt.txt 相同。</p><div class="actions"><button id="copy-prompt" class="action primary" type="button">复制英文原文</button><a id="download-prompt" download>下载 prompt.txt</a><a id="download-case" download>下载案例 JSON</a></div><p id="copy-status" role="status" aria-live="polite"></p><textarea id="manual-copy" aria-label="手动复制完整原文" readonly hidden></textarea><details open><summary>完整英文描述</summary><div id="prompt" class="original-text" lang="en"></div></details><details><summary>固定 v5 通用指令</summary><div id="instruction" class="original-text"></div></details></section>
+<section aria-labelledby="credits-title"><h2 id="credits-title">来源、许可与生成参数</h2><div class="credits"><div><h3>原图署名</h3><dl id="source-meta"></dl><div id="source-links" class="actions"></div></div><div><h3>本次记录</h3><dl id="generation-meta"></dl></div></div><details><summary>文件 SHA-256</summary><dl id="hashes"></dl></details></section>
+</div>
+<footer><p>离线浏览 · 无框架、无外部依赖 · 不上传图片或数据。仅主动打开来源与许可链接时访问公开网站。</p><p>这是一组有限案例，不是总体准确率估计；检查项通过也不代表整体精确复刻。</p></footer>
+<noscript><p class="error">请启用 JavaScript，并保留同目录 data.js 和案例文件夹。本页可离线打开，无需服务器。</p></noscript>
+</main>
+<dialog id="lightbox" aria-labelledby="lightbox-title"><div class="dialog-bar"><strong id="lightbox-title"></strong><button id="close-dialog" class="action" type="button" autofocus>关闭</button></div><img id="large-image" class="dialog-image" alt=""><div class="dialog-bottom"><span>按 Esc 关闭，返回原图片按钮</span><a id="large-link" target="_blank" rel="noopener noreferrer">打开完整原文件</a></div></dialog>
+<script src="data.js"></script>
+<script>
+'use strict';
+(()=>{
+const $=id=>document.getElementById(id);
+const make=(tag,value,className)=>{const node=document.createElement(tag);if(value!==undefined)node.textContent=value;if(className)node.className=className;return node;};
+const value=v=>v===null?'未记录':typeof v==='object'?JSON.stringify(v,null,2):String(v??'未记录');
+const data=window.EXAMPLES_DATA;
+if(!data||!Array.isArray(data.samples)||!data.samples.length){$('load-error').textContent='案例数据未加载。请保留 examples/data.js 和完整案例目录，再重新打开本页。';$('load-error').hidden=false;return;}
+const samples=data.samples;let selected=0,returnFocus=null,copySequence=0;
+const path=(sample,name)=>/^[a-z0-9-]+$/i.test(sample.id)&&/^[a-z0-9_.-]+$/i.test(name)?sample.id+'/'+name:null;
+const labels={supported:'全部支持',partial:'部分支持',unsupported:'未支持',omitted:'未覆盖',contradicted:'存在矛盾',pass:'通过',fail:'未通过',uncertain:'不确定',not_generated:'未生成 · 不计通过'};
+const field=(container,label,content)=>container.append(make('dt',label),make('dd',value(content)));
+const link=(container,label,url)=>{if(typeof url!=='string'||!/^https:\/\//i.test(url))return;const a=make('a',label);a.href=url;a.target='_blank';a.rel='noopener noreferrer';container.append(a);};
+$('overview').textContent=samples.length+' 张源图 · '+new Set(samples.map(s=>s.category)).size+' 类 · '+samples.filter(s=>s.generation).length+' 张实际生图 · 其余仅文字测试';
+$('instruction').textContent=data.instruction;
+samples.forEach((sample,index)=>{const b=make('button',undefined,'sample-button');b.type='button';b.append(make('span',sample.title),make('span',sample.id+' · '+sample.category+' · '+(sample.generation?'含实际生图':'仅文字测试'),'sample-meta'));b.addEventListener('click',()=>{selected=index;render();});$('sample-list').append(b);});
+function image(sample,file,label,width,height){
+ const src=path(sample,file);if(!src)return;
+ const figure=make('figure'),caption=make('figcaption');caption.append(make('strong',label),make('span',width+' × '+height));figure.append(caption);
+ const button=make('button',undefined,'image-button');button.type='button';button.setAttribute('aria-label','放大 '+sample.title+' · '+label);
+ const img=make('img');img.alt=sample.title+' · '+label;img.decoding='async';
+ const error=make('p','图片文件无法读取。请恢复完整案例目录；不会用其它图片替代。','error');error.hidden=true;img.addEventListener('error',()=>{button.hidden=true;error.hidden=false;});img.src=src;
+ button.append(img,make('span','点击放大','zoom-hint'));button.addEventListener('click',()=>{returnFocus=button;$('lightbox-title').textContent=img.alt;$('large-image').src=src;$('large-image').alt=img.alt;$('large-link').href=src;$('lightbox').showModal();});
+ const a=make('a','打开完整原文件','image-link');a.href=src;a.target='_blank';a.rel='noopener';figure.append(button,error,a);$('frames').append(figure);
+}
+function resultCell(record,notGenerated){const td=make('td');if(notGenerated){td.append(make('p','未生成 · 仅文字测试，不计通过','status status-not_generated'));return td;}if(!record){td.append(make('p','未记录 · 不计通过','status'));return td;}const status=labels[record.status]||value(record.status);td.append(make('p',status,'status status-'+(Object.hasOwn(labels,record.status)?record.status:'unknown')));for(const [key,label] of [['evidence','证据'],['reason','判断依据'],['observedBBox','观察框 [xMin, yMin, xMax, yMax]'],['observedBBoxAreaPercent','观察框面积（%）'],['measurementBasis','测量依据'],['uncertainty','不确定性']])if(record[key]!==undefined)td.append(make('p',label+'：'+value(record[key]),key==='evidence'||key==='reason'?'detail':'detail small'));return td;}
+function render(){
+ const s=samples[selected],g=s.generation,source=s.source||{};copySequence++;$('copy-status').textContent='';$('manual-copy').hidden=true;$('manual-copy').value='';
+ [...$('sample-list').children].forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));
+ $('sample-title').textContent=s.title;$('sample-meta').textContent=s.id+' · '+s.category+' · '+(g?'原图与实际生图':'仅文字测试');
+ $('model-summary').textContent='反推模型：'+s.caption.model+' · '+(g?'生图模型：'+g.model+' · '+g.quality+' · 纯文字输入，无参考图':'本案例未生图');
+ $('frames').replaceChildren();$('frames').classList.toggle('single',!g);
+ const width=Number(source.width),height=Number(source.height);$('frames').style.setProperty('--ratio',width>0&&height>0?width+'/'+height:'1');
+ image(s,'source.jpg','原图',source.width,source.height);if(g)image(s,g.file,g.model+' · 反推后纯文生图',g.width,g.height);
+ $('missing').hidden=Boolean(g);$('missing').textContent='本案例未生成图片，仅测试英文反推描述；没有图像复现结果，不计为通过，也不计为失败。';
+ $('conclusion').textContent=s.review?.conclusion||'尚未记录评审结论。';$('checks').replaceChildren();
+ for(const check of s.checks||[]){const tr=make('tr'),th=make('th');th.scope='row';th.append(make('strong',check.description),make('p','冻结值：'+value(check.expected),'detail'),make('p','容差：'+(check.tolerance===null?'不适用':value(check.tolerance)),'detail small'));tr.append(th,resultCell(s.review?.captionChecks?.find(r=>r.id===check.id),false),resultCell(s.review?.generationChecks?.find(r=>r.id===check.id),!g));$('checks').append(tr);}
+ $('prompt').textContent=s.captionText;$('download-prompt').href=path(s,s.caption.file);$('download-case').href=path(s,'case.json');
+ $('source-meta').replaceChildren();field($('source-meta'),'作者',source.author);field($('source-meta'),'原图许可',source.license);field($('source-meta'),'尺寸',source.width+' × '+source.height);
+ if(s.provenance?.requiredCredit)field($('source-meta'),'要求的署名',s.provenance.requiredCredit);
+ if(s.provenance?.sourceConditions)field($('source-meta'),'来源条件',s.provenance.sourceConditions);
+ if(s.provenance?.sourceModification)field($('source-meta'),'源图处理',s.provenance.sourceModification);
+ $('source-links').replaceChildren();link($('source-links'),'来源页面',source.page);link($('source-links'),'原图公开地址',source.url);link($('source-links'),'许可说明',source.licenseUrl);
+ $('generation-meta').replaceChildren();field($('generation-meta'),'反推模型',s.caption.model);field($('generation-meta'),'生图状态',g?'已生成 · 仅输入英文描述':'未生成 · 仅文字测试');
+ if(g){for(const [key,label] of [['requestedModel','请求模型标识'],['reportedModel','返回模型标识'],['quality','质量'],['width','宽度（px）'],['height','高度（px）'],['license','生成图许可']])field($('generation-meta'),label,g[key]);field($('generation-meta'),'参考图输入',g.referenceImage?'是':'否（纯文字）');field($('generation-meta'),'随机种子',g.seed===null?'未记录':g.seed);}
+ if(g&&s.provenance?.generationRights)field($('generation-meta'),'权利边界',s.provenance.generationRights);
+ $('hashes').replaceChildren();field($('hashes'),'source.jpg',source.sha256);field($('hashes'),'prompt.txt',s.caption.sha256);if(g)field($('hashes'),g.file,g.sha256);
+}
+$('copy-prompt').addEventListener('click',async()=>{const text=samples[selected].captionText,sequence=++copySequence,button=$('copy-prompt');button.disabled=true;let copied=false;try{await navigator.clipboard.writeText(text);copied=true;}catch{if(sequence===copySequence){const area=$('manual-copy');area.value=text;area.hidden=false;area.focus();area.select();try{copied=document.execCommand('copy');}catch{}if(copied){area.hidden=true;button.focus();}}}finally{button.disabled=false;}if(sequence===copySequence)$('copy-status').textContent=copied?'已复制完整英文原文。':'无法自动复制。原文已在文本框中选中，请使用系统复制操作。';});
+$('close-dialog').addEventListener('click',()=>$('lightbox').close());$('lightbox').addEventListener('close',()=>returnFocus?.focus());
+$('lightbox').addEventListener('click',event=>{if(event.target!==$('lightbox'))return;const r=event.target.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)event.target.close();});
+$('app').hidden=false;render();
+})();
+</script>
+</body>
+</html>

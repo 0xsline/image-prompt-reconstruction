@@ -1,0 +1,151 @@
+{
+  "id": "s25",
+  "category": "交通工具",
+  "title": "铜红色老式汽车",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg/1280px-Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "author": "Frank Schulenburg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "width": 1280,
+    "height": 951,
+    "sha256": "b1e4cb5e9ae98df91275fdec6f0434ce83841d772a8475915146208a54b50489"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "2102be23682fe531727a8c8d46ce30675fd844f49aee0543269fb4ff0995a498",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1448,
+    "height": 1086,
+    "sha256": "05506cfde7e2b5c1433ac176f862c5bcb8602c25438ca41de19077ed1004135a",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0"
+  },
+  "checks": [
+    {
+      "id": "s25-1",
+      "description": "车辆数量和朝向",
+      "expected": "一辆主车位于中下部，前端朝左且略面向观者，右端为车尾",
+      "tolerance": null
+    },
+    {
+      "id": "s25-2",
+      "description": "主体包围盒和画面占比（AI视觉粗估，坐标为距左/上边的百分比；面积为bbox面积，非分割面积）",
+      "expected": {
+        "subject": "完整主车（含轮胎，不含地面影子）",
+        "bboxPercent": [
+          12,
+          41,
+          96,
+          97
+        ],
+        "bboxAreaPercent": 47.0
+      },
+      "tolerance": {
+        "bboxEdgesPercentagePoints": 5,
+        "bboxAreaPercentagePoints": 5
+      }
+    },
+    {
+      "id": "s25-3",
+      "description": "前后遮挡关系",
+      "expected": "车身遮挡后方灌木下部；白房和棕榈树在车后；可见近侧前后两轮，远侧轮不要求出现",
+      "tolerance": null
+    },
+    {
+      "id": "s25-4",
+      "description": "车辆结构颜色",
+      "expected": "铜红色车身、白色车顶与白壁轮胎，前保险杠及长侧饰条呈银色金属，车尾有上扬尾鳍",
+      "tolerance": null
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s25-1",
+        "status": "supported",
+        "evidence": "'a ... sedan'、'three-quarter view'、'nose pointing toward the lower left'、'tail receding toward the right'，车在42%–97%高。",
+        "reason": "数量、中下位置和左前右后的三分之四朝向均明确。"
+      },
+      {
+        "id": "s25-2",
+        "status": "supported",
+        "evidence": "'entire car' 明确横向12%–96%、纵向42%–97%，不裁保险杠或车轮。",
+        "reason": "边界最大差1个百分点，文字bbox面积46.2%，与冻结47.0%相差0.8个百分点；均满足容差。",
+        "observedBBox": [
+          0.12,
+          0.42,
+          0.96,
+          0.97
+        ],
+        "observedBBoxAreaPercent": 46.2,
+        "measurementBasis": "caption_explicit_extents"
+      },
+      {
+        "id": "s25-3",
+        "status": "supported",
+        "evidence": "'Behind the car, a dense green hedge'、'white house'、'palm fronds ... center background'；分别描述可见前轮和较小后轮。",
+        "reason": "明确灌木、房屋与棕榈位于车后，近侧前后轮可见；前车后篱的叠置与源图一致。"
+      },
+      {
+        "id": "s25-4",
+        "status": "supported",
+        "evidence": "'copper-red'、'gray-white roof'、'broad white sidewalls'、'bumper ... bright silver'、'horizontal silver strip'、'prominent rear fin'。",
+        "reason": "冻结的车身、车顶、白壁胎、金属保险杠和饰条及尾鳍均有明确支持。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s25-1",
+        "status": "pass",
+        "evidence": "一辆铜红主车位于中下部，车头向左并露正面，车尾在右。",
+        "reason": "车辆数量和朝向满足全部冻结条件。"
+      },
+      {
+        "id": "s25-2",
+        "status": "fail",
+        "evidence": "完整车辆可见外缘粗估横向3%–98%、纵向39%–89%，不含投影。",
+        "reason": "左边比冻结12%约偏9个百分点，下边比97%约上移8个百分点，均超过5个百分点；面积约48%虽接近47%，不能抵消边界失败。",
+        "observedBBox": [
+          0.03,
+          0.39,
+          0.98,
+          0.89
+        ],
+        "observedBBoxAreaPercent": 48,
+        "uncertainty": "边缘目测约±1个百分点；结论不依赖细小测量误差。"
+      },
+      {
+        "id": "s25-3",
+        "status": "pass",
+        "evidence": "车身遮住灌木下部，白房和棕榈在后，两只近侧白壁车轮均可见。",
+        "reason": "全部前后遮挡和轮子可见性条件满足。"
+      },
+      {
+        "id": "s25-4",
+        "status": "pass",
+        "evidence": "铜红车身、白顶、白壁轮胎、银色前杠与长侧饰条、右尾上扬尾鳍均清楚可见。",
+        "reason": "冻结结构颜色条件全部满足；双圆灯、格栅及饰条造型与原车不同，但这些具体款式不在此条冻结要求中。"
+      }
+    ],
+    "conclusion": "文字四项有依据；生成保留车辆朝向、颜色与环境层次，但左侧留白和底边位置超容差，尺度检查失败，车灯与格栅等款式也明显改变。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "The linked source license applies; attribution retained. No endorsement or clearance of non-copyright rights is implied.",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance.",
+    "requiredCredit": "© Frank Schulenburg / CC BY-SA 4.0"
+  }
+}

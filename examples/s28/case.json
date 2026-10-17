@@ -1,0 +1,132 @@
+{
+  "id": "s28",
+  "category": "绘画插画",
+  "title": "几何静物绘画",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Fernand_Léger_Still_Life_with_Candlestick_1922.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Fernand_L%C3%A9ger_Still_Life_with_Candlestick_1922.jpg/960px-Fernand_L%C3%A9ger_Still_Life_with_Candlestick_1922.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "author": "Fernand Léger",
+    "license": "Public domain; PD-Art / author died 1955, life+70 or fewer; US pre-1931",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "width": 960,
+    "height": 1386,
+    "sha256": "493c285f1ecafa6806c731b413894b40772c3e39adba2cf29ff7aff5beb658c3"
+  },
+  "caption": {
+    "file": "prompt.txt",
+    "sha256": "531c8d46a5cc5231be91ed593d1c7d7dcb71882a9fb4abc57369ebcf08e9920a",
+    "model": "openai-codex/gpt-6-astra"
+  },
+  "generation": null,
+  "checks": [
+    {
+      "id": "s28-1",
+      "description": "有限对象计数与位置",
+      "expected": "只考核右下方一只灰白烛台及其圆形底盘；上半部有一块黑色波纹条带的黄色近圆形",
+      "tolerance": null
+    },
+    {
+      "id": "s28-2",
+      "description": "主体包围盒和画面占比（AI视觉粗估，坐标为距左/上边的百分比；面积为bbox面积，非分割面积）",
+      "expected": {
+        "subject": "右下灰白烛台（含底盘和右侧环形把手）",
+        "bboxPercent": [
+          63,
+          53,
+          89,
+          75
+        ],
+        "bboxAreaPercent": 5.7
+      },
+      "tolerance": {
+        "bboxEdgesPercentagePoints": 2,
+        "bboxAreaPercentagePoints": 2
+      }
+    },
+    {
+      "id": "s28-3",
+      "description": "平面叠压关系",
+      "expected": "上部黄色波纹圆形右缘被深色竖条遮住；左下碗勺与中部蓝白几何块互相叠压，烛台底盘位于桌面之上",
+      "tolerance": null
+    },
+    {
+      "id": "s28-4",
+      "description": "绘画媒介和关键颜色",
+      "expected": "非摄影静物：大面积黄、橙、黑、白、蓝平涂几何色块，边缘硬朗；灰色烛台以手绘明暗渐变塑形，背景为矩形条带而非真实房间",
+      "tolerance": null
+    }
+  ],
+  "review": {
+    "captionChecks": [
+      {
+        "id": "s28-1",
+        "status": "supported",
+        "evidence": "右下单个 'slender gray turned vessel ... pale handled circular base'；上部 'yellow oval ... thick wavy black stripes'。",
+        "reason": "虽然用中性的vessel而非candlestick称呼，仍明确描述了冻结对象的灰色车削状身形、浅圆底盘、单个右下位置及上部黄黑波纹形。"
+      },
+      {
+        "id": "s28-2",
+        "status": "supported",
+        "evidence": "右下器物及带把圆底明确给63%–88%、53%–75%。",
+        "reason": "与冻结bbox仅右边相差1个百分点，面积5.5%，与5.7%相差0.2个百分点，边界和面积均在±2个百分点内。",
+        "observedBBox": [
+          0.63,
+          0.53,
+          0.88,
+          0.75
+        ],
+        "observedBBoxAreaPercent": 5.5,
+        "measurementBasis": "caption_explicit_extents"
+      },
+      {
+        "id": "s28-3",
+        "status": "partial",
+        "evidence": "'overlapping vessels and utensils'、桌面 'partly hidden' 于蓝白黄块；'broad dark vertical bar divides the right side'；右下器物列在桌面对象中。",
+        "reason": "没有明确黄色波纹圆形右缘被深色竖条遮挡，也未具体说明左下碗勺与蓝白块的互相叠压；一般性overlapping不能覆盖这些定向关系。"
+      },
+      {
+        "id": "s28-4",
+        "status": "supported",
+        "evidence": "'geometric painting'，黄橙黑白蓝等平面、'Flattened overlapping planes replace consistent natural perspective'、器皿 'restrained gray shading'、背景 'interlocking ... planes'，末句禁止添加房间。",
+        "reason": "几何平面绘画而非摄影、关键色组、器物灰色明暗塑形和非真实房间背景均明确；几何块与矩形竖条支持硬朗分界。"
+      }
+    ],
+    "generationChecks": [
+      {
+        "id": "s28-1",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "按协议未生图，不判断视觉复现。"
+      },
+      {
+        "id": "s28-2",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "没有生成图可估计边界与面积。",
+        "observedBBox": null,
+        "observedBBoxAreaPercent": null
+      },
+      {
+        "id": "s28-3",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "按协议未生图，不判断视觉复现。"
+      },
+      {
+        "id": "s28-4",
+        "status": "not_generated",
+        "evidence": "review-inputs.json 中 generation=null。",
+        "reason": "按协议未生图，不判断视觉复现。"
+      }
+    ],
+    "conclusion": "文字保留右下灰白器物、上方黄黑波纹形、几何色块与器物占比；关键定向叠压关系只部分描述。未生成图片，不能判断布局或绘画质感能否实际复现。"
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-17",
+    "sourceLicenseEvidence": "Author and licensing sections independently reread on the linked Wikimedia Commons file page.",
+    "sourceModification": "Wikimedia proportional thumbnail of the linked source version; no project cropping, retouching or re-encoding. Downloaded image bytes preserved.",
+    "sourceConditions": "Commons marks the artwork public domain: artist died in 1955; life plus 70 years or fewer, and US publication before 1931. This is not a worldwide public-domain assertion. Commons considers the faithful 2D reproduction public domain in the US; reuse may be restricted in other jurisdictions. See https://commons.wikimedia.org/wiki/Commons:Reuse_of_PD-Art_photographs .",
+    "reviewLimitations": "AI visual estimates and model review against four preselected checks, not human annotations, segmentation measurements or an overall accuracy benchmark.",
+    "generationRights": "For generated images, only rights this project can license are offered under CC BY-SA 4.0; corresponding source credit and conditions remain. No guarantee of copyright subsistence, exclusivity or third-party clearance."
+  }
+}
