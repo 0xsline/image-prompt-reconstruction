@@ -170,7 +170,23 @@ window.EXAMPLES_DATA = {
         "sha256": "39cab794fbc3be3f8737f42e1f1d9eba3ed073235c3f1391b2d12e020702a0cf",
         "model": "openai-codex/gpt-6-astra"
       },
-      "generation": null,
+      "generation": {
+        "file": "generated.webp",
+        "model": "GPT Image 2",
+        "requestedModel": "openai-codex/gpt-image-2",
+        "reportedModel": "gpt-image-2-codex",
+        "quality": "low",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "f4b25d0e9580a8de1239f0af28be2cf4ca5e75516a3ea0751290901724af1008",
+        "referenceImage": false,
+        "seed": null,
+        "license": "CC-BY-SA-4.0",
+        "batch": "completion-2026-10-17",
+        "attempts": 1,
+        "promptSha256": "39cab794fbc3be3f8737f42e1f1d9eba3ed073235c3f1391b2d12e020702a0cf",
+        "requestedAspectRatio": "3:2"
+      },
       "checks": [
         {
           "id": "s18-count-position",
@@ -246,32 +262,39 @@ window.EXAMPLES_DATA = {
         "generationChecks": [
           {
             "id": "s18-count-position",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "本样本没有生图，不判断复现。"
+            "status": "pass",
+            "evidence": "生成图中右是一只深棕盘；盘外左下清楚可辨两只完整扭结面包。",
+            "reason": "指定盘的位置、颜色和盘外两只的计数保留；不把盘内重叠个体纳入计数。"
           },
           {
             "id": "s18-occupancy",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "无生成图可估框。",
-            "observedBBox": null,
-            "observedBBoxAreaPercent": null
+            "status": "fail",
+            "evidence": "盘与盘中面包联合外框目测约为x28%–100%、y4%–73%；右侧盘沿接触画框，最高面包接近顶部。",
+            "reason": "上边比冻结11%高约7个百分点，右边比92%多约8个百分点，均超出±5个百分点；面积也明显偏大。粗估误差不影响右侧裁切的判断。",
+            "observedBBox": [
+              0.28,
+              0.04,
+              1.0,
+              0.73
+            ],
+            "observedBBoxAreaPercent": 49.7,
+            "measurementBasis": "AI视觉粗估联合外接框，非分割或像素级测量"
           },
           {
             "id": "s18-occlusion",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "本样本没有生图，不判断复现。"
+            "status": "pass",
+            "evidence": "前排扭结面包遮挡后排，深棕盘前沿从面包下方露出；盘外两只落在红白织布上。",
+            "reason": "冻结的三组遮挡和承托关系均可见。"
           },
           {
             "id": "s18-structure-color",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "本样本没有生图，不判断复现。"
+            "status": "pass",
+            "evidence": "金黄至焦棕的扭结表面有可见白色砂糖状颗粒，红白格织布铺满下半幅，左上是浅色木台。",
+            "reason": "扭结、可见糖粒外观、红白格布和左上木台均保留；颗粒仅按视觉外观判断，不鉴定成分。"
           }
         ],
-        "conclusion": "文字保留右侧盘堆、左下两只、联合尺度与遮挡，颗粒外观保留但砂糖身份未明确；无生图，不能据文字判断复现。"
+        "conclusion": "一次纯文生图保留中右深棕盘、盘外左下两只及布面承托关系，但盘堆扩大至右边裁切，顶部抬高，面包扭结和糖粒更粗，木台变浅。四项限定检查为3通过、1不通过，不代表整图相似度。",
+        "reviewProvenance": "2026-10-17：AI视觉评审实际打开source.jpg与generated.webp，按既有四项冻结条件逐项比较；非人工标注、非独立盲评或受控基准。外接框为视觉粗估。"
       },
       "provenance": {
         "sourceLicenseChecked": "2026-10-17",
@@ -452,7 +475,23 @@ window.EXAMPLES_DATA = {
         "sha256": "c577f93fce8579f9e1f8e34dd4d46304733f5023a27eca70ce736f95e63de9ac",
         "model": "openai-codex/gpt-6-astra"
       },
-      "generation": null,
+      "generation": {
+        "file": "generated.webp",
+        "model": "GPT Image 2",
+        "requestedModel": "openai-codex/gpt-image-2",
+        "reportedModel": "gpt-image-2-codex",
+        "quality": "medium",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "8a6632199f741622b1e2732d9e4ceb73d37ea6199127932b0085bb594f60b4e3",
+        "referenceImage": false,
+        "seed": null,
+        "license": "CC-BY-SA-4.0",
+        "batch": "completion-2026-10-17",
+        "attempts": 1,
+        "promptSha256": "c577f93fce8579f9e1f8e34dd4d46304733f5023a27eca70ce736f95e63de9ac",
+        "requestedAspectRatio": "4:3"
+      },
       "checks": [
         {
           "id": "s20-count-position",
@@ -523,32 +562,39 @@ window.EXAMPLES_DATA = {
         "generationChecks": [
           {
             "id": "s20-count-position",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "未生图，不判断复现。"
+            "status": "fail",
+            "evidence": "生成图最高的三只分离海豚约在x20%、43%、59%，头均朝上，右边一只最高。",
+            "reason": "中间一只从冻结x34%移至约43%，超过±5个百分点；其他子条件保留也不能使整项通过。"
           },
           {
             "id": "s20-occupancy",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "无生成图可估框。",
-            "observedBBox": null,
-            "observedBBoxAreaPercent": null
+            "status": "fail",
+            "evidence": "上方中央偏右最高海豚本体含尾鳍的外框目测约x56%–61%、y2%–17%，不计水花尾迹。",
+            "reason": "下边约17%而冻结为25%，缩短约8个百分点，超过±5个百分点；面积接近不能抵消四边条件不满足。",
+            "observedBBox": [
+              0.56,
+              0.02,
+              0.61,
+              0.17
+            ],
+            "observedBBoxAreaPercent": 0.75,
+            "measurementBasis": "AI视觉粗估指定海豚本体含尾鳍，不含白色尾迹；非分割测量"
           },
           {
             "id": "s20-occlusion",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "未生图，不判断复现。"
+            "status": "fail",
+            "evidence": "明显白色水花伴随的亮海豚分布于顶部中央偏右、左上偏中、中部偏右和左下；另有较暗青色水下个体，无陆地遮挡。",
+            "reason": "水下层次与无陆地保留，但四只亮海豚并未集中在中央偏下，顶部最高个体也被加上水花，不满足完整位置关系。"
           },
           {
             "id": "s20-structure-color",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "未生图，不判断复现。"
+            "status": "pass",
+            "evidence": "俯视蓝青水面，细长灰背海豚可见横向分叉尾鳍，个体之间保留明显水面空隙。",
+            "reason": "俯视、海色、灰背、叉尾和个体间隙均可观察；新增清晰海底纹理不在该项限定条件内。"
           }
         ],
-        "conclusion": "文字保留俯视海豚群、四处水花及水下层次，但指定三只的横向位置、指定个体四边及叉尾形状未全部明确；无生成图证据。"
+        "conclusion": "一次纯文生图保留俯视蓝青海水、细长灰背叉尾和群体间隙，但上方中间个体右移，最高海豚变短，水花主体位置重排，并新增明显海底纹理。四项限定检查为1通过、3不通过，不能据类别一致声称布局复现。",
+        "reviewProvenance": "2026-10-17：AI视觉评审实际打开source.jpg与generated.webp，按既有四项冻结条件逐项比较；非人工标注、非独立盲评或受控基准。外接框为视觉粗估。"
       },
       "provenance": {
         "sourceLicenseChecked": "2026-10-17",
@@ -724,7 +770,23 @@ window.EXAMPLES_DATA = {
         "sha256": "9a357d1851d806da0cbc8cdbd71af9beabfe44accc574a39436a10870eaea10d",
         "model": "openai-codex/gpt-6-astra"
       },
-      "generation": null,
+      "generation": {
+        "file": "generated.webp",
+        "model": "GPT Image 2",
+        "requestedModel": "openai-codex/gpt-image-2",
+        "reportedModel": "gpt-image-2-codex",
+        "quality": "medium",
+        "width": 1448,
+        "height": 1086,
+        "sha256": "83d46777ba375aa291e73aba77aeb7d2fd3f16e2db6e6f7108c19ad7b871fb3f",
+        "referenceImage": false,
+        "seed": null,
+        "license": "CC-BY-SA-4.0",
+        "batch": "completion-2026-10-17",
+        "attempts": 1,
+        "promptSha256": "9a357d1851d806da0cbc8cdbd71af9beabfe44accc574a39436a10870eaea10d",
+        "requestedAspectRatio": "4:3"
+      },
       "checks": [
         {
           "id": "s22-count-position",
@@ -800,32 +862,39 @@ window.EXAMPLES_DATA = {
         "generationChecks": [
           {
             "id": "s22-count-position",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "未生图，不判断复现。"
+            "status": "pass",
+            "evidence": "两把椭圆靠背椅左右分列，中央窄木桌上两盏台灯夹着一只插花花瓶。",
+            "reason": "指定家具与台灯数量、左右排列和花瓶居中的关系均保留。"
           },
           {
             "id": "s22-occupancy",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "无生成图可估框。",
-            "observedBBox": null,
-            "observedBBoxAreaPercent": null
+            "status": "uncertain",
+            "evidence": "不计台灯花瓶，两椅与桌子联合外框目测约x26%–75%、y61%–93%，面积约15.7%；右椅较原图外扩，椅背更高。",
+            "reason": "粗估值落在冻结容差内，但右边距允许上限76%仅约1个百分点，上边也接近60%下限；未做像素级边界标注，不能确信全部四边同时满足，保留不确定而非算通过。",
+            "observedBBox": [
+              0.26,
+              0.61,
+              0.75,
+              0.93
+            ],
+            "observedBBoxAreaPercent": 15.7,
+            "measurementBasis": "AI视觉粗估家具联合外接框，不计桌上摆件；接近容差边界，非分割测量"
           },
           {
             "id": "s22-occlusion",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "未生图，不判断复现。"
+            "status": "pass",
+            "evidence": "桌椅在白色蕾丝窗帘前，厚重花纹窗帘在左右两侧，碗形吊灯从上方中央垂下并遮住后方帘幔。",
+            "reason": "家具、窗帘与中央前景吊灯的全部冻结深度关系可见。"
           },
           {
             "id": "s22-structure-color",
-            "status": "not_generated",
-            "evidence": "本例没有生成图像。",
-            "reason": "未生图，不判断复现。"
+            "status": "pass",
+            "evidence": "室内为金棕暖色，左右壁灯各清楚可见两个灯罩，亮白蕾丝衬在深色木桌椅后。",
+            "reason": "每侧两个灯罩的数量和明暗、颜色关系全部保留；灯具花纹和家具款式仍有变化。"
           }
         ],
-        "conclusion": "文字保留小家具组尺度、两椅一桌两灯夹花及窗帘前后层次，壁灯每侧两个灯罩未明确；无生图，不能评价复现。"
+        "conclusion": "一次纯文生图保留双椅一桌、两台灯夹花、每侧双罩壁灯及窗帘前后层次；椅桌组略扩大，吊灯和花束更显眼，帘幔、桌腿及墙板细节重构，底部新增地毯。四项限定检查为3通过、1不确定，家具框接近容差边界，不宣称精确复刻。",
+        "reviewProvenance": "2026-10-17：AI视觉评审实际打开source.jpg与generated.webp，按既有四项冻结条件逐项比较；非人工标注、非独立盲评或受控基准。外接框为视觉粗估。"
       },
       "provenance": {
         "sourceLicenseChecked": "2026-10-17",
@@ -1007,7 +1076,23 @@ window.EXAMPLES_DATA = {
         "sha256": "f81872690066e898064800e5cfceb52d28d58bc5f43b7250c10d94352f4e5130",
         "model": "openai-codex/gpt-6-astra"
       },
-      "generation": null,
+      "generation": {
+        "file": "generated.webp",
+        "model": "GPT Image 2",
+        "requestedModel": "openai-codex/gpt-image-2",
+        "reportedModel": "gpt-image-2-codex",
+        "quality": "medium",
+        "width": 1672,
+        "height": 941,
+        "sha256": "abfd501062cab3eb1074b772e2343575c76877000d5c8cbd4aea38f311ebe116",
+        "referenceImage": false,
+        "seed": null,
+        "license": "CC-BY-SA-4.0",
+        "batch": "completion-2026-10-17",
+        "attempts": 1,
+        "promptSha256": "f81872690066e898064800e5cfceb52d28d58bc5f43b7250c10d94352f4e5130",
+        "requestedAspectRatio": "16:9"
+      },
       "checks": [
         {
           "id": "s24-1",
@@ -1088,32 +1173,48 @@ window.EXAMPLES_DATA = {
         "generationChecks": [
           {
             "id": "s24-1",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "按协议未生图，不判断视觉复现。"
+            "status": "pass",
+            "evidence": "生成图中一组相连白色壳片屋顶位于中下部，最高尖壳在横向约40%处，右侧约65%–75%处另有较小壳片组。",
+            "reason": "中下部相连屋面、中央附近最高壳片及右侧小组均可见；不表示壳片数量与原图完全相同。"
           },
           {
             "id": "s24-2",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "没有生成图可估计边界与面积。",
-            "observedBBox": null,
-            "observedBBoxAreaPercent": null
+            "status": "fail",
+            "evidence": "排除外围码头和水面，生成图建筑屋顶与墙体的AI视觉估计bbox约为[21,25,76,64]%，面积约21.5%。原图冻结bbox为[20,33,75,79]%。",
+            "reason": "顶部约上移8个百分点、底部约上移15个百分点，均超过±5个百分点容差；即使估计有少量误差也不能通过全部边界条件。",
+            "observedBBox": [
+              0.21,
+              0.25,
+              0.76,
+              0.64
+            ],
+            "observedBBoxAreaPercent": 21.5,
+            "measurementBasis": "AI visual estimate from displayed image; not segmentation or calibrated measurement"
           },
           {
             "id": "s24-3",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "按协议未生图，不判断视觉复现。"
+            "status": "pass",
+            "evidence": "蓝黑水面占据前景，建筑下方有纵向延伸的金白色灯光倒影；密集亮窗楼群位于建筑后方。",
+            "reason": "前景水面及垂直倒影、后景亮窗城市的完整层次关系成立。"
           },
           {
             "id": "s24-4",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "按协议未生图，不判断视觉复现。"
+            "status": "pass",
+            "evidence": "多个白色尖顶弧面互相叠置，其下为暖金黄色玻璃和亮窗，天空及大部分非倒影水面呈深蓝色。",
+            "reason": "叠置尖曲屋面、下方暖窗和蓝黑夜景均保留。"
           }
         ],
-        "conclusion": "文字保留屋面群的主次、夜景亮窗和水岸纵深；主体墙体与码头被合并量化，无法确认完整建筑占比，水面蓝黑色也未充分说明；未生图，不能声称复现。"
+        "conclusion": "实际生成保留白色壳片、右侧小屋面、暖窗和水岸夜景层次，但建筑整体上移，墙体底缘明显高于冻结边界，壳片形状、城市楼群和水纹亦被重构。四项限定检查为3通过、1不通过，不代表精确复刻。",
+        "provenance": {
+          "reviewerType": "AI visual review",
+          "reviewerModel": "openai-codex/gpt-6-astra",
+          "date": "2026-10-17",
+          "inputsViewed": [
+            "source.jpg",
+            "generated.webp"
+          ],
+          "method": "Direct visual comparison against the four unchanged preselected checks; not human review or an independent blinded benchmark. Bounding boxes are approximate AI visual estimates."
+        }
       },
       "provenance": {
         "sourceLicenseChecked": "2026-10-17",
@@ -1296,7 +1397,23 @@ window.EXAMPLES_DATA = {
         "sha256": "1317705a38ba1e368b00eaf40a88db630b95ae18ca1e8d5de7f182080ad1c5f2",
         "model": "openai-codex/gpt-6-astra"
       },
-      "generation": null,
+      "generation": {
+        "file": "generated.webp",
+        "model": "GPT Image 2",
+        "requestedModel": "openai-codex/gpt-image-2",
+        "reportedModel": "gpt-image-2-codex",
+        "quality": "high",
+        "width": 1536,
+        "height": 1024,
+        "sha256": "b46711aa5c9907a3a1ef897c46b4a01fdcd99f5550659d0124d52425002ccd87",
+        "referenceImage": false,
+        "seed": null,
+        "license": "CC-BY-SA-4.0",
+        "batch": "completion-2026-10-17",
+        "attempts": 1,
+        "promptSha256": "1317705a38ba1e368b00eaf40a88db630b95ae18ca1e8d5de7f182080ad1c5f2",
+        "requestedAspectRatio": "3:2"
+      },
       "checks": [
         {
           "id": "s26-1",
@@ -1377,32 +1494,48 @@ window.EXAMPLES_DATA = {
         "generationChecks": [
           {
             "id": "s26-1",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "按协议未生图，不判断视觉复现。"
+            "status": "pass",
+            "evidence": "画面中央略偏右是一辆迎面蓝色三轮货车，车头下方有单个中央前轮，后车厢载有一群上半身露出的乘客。",
+            "reason": "单车、蓝色、正面朝向、中央前轮及后载人群均保留；静态画面只能支持迎面驶来的视觉姿态，不能证明实际运动。"
           },
           {
             "id": "s26-2",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "没有生成图可估计边界与面积。",
-            "observedBBox": null,
-            "observedBBoxAreaPercent": null
+            "status": "uncertain",
+            "evidence": "包含车厢栏杆、后视镜和轮子，不含乘客，AI视觉估计车辆bbox约为[37,45,71,95]%，面积约17.0%；冻结值为[34,50,66,98]%，边界容差±5个百分点。",
+            "reason": "面积和左、下边缘大致在容差内，但上缘和右缘恰接近容差界限；栏杆与乘客遮挡处的边界难以凭粗估精确确定，不能把约数舍入为全条件通过。",
+            "observedBBox": [
+              0.37,
+              0.45,
+              0.71,
+              0.95
+            ],
+            "observedBBoxAreaPercent": 17.0,
+            "measurementBasis": "AI visual estimate from displayed image; threshold-adjacent edges are uncertain, not segmentation measurements"
           },
           {
             "id": "s26-3",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "按协议未生图，不判断视觉复现。"
+            "status": "pass",
+            "evidence": "后车厢乘客上身露在驾驶室上方，下身被蓝色车厢和驾驶室挡住；车辆在深色装饰门洞的前方，远街通过门洞向后延伸。",
+            "reason": "指定的人车遮挡和车在门洞之前两层关系均可见。"
           },
           {
             "id": "s26-4",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "按协议未生图，不判断视觉复现。"
+            "status": "pass",
+            "evidence": "蓝色短驾驶室有大块近矩形挡风玻璃和左右矩形灯组；中央前轮完整露出，左右后轮均能在车身两侧下方看到。",
+            "reason": "全部冻结结构条件成立，但车头格栅、灯具造型和车厢栏杆并非原图款式。"
           }
         ],
-        "conclusion": "文字保留正面蓝色三轮车、上方人群与门洞纵深，但车辆独立占比、群体下身遮挡及后轮可见性未充分明确；无生成结果。"
+        "conclusion": "实际生成保留正面蓝色三轮车、中央前轮、两侧后轮和车后人群遮挡，但车辆略向右移，车辆边界接近容差上限，不能凭粗估判定占比通过；乘客、车头款式、门楼及街景明显重构。四项为3通过、0不通过、1不确定，不是整图相似度。",
+        "provenance": {
+          "reviewerType": "AI visual review",
+          "reviewerModel": "openai-codex/gpt-6-astra",
+          "date": "2026-10-17",
+          "inputsViewed": [
+            "source.jpg",
+            "generated.webp"
+          ],
+          "method": "Direct visual comparison against the four unchanged preselected checks; not human review or an independent blinded benchmark. Bounding boxes are approximate AI visual estimates."
+        }
       },
       "provenance": {
         "sourceLicenseChecked": "2026-10-17",
@@ -1584,7 +1717,23 @@ window.EXAMPLES_DATA = {
         "sha256": "531c8d46a5cc5231be91ed593d1c7d7dcb71882a9fb4abc57369ebcf08e9920a",
         "model": "openai-codex/gpt-6-astra"
       },
-      "generation": null,
+      "generation": {
+        "file": "generated.webp",
+        "model": "GPT Image 2",
+        "requestedModel": "openai-codex/gpt-image-2",
+        "reportedModel": "gpt-image-2-codex",
+        "quality": "medium",
+        "width": 1024,
+        "height": 1536,
+        "sha256": "75fd5f6053220d69122a65dddf943e2778ffa1336668bbfdb68574837aa620f6",
+        "referenceImage": false,
+        "seed": null,
+        "license": "CC-BY-SA-4.0",
+        "batch": "completion-2026-10-17",
+        "attempts": 1,
+        "promptSha256": "531c8d46a5cc5231be91ed593d1c7d7dcb71882a9fb4abc57369ebcf08e9920a",
+        "requestedAspectRatio": "2:3"
+      },
       "checks": [
         {
           "id": "s28-1",
@@ -1661,32 +1810,48 @@ window.EXAMPLES_DATA = {
         "generationChecks": [
           {
             "id": "s28-1",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "按协议未生图，不判断视觉复现。"
+            "status": "fail",
+            "evidence": "上半部保留一块黄底黑色波纹的近圆形；右下虽有单个灰白器物和带把圆底盘，器身却变为高大、收腰、上口外张的瓶状物。",
+            "reason": "只保留灰白颜色、右下位置和底盘不足以满足烛台对象条件；原图短小、带多层环节的烛台轮廓未保留。"
           },
           {
             "id": "s28-2",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "没有生成图可估计边界与面积。",
-            "observedBBox": null,
-            "observedBBoxAreaPercent": null
+            "status": "fail",
+            "evidence": "把右下替代器物连同底盘、右侧环把整体计入，AI视觉估计bbox约为[61,38,99,81]%，面积约16.3%；原图冻结烛台bbox为[63,53,89,75]%，面积5.7%。",
+            "reason": "替代器物明显放大并向上延伸，顶部约差15、右缘约差10、下缘约差6个百分点，面积约差10.6个百分点，均有远超±2容差的偏差。",
+            "observedBBox": [
+              0.61,
+              0.38,
+              0.99,
+              0.81
+            ],
+            "observedBBoxAreaPercent": 16.3,
+            "measurementBasis": "AI visual estimate of the corresponding replacement vessel, including base and handle; not segmentation or calibrated measurement"
           },
           {
             "id": "s28-3",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "按协议未生图，不判断视觉复现。"
+            "status": "fail",
+            "evidence": "黄色波纹形呈完整弧形右边缘，伸入深色竖条区域而不是由该条切断；左下带勺杯碗位于蓝白块前方，不再呈原图那种被蓝白块切入的交错叠压。右下底盘仍置于桌面上。",
+            "reason": "桌面承托关系保留，但黄色形与竖条的遮挡方向改变，碗勺与中部色块的交错关系未完整复现，不能以部分满足计通过。"
           },
           {
             "id": "s28-4",
-            "status": "not_generated",
-            "evidence": "review-inputs.json 中 generation=null。",
-            "reason": "按协议未生图，不判断视觉复现。"
+            "status": "fail",
+            "evidence": "生成图仍是黄、橙、黑、白、蓝硬边几何静物绘画，背景为抽象条带而非真实房间；右下器物却用大块黑白灰多边形切面塑形，原图柔和连续的灰色明暗渐变消失。",
+            "reason": "非摄影媒介、色组和抽象背景保留，但指定的手绘渐变塑形子条件未满足。"
           }
         ],
-        "conclusion": "文字保留右下灰白器物、上方黄黑波纹形、几何色块与器物占比；关键定向叠压关系只部分描述。未生成图片，不能判断布局或绘画质感能否实际复现。"
+        "conclusion": "实际生成保留黄黑波纹形和几何静物色组，却将右下小烛台改成高大的瓶状器物，圆桌、杯勺与中央色块也重排；黄色形的遮挡方向改变，灰色连续明暗变成硬边切面。四项完整条件均不通过，并非没有保留任何视觉元素。",
+        "provenance": {
+          "reviewerType": "AI visual review",
+          "reviewerModel": "openai-codex/gpt-6-astra",
+          "date": "2026-10-17",
+          "inputsViewed": [
+            "source.jpg",
+            "generated.webp"
+          ],
+          "method": "Direct visual comparison against the four unchanged preselected checks; not human review or an independent blinded benchmark. Bounding boxes are approximate AI visual estimates."
+        }
       },
       "provenance": {
         "sourceLicenseChecked": "2026-10-17",

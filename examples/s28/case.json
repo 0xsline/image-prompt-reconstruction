@@ -17,7 +17,23 @@
     "sha256": "531c8d46a5cc5231be91ed593d1c7d7dcb71882a9fb4abc57369ebcf08e9920a",
     "model": "openai-codex/gpt-6-astra"
   },
-  "generation": null,
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "75fd5f6053220d69122a65dddf943e2778ffa1336668bbfdb68574837aa620f6",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0",
+    "batch": "completion-2026-10-17",
+    "attempts": 1,
+    "promptSha256": "531c8d46a5cc5231be91ed593d1c7d7dcb71882a9fb4abc57369ebcf08e9920a",
+    "requestedAspectRatio": "2:3"
+  },
   "checks": [
     {
       "id": "s28-1",
@@ -94,32 +110,40 @@
     "generationChecks": [
       {
         "id": "s28-1",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "按协议未生图，不判断视觉复现。"
+        "status": "fail",
+        "evidence": "上半部保留一块黄底黑色波纹的近圆形；右下虽有单个灰白器物和带把圆底盘，器身却变为高大、收腰、上口外张的瓶状物。",
+        "reason": "只保留灰白颜色、右下位置和底盘不足以满足烛台对象条件；原图短小、带多层环节的烛台轮廓未保留。"
       },
       {
         "id": "s28-2",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "没有生成图可估计边界与面积。",
-        "observedBBox": null,
-        "observedBBoxAreaPercent": null
+        "status": "fail",
+        "evidence": "把右下替代器物连同底盘、右侧环把整体计入，AI视觉估计bbox约为[61,38,99,81]%，面积约16.3%；原图冻结烛台bbox为[63,53,89,75]%，面积5.7%。",
+        "reason": "替代器物明显放大并向上延伸，顶部约差15、右缘约差10、下缘约差6个百分点，面积约差10.6个百分点，均有远超±2容差的偏差。",
+        "observedBBox": [0.61, 0.38, 0.99, 0.81],
+        "observedBBoxAreaPercent": 16.3,
+        "measurementBasis": "AI visual estimate of the corresponding replacement vessel, including base and handle; not segmentation or calibrated measurement"
       },
       {
         "id": "s28-3",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "按协议未生图，不判断视觉复现。"
+        "status": "fail",
+        "evidence": "黄色波纹形呈完整弧形右边缘，伸入深色竖条区域而不是由该条切断；左下带勺杯碗位于蓝白块前方，不再呈原图那种被蓝白块切入的交错叠压。右下底盘仍置于桌面上。",
+        "reason": "桌面承托关系保留，但黄色形与竖条的遮挡方向改变，碗勺与中部色块的交错关系未完整复现，不能以部分满足计通过。"
       },
       {
         "id": "s28-4",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "按协议未生图，不判断视觉复现。"
+        "status": "fail",
+        "evidence": "生成图仍是黄、橙、黑、白、蓝硬边几何静物绘画，背景为抽象条带而非真实房间；右下器物却用大块黑白灰多边形切面塑形，原图柔和连续的灰色明暗渐变消失。",
+        "reason": "非摄影媒介、色组和抽象背景保留，但指定的手绘渐变塑形子条件未满足。"
       }
     ],
-    "conclusion": "文字保留右下灰白器物、上方黄黑波纹形、几何色块与器物占比；关键定向叠压关系只部分描述。未生成图片，不能判断布局或绘画质感能否实际复现。"
+    "conclusion": "实际生成保留黄黑波纹形和几何静物色组，却将右下小烛台改成高大的瓶状器物，圆桌、杯勺与中央色块也重排；黄色形的遮挡方向改变，灰色连续明暗变成硬边切面。四项完整条件均不通过，并非没有保留任何视觉元素。",
+    "provenance": {
+      "reviewerType": "AI visual review",
+      "reviewerModel": "openai-codex/gpt-6-astra",
+      "date": "2026-10-17",
+      "inputsViewed": ["source.jpg", "generated.webp"],
+      "method": "Direct visual comparison against the four unchanged preselected checks; not human review or an independent blinded benchmark. Bounding boxes are approximate AI visual estimates."
+    }
   },
   "provenance": {
     "sourceLicenseChecked": "2026-10-17",

@@ -17,7 +17,23 @@
     "sha256": "f81872690066e898064800e5cfceb52d28d58bc5f43b7250c10d94352f4e5130",
     "model": "openai-codex/gpt-6-astra"
   },
-  "generation": null,
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1672,
+    "height": 941,
+    "sha256": "abfd501062cab3eb1074b772e2343575c76877000d5c8cbd4aea38f311ebe116",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0",
+    "batch": "completion-2026-10-17",
+    "attempts": 1,
+    "promptSha256": "f81872690066e898064800e5cfceb52d28d58bc5f43b7250c10d94352f4e5130",
+    "requestedAspectRatio": "16:9"
+  },
   "checks": [
     {
       "id": "s24-1",
@@ -98,32 +114,40 @@
     "generationChecks": [
       {
         "id": "s24-1",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "按协议未生图，不判断视觉复现。"
+        "status": "pass",
+        "evidence": "生成图中一组相连白色壳片屋顶位于中下部，最高尖壳在横向约40%处，右侧约65%–75%处另有较小壳片组。",
+        "reason": "中下部相连屋面、中央附近最高壳片及右侧小组均可见；不表示壳片数量与原图完全相同。"
       },
       {
         "id": "s24-2",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "没有生成图可估计边界与面积。",
-        "observedBBox": null,
-        "observedBBoxAreaPercent": null
+        "status": "fail",
+        "evidence": "排除外围码头和水面，生成图建筑屋顶与墙体的AI视觉估计bbox约为[21,25,76,64]%，面积约21.5%。原图冻结bbox为[20,33,75,79]%。",
+        "reason": "顶部约上移8个百分点、底部约上移15个百分点，均超过±5个百分点容差；即使估计有少量误差也不能通过全部边界条件。",
+        "observedBBox": [0.21, 0.25, 0.76, 0.64],
+        "observedBBoxAreaPercent": 21.5,
+        "measurementBasis": "AI visual estimate from displayed image; not segmentation or calibrated measurement"
       },
       {
         "id": "s24-3",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "按协议未生图，不判断视觉复现。"
+        "status": "pass",
+        "evidence": "蓝黑水面占据前景，建筑下方有纵向延伸的金白色灯光倒影；密集亮窗楼群位于建筑后方。",
+        "reason": "前景水面及垂直倒影、后景亮窗城市的完整层次关系成立。"
       },
       {
         "id": "s24-4",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "按协议未生图，不判断视觉复现。"
+        "status": "pass",
+        "evidence": "多个白色尖顶弧面互相叠置，其下为暖金黄色玻璃和亮窗，天空及大部分非倒影水面呈深蓝色。",
+        "reason": "叠置尖曲屋面、下方暖窗和蓝黑夜景均保留。"
       }
     ],
-    "conclusion": "文字保留屋面群的主次、夜景亮窗和水岸纵深；主体墙体与码头被合并量化，无法确认完整建筑占比，水面蓝黑色也未充分说明；未生图，不能声称复现。"
+    "conclusion": "实际生成保留白色壳片、右侧小屋面、暖窗和水岸夜景层次，但建筑整体上移，墙体底缘明显高于冻结边界，壳片形状、城市楼群和水纹亦被重构。四项限定检查为3通过、1不通过，不代表精确复刻。",
+    "provenance": {
+      "reviewerType": "AI visual review",
+      "reviewerModel": "openai-codex/gpt-6-astra",
+      "date": "2026-10-17",
+      "inputsViewed": ["source.jpg", "generated.webp"],
+      "method": "Direct visual comparison against the four unchanged preselected checks; not human review or an independent blinded benchmark. Bounding boxes are approximate AI visual estimates."
+    }
   },
   "provenance": {
     "sourceLicenseChecked": "2026-10-17",

@@ -17,7 +17,23 @@
     "sha256": "1317705a38ba1e368b00eaf40a88db630b95ae18ca1e8d5de7f182080ad1c5f2",
     "model": "openai-codex/gpt-6-astra"
   },
-  "generation": null,
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "high",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "b46711aa5c9907a3a1ef897c46b4a01fdcd99f5550659d0124d52425002ccd87",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0",
+    "batch": "completion-2026-10-17",
+    "attempts": 1,
+    "promptSha256": "1317705a38ba1e368b00eaf40a88db630b95ae18ca1e8d5de7f182080ad1c5f2",
+    "requestedAspectRatio": "3:2"
+  },
   "checks": [
     {
       "id": "s26-1",
@@ -98,32 +114,40 @@
     "generationChecks": [
       {
         "id": "s26-1",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "按协议未生图，不判断视觉复现。"
+        "status": "pass",
+        "evidence": "画面中央略偏右是一辆迎面蓝色三轮货车，车头下方有单个中央前轮，后车厢载有一群上半身露出的乘客。",
+        "reason": "单车、蓝色、正面朝向、中央前轮及后载人群均保留；静态画面只能支持迎面驶来的视觉姿态，不能证明实际运动。"
       },
       {
         "id": "s26-2",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "没有生成图可估计边界与面积。",
-        "observedBBox": null,
-        "observedBBoxAreaPercent": null
+        "status": "uncertain",
+        "evidence": "包含车厢栏杆、后视镜和轮子，不含乘客，AI视觉估计车辆bbox约为[37,45,71,95]%，面积约17.0%；冻结值为[34,50,66,98]%，边界容差±5个百分点。",
+        "reason": "面积和左、下边缘大致在容差内，但上缘和右缘恰接近容差界限；栏杆与乘客遮挡处的边界难以凭粗估精确确定，不能把约数舍入为全条件通过。",
+        "observedBBox": [0.37, 0.45, 0.71, 0.95],
+        "observedBBoxAreaPercent": 17.0,
+        "measurementBasis": "AI visual estimate from displayed image; threshold-adjacent edges are uncertain, not segmentation measurements"
       },
       {
         "id": "s26-3",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "按协议未生图，不判断视觉复现。"
+        "status": "pass",
+        "evidence": "后车厢乘客上身露在驾驶室上方，下身被蓝色车厢和驾驶室挡住；车辆在深色装饰门洞的前方，远街通过门洞向后延伸。",
+        "reason": "指定的人车遮挡和车在门洞之前两层关系均可见。"
       },
       {
         "id": "s26-4",
-        "status": "not_generated",
-        "evidence": "review-inputs.json 中 generation=null。",
-        "reason": "按协议未生图，不判断视觉复现。"
+        "status": "pass",
+        "evidence": "蓝色短驾驶室有大块近矩形挡风玻璃和左右矩形灯组；中央前轮完整露出，左右后轮均能在车身两侧下方看到。",
+        "reason": "全部冻结结构条件成立，但车头格栅、灯具造型和车厢栏杆并非原图款式。"
       }
     ],
-    "conclusion": "文字保留正面蓝色三轮车、上方人群与门洞纵深，但车辆独立占比、群体下身遮挡及后轮可见性未充分明确；无生成结果。"
+    "conclusion": "实际生成保留正面蓝色三轮车、中央前轮、两侧后轮和车后人群遮挡，但车辆略向右移，车辆边界接近容差上限，不能凭粗估判定占比通过；乘客、车头款式、门楼及街景明显重构。四项为3通过、0不通过、1不确定，不是整图相似度。",
+    "provenance": {
+      "reviewerType": "AI visual review",
+      "reviewerModel": "openai-codex/gpt-6-astra",
+      "date": "2026-10-17",
+      "inputsViewed": ["source.jpg", "generated.webp"],
+      "method": "Direct visual comparison against the four unchanged preselected checks; not human review or an independent blinded benchmark. Bounding boxes are approximate AI visual estimates."
+    }
   },
   "provenance": {
     "sourceLicenseChecked": "2026-10-17",

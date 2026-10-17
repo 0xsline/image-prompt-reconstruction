@@ -17,7 +17,23 @@
     "sha256": "c577f93fce8579f9e1f8e34dd4d46304733f5023a27eca70ce736f95e63de9ac",
     "model": "openai-codex/gpt-6-astra"
   },
-  "generation": null,
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1448,
+    "height": 1086,
+    "sha256": "8a6632199f741622b1e2732d9e4ceb73d37ea6199127932b0085bb594f60b4e3",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0",
+    "batch": "completion-2026-10-17",
+    "attempts": 1,
+    "promptSha256": "c577f93fce8579f9e1f8e34dd4d46304733f5023a27eca70ce736f95e63de9ac",
+    "requestedAspectRatio": "4:3"
+  },
   "checks": [
     {
       "id": "s20-count-position",
@@ -88,32 +104,34 @@
     "generationChecks": [
       {
         "id": "s20-count-position",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "未生图，不判断复现。"
+        "status": "fail",
+        "evidence": "生成图最高的三只分离海豚约在x20%、43%、59%，头均朝上，右边一只最高。",
+        "reason": "中间一只从冻结x34%移至约43%，超过±5个百分点；其他子条件保留也不能使整项通过。"
       },
       {
         "id": "s20-occupancy",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "无生成图可估框。",
-        "observedBBox": null,
-        "observedBBoxAreaPercent": null
+        "status": "fail",
+        "evidence": "上方中央偏右最高海豚本体含尾鳍的外框目测约x56%–61%、y2%–17%，不计水花尾迹。",
+        "reason": "下边约17%而冻结为25%，缩短约8个百分点，超过±5个百分点；面积接近不能抵消四边条件不满足。",
+        "observedBBox": [0.56, 0.02, 0.61, 0.17],
+        "observedBBoxAreaPercent": 0.75,
+        "measurementBasis": "AI视觉粗估指定海豚本体含尾鳍，不含白色尾迹；非分割测量"
       },
       {
         "id": "s20-occlusion",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "未生图，不判断复现。"
+        "status": "fail",
+        "evidence": "明显白色水花伴随的亮海豚分布于顶部中央偏右、左上偏中、中部偏右和左下；另有较暗青色水下个体，无陆地遮挡。",
+        "reason": "水下层次与无陆地保留，但四只亮海豚并未集中在中央偏下，顶部最高个体也被加上水花，不满足完整位置关系。"
       },
       {
         "id": "s20-structure-color",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "未生图，不判断复现。"
+        "status": "pass",
+        "evidence": "俯视蓝青水面，细长灰背海豚可见横向分叉尾鳍，个体之间保留明显水面空隙。",
+        "reason": "俯视、海色、灰背、叉尾和个体间隙均可观察；新增清晰海底纹理不在该项限定条件内。"
       }
     ],
-    "conclusion": "文字保留俯视海豚群、四处水花及水下层次，但指定三只的横向位置、指定个体四边及叉尾形状未全部明确；无生成图证据。"
+    "conclusion": "一次纯文生图保留俯视蓝青海水、细长灰背叉尾和群体间隙，但上方中间个体右移，最高海豚变短，水花主体位置重排，并新增明显海底纹理。四项限定检查为1通过、3不通过，不能据类别一致声称布局复现。",
+    "reviewProvenance": "2026-10-17：AI视觉评审实际打开source.jpg与generated.webp，按既有四项冻结条件逐项比较；非人工标注、非独立盲评或受控基准。外接框为视觉粗估。"
   },
   "provenance": {
     "sourceLicenseChecked": "2026-10-17",

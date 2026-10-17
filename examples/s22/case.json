@@ -17,7 +17,23 @@
     "sha256": "9a357d1851d806da0cbc8cdbd71af9beabfe44accc574a39436a10870eaea10d",
     "model": "openai-codex/gpt-6-astra"
   },
-  "generation": null,
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "medium",
+    "width": 1448,
+    "height": 1086,
+    "sha256": "83d46777ba375aa291e73aba77aeb7d2fd3f16e2db6e6f7108c19ad7b871fb3f",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0",
+    "batch": "completion-2026-10-17",
+    "attempts": 1,
+    "promptSha256": "9a357d1851d806da0cbc8cdbd71af9beabfe44accc574a39436a10870eaea10d",
+    "requestedAspectRatio": "4:3"
+  },
   "checks": [
     {
       "id": "s22-count-position",
@@ -93,32 +109,34 @@
     "generationChecks": [
       {
         "id": "s22-count-position",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "未生图，不判断复现。"
+        "status": "pass",
+        "evidence": "两把椭圆靠背椅左右分列，中央窄木桌上两盏台灯夹着一只插花花瓶。",
+        "reason": "指定家具与台灯数量、左右排列和花瓶居中的关系均保留。"
       },
       {
         "id": "s22-occupancy",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "无生成图可估框。",
-        "observedBBox": null,
-        "observedBBoxAreaPercent": null
+        "status": "uncertain",
+        "evidence": "不计台灯花瓶，两椅与桌子联合外框目测约x26%–75%、y61%–93%，面积约15.7%；右椅较原图外扩，椅背更高。",
+        "reason": "粗估值落在冻结容差内，但右边距允许上限76%仅约1个百分点，上边也接近60%下限；未做像素级边界标注，不能确信全部四边同时满足，保留不确定而非算通过。",
+        "observedBBox": [0.26, 0.61, 0.75, 0.93],
+        "observedBBoxAreaPercent": 15.7,
+        "measurementBasis": "AI视觉粗估家具联合外接框，不计桌上摆件；接近容差边界，非分割测量"
       },
       {
         "id": "s22-occlusion",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "未生图，不判断复现。"
+        "status": "pass",
+        "evidence": "桌椅在白色蕾丝窗帘前，厚重花纹窗帘在左右两侧，碗形吊灯从上方中央垂下并遮住后方帘幔。",
+        "reason": "家具、窗帘与中央前景吊灯的全部冻结深度关系可见。"
       },
       {
         "id": "s22-structure-color",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "未生图，不判断复现。"
+        "status": "pass",
+        "evidence": "室内为金棕暖色，左右壁灯各清楚可见两个灯罩，亮白蕾丝衬在深色木桌椅后。",
+        "reason": "每侧两个灯罩的数量和明暗、颜色关系全部保留；灯具花纹和家具款式仍有变化。"
       }
     ],
-    "conclusion": "文字保留小家具组尺度、两椅一桌两灯夹花及窗帘前后层次，壁灯每侧两个灯罩未明确；无生图，不能评价复现。"
+    "conclusion": "一次纯文生图保留双椅一桌、两台灯夹花、每侧双罩壁灯及窗帘前后层次；椅桌组略扩大，吊灯和花束更显眼，帘幔、桌腿及墙板细节重构，底部新增地毯。四项限定检查为3通过、1不确定，家具框接近容差边界，不宣称精确复刻。",
+    "reviewProvenance": "2026-10-17：AI视觉评审实际打开source.jpg与generated.webp，按既有四项冻结条件逐项比较；非人工标注、非独立盲评或受控基准。外接框为视觉粗估。"
   },
   "provenance": {
     "sourceLicenseChecked": "2026-10-17",

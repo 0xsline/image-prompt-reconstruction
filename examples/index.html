@@ -43,7 +43,7 @@ const path=(sample,name)=>/^[a-z0-9-]+$/i.test(sample.id)&&/^[a-z0-9_.-]+$/i.tes
 const labels={supported:'全部支持',partial:'部分支持',unsupported:'未支持',omitted:'未覆盖',contradicted:'存在矛盾',pass:'通过',fail:'未通过',uncertain:'不确定',not_generated:'未生成 · 不计通过'};
 const field=(container,label,content)=>container.append(make('dt',label),make('dd',value(content)));
 const link=(container,label,url)=>{if(typeof url!=='string'||!/^https:\/\//i.test(url))return;const a=make('a',label);a.href=url;a.target='_blank';a.rel='noopener noreferrer';container.append(a);};
-$('overview').textContent=samples.length+' 张源图 · '+new Set(samples.map(s=>s.category)).size+' 类 · '+samples.filter(s=>s.generation).length+' 张实际生图 · 其余仅文字测试';
+$('overview').textContent=samples.length+' 张源图 · '+new Set(samples.map(s=>s.category)).size+' 类 · '+samples.filter(s=>s.generation).length+' 张实际生图'+(samples.some(s=>!s.generation)?' · 其余仅文字测试':' · 全部含原图对比');
 $('instruction').textContent=data.instruction;
 samples.forEach((sample,index)=>{const b=make('button',undefined,'sample-button');b.type='button';b.append(make('span',sample.title),make('span',sample.id+' · '+sample.category+' · '+(sample.generation?'含实际生图':'仅文字测试'),'sample-meta'));b.addEventListener('click',()=>{selected=index;render();});$('sample-list').append(b);});
 function image(sample,file,label,width,height){

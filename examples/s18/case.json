@@ -17,7 +17,23 @@
     "sha256": "39cab794fbc3be3f8737f42e1f1d9eba3ed073235c3f1391b2d12e020702a0cf",
     "model": "openai-codex/gpt-6-astra"
   },
-  "generation": null,
+  "generation": {
+    "file": "generated.webp",
+    "model": "GPT Image 2",
+    "requestedModel": "openai-codex/gpt-image-2",
+    "reportedModel": "gpt-image-2-codex",
+    "quality": "low",
+    "width": 1536,
+    "height": 1024,
+    "sha256": "f4b25d0e9580a8de1239f0af28be2cf4ca5e75516a3ea0751290901724af1008",
+    "referenceImage": false,
+    "seed": null,
+    "license": "CC-BY-SA-4.0",
+    "batch": "completion-2026-10-17",
+    "attempts": 1,
+    "promptSha256": "39cab794fbc3be3f8737f42e1f1d9eba3ed073235c3f1391b2d12e020702a0cf",
+    "requestedAspectRatio": "3:2"
+  },
   "checks": [
     {
       "id": "s18-count-position",
@@ -93,32 +109,34 @@
     "generationChecks": [
       {
         "id": "s18-count-position",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "本样本没有生图，不判断复现。"
+        "status": "pass",
+        "evidence": "生成图中右是一只深棕盘；盘外左下清楚可辨两只完整扭结面包。",
+        "reason": "指定盘的位置、颜色和盘外两只的计数保留；不把盘内重叠个体纳入计数。"
       },
       {
         "id": "s18-occupancy",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "无生成图可估框。",
-        "observedBBox": null,
-        "observedBBoxAreaPercent": null
+        "status": "fail",
+        "evidence": "盘与盘中面包联合外框目测约为x28%–100%、y4%–73%；右侧盘沿接触画框，最高面包接近顶部。",
+        "reason": "上边比冻结11%高约7个百分点，右边比92%多约8个百分点，均超出±5个百分点；面积也明显偏大。粗估误差不影响右侧裁切的判断。",
+        "observedBBox": [0.28, 0.04, 1.0, 0.73],
+        "observedBBoxAreaPercent": 49.7,
+        "measurementBasis": "AI视觉粗估联合外接框，非分割或像素级测量"
       },
       {
         "id": "s18-occlusion",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "本样本没有生图，不判断复现。"
+        "status": "pass",
+        "evidence": "前排扭结面包遮挡后排，深棕盘前沿从面包下方露出；盘外两只落在红白织布上。",
+        "reason": "冻结的三组遮挡和承托关系均可见。"
       },
       {
         "id": "s18-structure-color",
-        "status": "not_generated",
-        "evidence": "本例没有生成图像。",
-        "reason": "本样本没有生图，不判断复现。"
+        "status": "pass",
+        "evidence": "金黄至焦棕的扭结表面有可见白色砂糖状颗粒，红白格织布铺满下半幅，左上是浅色木台。",
+        "reason": "扭结、可见糖粒外观、红白格布和左上木台均保留；颗粒仅按视觉外观判断，不鉴定成分。"
       }
     ],
-    "conclusion": "文字保留右侧盘堆、左下两只、联合尺度与遮挡，颗粒外观保留但砂糖身份未明确；无生图，不能据文字判断复现。"
+    "conclusion": "一次纯文生图保留中右深棕盘、盘外左下两只及布面承托关系，但盘堆扩大至右边裁切，顶部抬高，面包扭结和糖粒更粗，木台变浅。四项限定检查为3通过、1不通过，不代表整图相似度。",
+    "reviewProvenance": "2026-10-17：AI视觉评审实际打开source.jpg与generated.webp，按既有四项冻结条件逐项比较；非人工标注、非独立盲评或受控基准。外接框为视觉粗估。"
   },
   "provenance": {
     "sourceLicenseChecked": "2026-10-17",

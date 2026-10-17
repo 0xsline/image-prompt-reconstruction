@@ -12,7 +12,7 @@
   <a href="SKILL.md">通用指令</a>
 </p>
 
-<p align="center"><sub>Agent Skill · v5 · 12 张参考图 · 6 类场景 · 6 组生成对比</sub></p>
+<p align="center"><sub>Agent Skill · v5 · 12 张参考图 · 6 类场景 · 12 组生成对比</sub></p>
 
 <table width="100%">
 <tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
@@ -23,7 +23,7 @@
 
 [英文原文](examples/s21/prompt.txt) · [检查记录](examples/s21/case.json) · 原图：Wilfredor，CC0 1.0，[来源与完整署名](ATTRIBUTION.md#sources)。
 
-> 反推模型为 `openai-codex/gpt-6-astra`，六组对比的生图模型为 GPT Image 2。展示真实差异，不代表精确复刻或找回原作者提示词。
+> 反推模型为 `openai-codex/gpt-6-astra`，十二组对比的生图模型为 GPT Image 2。展示真实差异，不代表精确复刻或找回原作者提示词。
 
 ## 快速开始
 
@@ -136,27 +136,75 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 [英文原文](examples/s27/prompt.txt) · [检查记录](examples/s27/case.json) · 原作：Ivan Aivazovsky，来源标记 PD-Art，[地域条件与来源](ATTRIBUTION.md#sources)。
 
 
-## 更多反推样图
+## 补充六组生图对比
 
-以下六张也是公开评测集中的原图，均已保存英文提示词，**仅反推、未生图**。这里不作为生成效果对比。
+这六组沿用已有的首次英文描述，各实际生成一次，不传原图、不逐图改词、不重跑挑选。左侧原图，右侧为真实生成结果；返回质量与尺寸逐例标注。
+
+### 食物 · 扭结面包与餐布
 
 <table width="100%">
-<tr><th width="50%">食物 · 扭结面包与餐布</th><th width="50%">动物 · 海豚群俯拍</th></tr>
-<tr>
-<td width="50%" align="center" valign="top"><a href="examples/s18/source.jpg"><img src="examples/s18/source.jpg" width="360" alt="仅反推样图：扭结面包与餐布"></a><br><a href="examples/s18/prompt.txt">英文提示词</a> · <a href="examples/s18/case.json">记录</a><br><sub>W.carter · CC0 1.0</sub></td>
-<td width="50%" align="center" valign="top"><a href="examples/s20/source.jpg"><img src="examples/s20/source.jpg" width="360" alt="仅反推样图：海豚群俯拍"></a><br><a href="examples/s20/prompt.txt">英文提示词</a> · <a href="examples/s20/case.json">记录</a><br><sub>Giles Laurent · CC BY-SA 4.0</sub></td>
-</tr>
-<tr><th width="50%">室内 · 窗前双椅与边桌</th><th width="50%">建筑 · 夜间壳形屋顶</th></tr>
-<tr>
-<td width="50%" align="center" valign="top"><a href="examples/s22/source.jpg"><img src="examples/s22/source.jpg" width="360" alt="仅反推样图：窗前双椅与边桌"></a><br><a href="examples/s22/prompt.txt">英文提示词</a> · <a href="examples/s22/case.json">记录</a><br><sub>Crisco 1492 · CC BY-SA 4.0</sub></td>
-<td width="50%" align="center" valign="top"><a href="examples/s24/source.jpg"><img src="examples/s24/source.jpg" width="360" alt="仅反推样图：夜间壳形屋顶建筑"></a><br><a href="examples/s24/prompt.txt">英文提示词</a> · <a href="examples/s24/case.json">记录</a><br><sub>Diliff · CC BY-SA 3.0</sub></td>
-</tr>
-<tr><th width="50%">交通 · 蓝色载人三轮车</th><th width="50%">绘画 · 几何静物</th></tr>
-<tr>
-<td width="50%" align="center" valign="top"><a href="examples/s26/source.jpg"><img src="examples/s26/source.jpg" width="360" alt="仅反推样图：蓝色载人三轮车"></a><br><a href="examples/s26/prompt.txt">英文提示词</a> · <a href="examples/s26/case.json">记录</a><br><sub>Luo Shaoyang · CC BY 2.0</sub></td>
-<td width="50%" align="center" valign="top"><a href="examples/s28/source.jpg"><img src="examples/s28/source.jpg" width="360" alt="仅反推样图：几何静物绘画"></a><br><a href="examples/s28/prompt.txt">英文提示词</a> · <a href="examples/s28/case.json">记录</a><br><sub>Fernand Léger · PD-Art，地域条件见署名页</sub></td>
-</tr>
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s18/source.jpg" width="360" alt="扭结面包与餐布原图"></td><td width="50%" align="center"><img src="examples/s18/generated.webp" width="360" alt="生成的扭结面包，盘堆更靠右，表面颗粒和色泽改变"></td></tr>
 </table>
+
+右侧盘堆与左下两只面包的关系保留，但盘堆更靠右，面包的扭结、颗粒和烘烤色泽改变。
+
+`low` · 1536 × 1024 · [英文原文](examples/s18/prompt.txt) · [检查记录](examples/s18/case.json) · 原图：W.carter，CC0 1.0，[来源与完整署名](ATTRIBUTION.md#sources)。
+
+### 动物 · 海豚群俯拍
+
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s20/source.jpg" width="360" alt="清澈蓝色海水中的海豚群原图"></td><td width="50%" align="center"><img src="examples/s20/generated.webp" width="360" alt="生成的俯拍海豚群，个体排列和水面纹理改变"></td></tr>
+</table>
+
+俯拍、向上游动和蓝绿水色保留，个体排列、水花位置和水面纹理明显不同。
+
+`medium` · 1448 × 1086 · [英文原文](examples/s20/prompt.txt) · [检查记录](examples/s20/case.json) · 原图：Giles Laurent，CC BY-SA 4.0，[来源与完整署名](ATTRIBUTION.md#sources)。
+
+### 室内 · 窗前双椅与边桌
+
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s22/source.jpg" width="360" alt="金棕窗帘前的双椅与边桌原图"></td><td width="50%" align="center"><img src="examples/s22/generated.webp" width="360" alt="生成的窗前双椅，吊灯花束和台灯放大"></td></tr>
+</table>
+
+窗帘、双椅和居中边桌保留；吊灯、花束与台灯更大，家具样式和窗外细节也改变。
+
+`medium` · 1448 × 1086 · [英文原文](examples/s22/prompt.txt) · [检查记录](examples/s22/case.json) · 原图：Crisco 1492，CC BY-SA 4.0，[来源与完整署名](ATTRIBUTION.md#sources)。
+
+### 建筑 · 夜间壳形屋顶
+
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s24/source.jpg" width="360" alt="夜间水岸壳形屋顶建筑原图"></td><td width="50%" align="center"><img src="examples/s24/generated.webp" width="360" alt="生成的水岸建筑，屋顶组合和观察角度不同"></td></tr>
+</table>
+
+白色壳形屋顶、暖光和水面倒影保留，但观察角度、屋顶组合与城市天际线被重新构造。
+
+`medium` · 1672 × 941 · [英文原文](examples/s24/prompt.txt) · [检查记录](examples/s24/case.json) · 原图：Diliff，CC BY-SA 3.0，[来源与地域条件](ATTRIBUTION.md#sources)。
+
+### 交通 · 蓝色载人三轮车
+
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s26/source.jpg" width="360" alt="门楼下的蓝色载人三轮车原图"></td><td width="50%" align="center"><img src="examples/s26/generated.webp" width="360" alt="生成的载人三轮车，人脸车头门楼文字和街道重构"></td></tr>
+</table>
+
+蓝车、上方乘客与门洞纵深保留。人脸、车头、门楼文字和街道细节发生重构，不能当作原照修复。
+
+`high` · 1536 × 1024 · [英文原文](examples/s26/prompt.txt) · [检查记录](examples/s26/case.json) · 原图：Luo Shaoyang，CC BY 2.0，[来源与完整署名](ATTRIBUTION.md#sources)。
+
+### 绘画 · 几何静物
+
+<table width="100%">
+<tr><th width="50%">原图</th><th width="50%">反推提示词 → GPT Image 2</th></tr>
+<tr><td width="50%" align="center"><img src="examples/s28/source.jpg" width="360" alt="几何静物绘画原图"></td><td width="50%" align="center"><img src="examples/s28/generated.webp" width="360" alt="生成的几何静物，右侧器物拉长，色块和遮挡关系改变"></td></tr>
+</table>
+
+主要配色与几何主题保留，但右侧器物明显拉长，黄黑椭圆、叉子、色块和遮挡关系改变。
+
+`medium` · 1024 × 1536 · [英文原文](examples/s28/prompt.txt) · [检查记录](examples/s28/case.json) · 原作：Fernand Léger，来源标记 PD-Art，[地域条件与来源](ATTRIBUTION.md#sources)。
 
 [查看全部 12 个案例文件](examples/) · [原图署名与许可](ATTRIBUTION.md)
 
@@ -167,22 +215,23 @@ git clone https://github.com/0xsline/image-prompt-reconstruction.git \
 | 阶段 | 模型 | 本次条件 |
 |---|---|---|
 | 图片反推 | `openai-codex/gpt-6-astra` | 原图 + 固定 v5 指令，工具辅助视觉代理 |
-| 图片生成 | GPT Image 2 | 完整英文，`medium`，每张一次，无参考图，不控制种子 |
+| 图片生成 | GPT Image 2 | 完整英文，每张一次，无参考图，不控制种子；返回质量见各例 |
 
-生图请求标识为 `openai-codex/gpt-image-2`，返回标识为 `gpt-image-2-codex`。五张输出为 1536 × 1024，汽车为 1448 × 1086。每例的原始英文、尺寸、哈希和逐项判断保存在对应的 `case.json` 与 `prompt.txt` 中。
+生图请求标识为 `openai-codex/gpt-image-2`，返回标识为 `gpt-image-2-codex`。原六组均为 `medium`；补充六组中，面包为 `low`、三轮车为 `high`，其余为 `medium`。工具未提供质量参数，以上按实际回执记录，不作为同档质量的受控比较。每例的英文、尺寸、哈希和逐项判断保存在对应的 `case.json` 与 `prompt.txt` 中。
 
 <details>
 <summary>查看评测结果与方法</summary>
 
-每张图在反推前固定 4 条可见条件，反推执行器不读取这些答案或来源标题。生图样本预先选定，只生成一次，没有重跑挑选。
+每张图在反推前固定 4 条可见条件，反推执行器不读取这些答案或来源标题。首批预选每类一张生成；用户要求完整对比后，补齐原先仅文字反推的另外六张。全部沿用首次英文，各生成一次，没有重跑挑选；补充批次不是新的独立留出集。
 
 | 检查对象 | 数量 | 结果 |
 |---|---:|---|
 | 首次英文 | 48 条 | 完整支持 29 条，部分覆盖 19 条 |
-| 实际生成图 | 24 条 | 通过 17 条，不通过 7 条 |
-| 未生图样本 | 24 条 | `not_generated`，不计通过或零分 |
+| 首批六张生成图 | 24 条 | 通过 17 条，不通过 7 条 |
+| 补充六张生成图 | 24 条 | 通过 13 条，不通过 9 条，不确定 2 条 |
+| 全部十二张生成图 | 48 条 | 通过 30 条，不通过 16 条，不确定 2 条 |
 
-评审由 AI 视觉代理完成，边界为视觉估计，不是人工专家共识或像素分割。每类只有一张实际生图，公开样图也可能已在训练数据中，结果不是总体准确率。室内和建筑各通过 4 条限定检查，仍不等于整图复刻；没有旧版本对照，不能据此声称 v5 全面更好。
+评审由 AI 视觉代理完成，边界为视觉估计，不是人工专家共识或像素分割。每类只有两张实际生图，公开样图也可能已在训练数据中，结果不是总体准确率。首批室内和建筑各通过 4 条限定检查，仍不等于整图复刻；没有旧版本对照，不能据此声称 v5 全面更好。
 
 完整方法见 [references/evaluation.md](references/evaluation.md)。
 
@@ -209,7 +258,7 @@ examples/data.js          画廊数据
 examples/s17/             单个案例，其它编号同理
   source.jpg              原图
   prompt.txt              首次英文
-  generated.webp          生图，仅六个案例有此文件
+  generated.webp          实际纯文生图，每个案例各一张
   case.json               来源、模型和评审记录
 ATTRIBUTION.md            素材署名与许可
 LICENSE                   代码与文档许可

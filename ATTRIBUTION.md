@@ -5,7 +5,7 @@
 ## License boundaries / 许可边界
 
 - 根 `LICENSE` 的 MIT 仅覆盖 skill、项目说明和画廊代码，**不覆盖案例资产**。第三方 `source.jpg` 始终保留下表各自许可或有地域条件的公有领域状态，不改贴 MIT 或统一 CC 许可。
-- 本项目能够许可的 `examples/s17…s28/prompt.txt`、各 `case.json` 的项目原创评审文字与组织、`examples/data.js` 的案例数据、六张 `generated.webp` 及其项目衍生预览，按 [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) 提供。第三方素材、其中引用的源信息及其原有权利不因此被重新许可。署名本项目：[0xsline / image-prompt-reconstruction](https://github.com/0xsline/image-prompt-reconstruction)，同时保留下列对应原图作者、源链接及许可证。
+- 本项目能够许可的 `examples/s17…s28/prompt.txt`、各 `case.json` 的项目原创评审文字与组织、`examples/data.js` 的案例数据、十二张 `generated.webp` 及其项目衍生预览，按 [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) 提供。第三方素材、其中引用的源信息及其原有权利不因此被重新许可。署名本项目：[0xsline / image-prompt-reconstruction](https://github.com/0xsline/image-prompt-reconstruction)，同时保留下列对应原图作者、源链接及许可证。
 - 生成图不是原作者的作品，也不表示原作者认可生成结果。本项目仅就能够授予的权利作许可：**不保证 AI 输出具备版权、独占性或免除第三方权利，也不将生成图宣称为公有领域**。商标、人格、建筑、艺术品、隐私等非照片版权权利仍须由复用者自行判断。
 - CC BY / CC BY-SA 的复用须按原许可署名、链接许可、说明修改；ShareAlike 作品的改编须遵守相同或兼容许可。CC0 按其法律允许范围生效。Public Domain Mark 是状态标识，不是新授予的许可。
 
@@ -39,22 +39,28 @@
 - **s28**：Fernand Léger，*Still Life with Candlestick*，1922，Musée d’art moderne de Paris 收藏。源页标注作者卒于 1955，作品在原属国及保护期为作者终身加 **70 年或更短**的地区属公有领域；美国依据 1931 年前出版。不得将此扩展为“全球无版权”。摄影复制在其它司法辖区可能有独立限制。
 - s27 / s28 的摄影复制地域说明参见 [Commons: Reuse of PD-Art photographs](https://commons.wikimedia.org/wiki/Commons:Reuse_of_PD-Art_photographs)。若所在司法辖区条件不满足，应另行取得权利或停止相应用途。本项目未取得超出源页面所列范围的额外授权。
 
-## Generated images / 六张纯文生成图
+## Generated images / 十二张纯文生成图
 
-下列图像由本项目使用 **GPT Image 2 / medium** 从对应 `prompt.txt` 各生成一次；未向生成模型提供参考图，未记录可重放 seed。它们是对图像描述的重新生成，**不是原图的等比缩放或精确复制**。构图、细节及比例可能发生变化。分辨率、哈希与四项有限评审见同目录 `case.json`；保留生成文件字节，不再编辑或重新编码。
+下列图像由本项目使用 **GPT Image 2** 从对应 `prompt.txt` 各生成一次；未向生成模型提供参考图，未记录可重放 seed。返回质量：s18 为 `low`，s26 为 `high`，其余十张为 `medium`，不作为统一质量的受控比较。它们是对图像描述的重新生成，**不是原图的等比缩放或精确复制**。构图、细节及比例可能发生变化。分辨率、哈希与四项有限评审见同目录 `case.json`；保留生成文件字节，不再编辑或重新编码。
 
 所有下列生成图的项目可许可部分均按 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) 提供。请署名本项目并保留对应原图信用；原图许可及地域限制不被取消。
 
 | 生成文件 | 对应原图作者与许可 | 修改/生成情况 |
 | --- | --- | --- |
 | [`examples/s17/generated.webp`](examples/s17/generated.webp) | [W.carter (Ann-Sophie Qvarnström)](https://commons.wikimedia.org/wiki/File:Plain_vanilla_muffin_in_Tuntorp.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
+| [`examples/s18/generated.webp`](examples/s18/generated.webp) | [W.carter](https://commons.wikimedia.org/wiki/File:Cardamom_buns.jpg) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
 | [`examples/s19/generated.webp`](examples/s19/generated.webp) | [Charles J. Sharp](https://commons.wikimedia.org/wiki/File:Eastern_quoll_%28Dasyurus_viverrinus%29_fawn_morph_Esk_Valley.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
+| [`examples/s20/generated.webp`](examples/s20/generated.webp) | [Giles Laurent](https://commons.wikimedia.org/wiki/File:009_Pod_of_Spinner_dolphins_swimming_in_the_Indian_ocean_Photo_by_Giles_Laurent.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
 | [`examples/s21/generated.webp`](examples/s21/generated.webp) | [Wilfredor](https://commons.wikimedia.org/wiki/File:Dining_room_at_the_inn_Dans_les_bras_de_Morph%C3%A9e%2C_located_on_%C3%8Ele_d%27Orl%C3%A9ans.jpg) · [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
+| [`examples/s22/generated.webp`](examples/s22/generated.webp) | [Crisco 1492](https://commons.wikimedia.org/wiki/File:Interior_of_Willistead_Manor_%28two_chairs_by_window%29%2C_Windsor%2C_Ontario%2C_2025-06-07.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
 | [`examples/s23/generated.webp`](examples/s23/generated.webp) | [Aciarium](https://commons.wikimedia.org/wiki/File:Kaiserfeldgasse_8_Leoben_06-2025.jpg) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
+| [`examples/s24/generated.webp`](examples/s24/generated.webp) | [Diliff](https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_-_Dec_2008.jpg) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节；地域条件见上文 |
 | [`examples/s25/generated.webp`](examples/s25/generated.webp) | [© Frank Schulenburg](https://commons.wikimedia.org/wiki/File:Chevy_Bel_Air_in_the_Presidio_of_San_Francisco.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
+| [`examples/s26/generated.webp`](examples/s26/generated.webp) | [Luo Shaoyang](https://commons.wikimedia.org/wiki/File:Three_wheeler_in_Pingyao.jpg) · [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
 | [`examples/s27/generated.webp`](examples/s27/generated.webp) | [Ivan Aivazovsky](https://commons.wikimedia.org/wiki/File:Aivazovsky,_Ivan_-_The_Ninth_Wave.jpg) · [Public domain; PD-Art / author died 1900, life+100 or fewer; US pre-1931](https://creativecommons.org/publicdomain/mark/1.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节 |
+| [`examples/s28/generated.webp`](examples/s28/generated.webp) | [Fernand Léger](https://commons.wikimedia.org/wiki/File:Fernand_Léger_Still_Life_with_Candlestick_1922.jpg) · [Public domain; PD-Art / author died 1955, life+70 or fewer; US pre-1931](https://creativecommons.org/publicdomain/mark/1.0/) | 原图 → AI 英文描述 → 纯文生成；未输入参考图；保留生成字节；地域条件见上文 |
 
-其余 s18、s20、s22、s24、s26、s28 **没有生成图**，也没有相应复现结论。不要把 12 条文字案例说成 12 次生图实验。
+首批为 s17、s19、s21、s23、s25、s27；用户要求完整对比后，用原先保存的英文为 s18、s20、s22、s24、s26、s28 各补生成一次。十二个案例现均含真实生成图，首次英文与冻结检查项不变。补充批次不是新的独立留出集。
 
 ## Review limits and no endorsement / 评审限制与无背书
 
