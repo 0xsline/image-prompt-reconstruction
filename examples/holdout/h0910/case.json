@@ -1,0 +1,286 @@
+{
+  "id": "h0910",
+  "category": "动物",
+  "title": "石上的林三趾鹑",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Barred_Buttonquail_in_Bhigwan_August_2025_by_Tisha_Mukherjee_17.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Barred_Buttonquail_in_Bhigwan_August_2025_by_Tisha_Mukherjee_17.jpg/1920px-Barred_Buttonquail_in_Bhigwan_August_2025_by_Tisha_Mukherjee_17.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Tisha Mukherjee",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "width": 1920,
+    "height": 1281,
+    "sha256": "5921db7ed2872854fb94d0cb4cf7a0d304831787b72bf03ab1226cf1452645e6",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-09-10; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0910-1",
+      "description": "count, pose, position",
+      "expected": "One small rounded quail-like bird perched on a rock, body three-quarter, head in profile facing viewer-left with a gray bill; bird right of center."
+    },
+    {
+      "id": "h0910-2",
+      "description": "bird bbox",
+      "expected": {
+        "bbox": [
+          0.36,
+          0.29,
+          0.8,
+          0.86
+        ],
+        "areaPercent": 25
+      }
+    },
+    {
+      "id": "h0910-3",
+      "description": "layout",
+      "expected": "Uniform smooth olive/yellow-green blurred background over the whole frame; gray weathered rock from ~29% width to the right edge across the bottom ~23%, cut by the bottom and right edges."
+    },
+    {
+      "id": "h0910-4",
+      "description": "plumage and light",
+      "expected": "Black-and-white barred breast, rufous-orange flanks and back with black and white spots, scaly head pattern; soft even light."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "5197c1e825d132c6fb402369a2a85d5b9c59149e35d6b32a7f61cc33252263f8"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcb-d3b9-7de3-9a6f-25f6c9cee936",
+        "seconds": 45
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "ece04ad10fea820d9bfc4bc7684bd616f537771eb30bb6de2ac4020f200eafba",
+        "original_png_sha256": "fd47483f494bf898d5824f09be6445962984e1b871a04bf034db98364451024b",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.499,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.001,
+        "ssim_luma64": 0.44,
+        "edge_corr64": 0.383,
+        "color_layout_dE8": 15.83,
+        "lab_hist_intersection": 0.326,
+        "L_mean_diff": -7.7,
+        "L_std_diff": -3.82,
+        "chroma_diff": 0.8
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "ee5541c30aabf1e6e8a1116709ea551987180ee87ea5a20f62d5f85c909a4654"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcb-57b6-7f23-aa86-386339478548",
+        "seconds": 45
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "9bd72ee8d4078b5bcd05e860ee30b2140c18e19fe20f959171c83676bb5472f2",
+        "original_png_sha256": "070e2e810f0e0179cf9604325862cc0902c78c334d5e857f140701215e743c3f",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.499,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.001,
+        "ssim_luma64": 0.427,
+        "edge_corr64": 0.337,
+        "color_layout_dE8": 18.71,
+        "lab_hist_intersection": 0.259,
+        "L_mean_diff": -13.95,
+        "L_std_diff": -3.29,
+        "chroma_diff": -6.88
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "85d3f36a1e7218d28a451033ebfdfa362bea73172890a542b22edd49e5cfaea3"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fd3-8beb-7960-9362-fe622b4e2a6e",
+        "seconds": 51,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "5b42bb09a46eb5bcf3783d018e8f819c87770b1036cd6e905fb16b591173f23a",
+        "original_png_sha256": "fb8a3e056945e12211266fd999216cc8989c3c48168bc1ac4ff5fff7fb40a55a",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.499,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.001,
+        "ssim_luma64": 0.553,
+        "edge_corr64": 0.382,
+        "color_layout_dE8": 9.18,
+        "lab_hist_intersection": 0.838,
+        "L_mean_diff": 0.38,
+        "L_std_diff": -1.57,
+        "chroma_diff": -2.22
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v6": [
+        {
+          "id": "h0910-1",
+          "status": "pass",
+          "evidence": "one bird on a rock, head in profile facing left, gray bill, right of center",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0910-2",
+          "status": "fail",
+          "evidence": "bird ~[0.37,0.24,0.95,0.75]; right +15, bottom -11",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0910-3",
+          "status": "fail",
+          "evidence": "soil mound spans the full width from ~55% down",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0910-4",
+          "status": "fail",
+          "evidence": "buff breast with black spots instead of black-and-white bars",
+          "blindLabel": "A"
+        }
+      ],
+      "v6-calibrated": [
+        {
+          "id": "h0910-1",
+          "status": "pass",
+          "evidence": "one bird on a rock, profile facing left, gray bill, right of center",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0910-2",
+          "status": "fail",
+          "evidence": "bird ~[0.42,0.17,0.88,0.78]; top -12, left +6, right +8, bottom -8",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0910-3",
+          "status": "fail",
+          "evidence": "rock from ~20% width, top at ~70% (both beyond 5)",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0910-4",
+          "status": "fail",
+          "evidence": "streaked buff breast, not black-and-white bars",
+          "blindLabel": "B"
+        }
+      ],
+      "v5": [
+        {
+          "id": "h0910-1",
+          "status": "pass",
+          "evidence": "one bird on a rock, profile facing left, gray bill, right of center",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0910-2",
+          "status": "fail",
+          "evidence": "bird ~[0.44,0.13,0.85,0.75]; top -16, left +8, bottom -11",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0910-3",
+          "status": "fail",
+          "evidence": "rock from ~42% width, top at ~62%",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0910-4",
+          "status": "fail",
+          "evidence": "spotted buff breast, not black-and-white bars",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v6-calibrated",
+          "v5",
+          "v6"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "id": "h0902",
+  "category": "动物",
+  "title": "红海旗鲷",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Pez_estandarte_del_mar_Rojo_(Heniochus_intermedius),_mar_Rojo,_Egipto,_2023-04-15,_DD_36.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Pez_estandarte_del_mar_Rojo_%28Heniochus_intermedius%29%2C_mar_Rojo%2C_Egipto%2C_2023-04-15%2C_DD_36.jpg/1920px-Pez_estandarte_del_mar_Rojo_%28Heniochus_intermedius%29%2C_mar_Rojo%2C_Egipto%2C_2023-04-15%2C_DD_36.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "width": 1920,
+    "height": 1920,
+    "sha256": "74e8830396abcf75411865cf047ccf0bda151250ef398ef5ccac8fcc4fe7c660",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-09-02; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0902-1",
+      "description": "count and pose",
+      "expected": "Exactly one bannerfish, seen in side view facing right (head at right), with a long white dorsal filament sweeping to the far left (tip within the left 12% of the frame)."
+    },
+    {
+      "id": "h0902-2",
+      "description": "fish bbox excluding the filament",
+      "expected": {
+        "bbox": [
+          0.29,
+          0.22,
+          0.94,
+          0.85
+        ],
+        "areaPercent": 41
+      }
+    },
+    {
+      "id": "h0902-3",
+      "description": "layout and depth",
+      "expected": "The fish is sharp in front of blurred blue-teal and purple coral; pale pink-white soft coral fills the lower right behind the fish's lower body; dark red-magenta coral at the bottom right corner."
+    },
+    {
+      "id": "h0902-4",
+      "description": "color and structure",
+      "expected": "Two broad black vertical bands on a white body, yellow rear body, yellow tail and fins, dark eye with a dark face mask; saturated underwater flash color with dark surroundings."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "879514b7b338df63dea4164241cd05833d634f79cf45b6f12473252771e47dbc"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc4-e088-7f43-a14d-f15c627767b4",
+        "seconds": 50
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "563a26bc48c868948e4bea420d12b77d5b9cdc308aae536db252b64e1eba35be",
+        "original_png_sha256": "fb2b54417cae0b3974e7b07829c6f75eba684b0ba7c5b5ab20b8c020dbc93bd7",
+        "width": 1254,
+        "height": 1254,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.0,
+        "aspect_gen": 1.0,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.065,
+        "edge_corr64": 0.054,
+        "color_layout_dE8": 26.37,
+        "lab_hist_intersection": 0.572,
+        "L_mean_diff": 3.39,
+        "L_std_diff": 0.12,
+        "chroma_diff": 7.75
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "180af2571364c21f35757874f764bb641d50ca21ef371f0b8c86d36c3522fa61"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc4-e086-76c0-8608-4a422d91dac1",
+        "seconds": 51
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "553f3a79da561c22fbaf249d9ae42e7efe2ca315d339eeffc936ce8a4da3169d",
+        "original_png_sha256": "30707dad540bb5bf7e0cbdaf851a3b7fab4e0c6ec9228cd92aabd3c78d0092c6",
+        "width": 1254,
+        "height": 1254,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.0,
+        "aspect_gen": 1.0,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.066,
+        "edge_corr64": -0.016,
+        "color_layout_dE8": 22.36,
+        "lab_hist_intersection": 0.41,
+        "L_mean_diff": -9.27,
+        "L_std_diff": -5.61,
+        "chroma_diff": -7.33
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "33a55cc5f8b1f55c864e635bb10d4e35d6ec0512420597ee3d7edcf536b19ce8"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcb-f0c6-7cf3-933d-5802fd951f0f",
+        "seconds": 51,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "b7aec61439f81aeeb37be6c96619e604ee28a81c9b4eea62b550237e70c6e3aa",
+        "original_png_sha256": "e3c4e2c6ff28bce38ddf5726fdb028b9d034445805c5001b25cb1791c4b06593",
+        "width": 1254,
+        "height": 1254,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.0,
+        "aspect_gen": 1.0,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.016,
+        "edge_corr64": 0.046,
+        "color_layout_dE8": 20.12,
+        "lab_hist_intersection": 0.688,
+        "L_mean_diff": -1.98,
+        "L_std_diff": -3.48,
+        "chroma_diff": -3.26
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v6": [
+        {
+          "id": "h0902-1",
+          "status": "pass",
+          "evidence": "right-facing, filament tip ~x0.05",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0902-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.23,0.27,0.90,0.74]; bottom -11, area ~32%",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0902-3",
+          "status": "fail",
+          "evidence": "dark teal reef, little purple, no dark red-magenta corner coral",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0902-4",
+          "status": "fail",
+          "evidence": "bands and yellow rear present, but muted ambient light rather than saturated flash",
+          "blindLabel": "A"
+        }
+      ],
+      "v6-calibrated": [
+        {
+          "id": "h0902-1",
+          "status": "pass",
+          "evidence": "right-facing, filament tip ~x0.04",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0902-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.17,0.17,0.94,0.92]; left -12, bottom +7, area ~58%",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0902-3",
+          "status": "pass",
+          "evidence": "blurred teal/purple coral, pale soft coral lower right, red-magenta at bottom right",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0902-4",
+          "status": "pass",
+          "evidence": "two black bands on white, yellow rear and fins, dark mask, saturated",
+          "blindLabel": "B"
+        }
+      ],
+      "v5": [
+        {
+          "id": "h0902-1",
+          "status": "pass",
+          "evidence": "right-facing, filament tip ~x0.04",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0902-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.06,0.10,0.96,0.73]; left -23, top -12, bottom -12",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0902-3",
+          "status": "pass",
+          "evidence": "blurred blue/teal coral, pale soft coral and red coral lower right",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0902-4",
+          "status": "fail",
+          "evidence": "body mostly yellow, white limited to the head area; oversized tail",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6",
+          "v6-calibrated",
+          "v5"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

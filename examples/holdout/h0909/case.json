@@ -1,0 +1,286 @@
+{
+  "id": "h0909",
+  "category": "动物",
+  "title": "两只飞行的金刚鹦鹉",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:189_Red-and-green_macaw_couple_flying_in_Chapada_dos_Guimar%C3%A3es_National_Park_Photo_by_Giles_Laurent.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/189_Red-and-green_macaw_couple_flying_in_Chapada_dos_Guimar%C3%A3es_National_Park_Photo_by_Giles_Laurent.jpg/1920px-189_Red-and-green_macaw_couple_flying_in_Chapada_dos_Guimar%C3%A3es_National_Park_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "width": 1920,
+    "height": 1280,
+    "sha256": "bf06b6b1d51d292247dc94ba7343ea427ca795097821985ca9f7ce16c706bb81",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-09-09; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0909-1",
+      "description": "count and direction",
+      "expected": "Exactly two red macaws flying toward viewer-left, one upper-left and one lower-right, overlapping horizontally only slightly, long red tails trailing right."
+    },
+    {
+      "id": "h0909-2",
+      "description": "combined birds bbox incl. tails",
+      "expected": {
+        "bbox": [
+          0.17,
+          0.31,
+          0.9,
+          0.75
+        ],
+        "areaPercent": 32
+      }
+    },
+    {
+      "id": "h0909-3",
+      "description": "background",
+      "expected": "Fully blurred background only: tan-gray rock cliff tones over most of the frame and soft green foliage in the lower right; no branches, sky or other birds."
+    },
+    {
+      "id": "h0909-4",
+      "description": "color and pose",
+      "expected": "Red heads and bodies, blue-turquoise wing tops, red undersides of wings; upper bird with a wing hanging down below the body; soft daylight; shallow depth of field."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "1d90533bfd1d529b3ce97e999318e53e8fc58d52ca94bacb7c48a70013511f12"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fca-8275-7a83-9c65-ffbf2d89604f",
+        "seconds": 45
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "ab8418ba5279e9c7947ad6d9baa245345be873ed067029ddca94ef5798091f2c",
+        "original_png_sha256": "45a692eebd6155f1a991a2384113ede4c836e1788455dd1382eed1c2536c452e",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.5,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.177,
+        "edge_corr64": 0.165,
+        "color_layout_dE8": 16.74,
+        "lab_hist_intersection": 0.511,
+        "L_mean_diff": 9.55,
+        "L_std_diff": 0.47,
+        "chroma_diff": 6.64
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "b47703541a48083e9c44f5e9453386d19a6e4d260a14f7c75c318fd9bf483997"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fca-9c8c-7542-83f5-13bef2d9401d",
+        "seconds": 50
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "f1c0b83b5c4be872ee2e06ac2165a9e3793b3a810653d74de2d80ddfe632fac5",
+        "original_png_sha256": "370404b4bf53701dd3872688a30eb6cf2bf9835af9c9d583c9bb9f52c95de78b",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.5,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.136,
+        "edge_corr64": 0.165,
+        "color_layout_dE8": 13.1,
+        "lab_hist_intersection": 0.623,
+        "L_mean_diff": -0.34,
+        "L_std_diff": -3.88,
+        "chroma_diff": -1.66
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "e3469b1e547183d10219877daa73c07eb9c8ce0d80a25608f19ced0e80f86188"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fd5-3a44-7be2-9b20-7b1cbc1978f5",
+        "seconds": 42,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "343f5d857bc815dd6f614c5e20b8889655b1be86e03d458ff3d2b91d72b8f6f9",
+        "original_png_sha256": "b102d4373547715e7b7fdb7a80708747ac04ea38d670b3995226877479ba5f08",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.5,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.189,
+        "edge_corr64": 0.269,
+        "color_layout_dE8": 18.12,
+        "lab_hist_intersection": 0.387,
+        "L_mean_diff": 12.37,
+        "L_std_diff": -3.29,
+        "chroma_diff": 0.39
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v6": [
+        {
+          "id": "h0909-1",
+          "status": "pass",
+          "evidence": "two macaws flying left, upper-left and lower-right, slight horizontal overlap, tails right",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0909-2",
+          "status": "fail",
+          "evidence": "birds ~[0.14,0.27,0.98,0.80]; right +8, area ~45%",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0909-3",
+          "status": "fail",
+          "evidence": "cliff and forest rendered sharply, not a fully blurred background",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0909-4",
+          "status": "fail",
+          "evidence": "yellow wing band like a scarlet macaw; deep focus",
+          "blindLabel": "A"
+        }
+      ],
+      "v6-calibrated": [
+        {
+          "id": "h0909-1",
+          "status": "pass",
+          "evidence": "two macaws flying left, upper-left and lower-right, tails right",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0909-2",
+          "status": "fail",
+          "evidence": "birds ~[0.15,0.27,0.95,0.78]; edges within ~5 but area ~41% (+9)",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0909-3",
+          "status": "pass",
+          "evidence": "strongly blurred tan-gray cliff and green foliage only",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0909-4",
+          "status": "pass",
+          "evidence": "red bodies, blue-turquoise wing tops, red undersides, hanging wing, shallow focus",
+          "blindLabel": "B"
+        }
+      ],
+      "v5": [
+        {
+          "id": "h0909-1",
+          "status": "pass",
+          "evidence": "two macaws flying left, tails right",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0909-2",
+          "status": "fail",
+          "evidence": "birds ~[0.14,0.25,0.97,0.73]; top -6, right +7, area ~40%",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0909-3",
+          "status": "uncertain",
+          "evidence": "cliff only mildly blurred; texture still readable",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0909-4",
+          "status": "fail",
+          "evidence": "prominent yellow wing band; moderate depth of field",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v5",
+          "v6-calibrated",
+          "v6"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6-calibrated",
+          "v5",
+          "v6"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

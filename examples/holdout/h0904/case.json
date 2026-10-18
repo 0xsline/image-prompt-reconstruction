@@ -1,0 +1,286 @@
+{
+  "id": "h0904",
+  "category": "建筑外观",
+  "title": "蓝调时刻的山丘餐厅",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Norderney,_Marienh%C3%B6he_--_2025_--_9295-9.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Norderney%2C_Marienh%C3%B6he_--_2025_--_9295-9.jpg/1920px-Norderney%2C_Marienh%C3%B6he_--_2025_--_9295-9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "3d67a7c90e624d1eeae47289bde4b0765cb7fa4f2e746917d7b5c79a4b818b44",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-09-04; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0904-1",
+      "description": "count and position",
+      "expected": "One pavilion with a dark pyramidal roof and a spire, apex just right of center (~50-58% width); a thin flagpole at left of the roof; white parasols at the right end; on top of a dark dune."
+    },
+    {
+      "id": "h0904-2",
+      "description": "building bbox incl. annex and parasols, excluding spire/flagpole",
+      "expected": {
+        "bbox": [
+          0.26,
+          0.16,
+          0.84,
+          0.55
+        ],
+        "areaPercent": 23
+      }
+    },
+    {
+      "id": "h0904-3",
+      "description": "layout",
+      "expected": "Deep blue sky over the upper ~45%; the dune is a near-black silhouette band in the middle; a dark flat ground strip across the bottom ~20%."
+    },
+    {
+      "id": "h0904-4",
+      "description": "light and color",
+      "expected": "Blue hour: saturated deep blue (not black) sky; warm yellow interior light and a row of lights with small starbursts along the roof edge; everything else dark. Facade lettering reads MARIEN HOHE (or is left unreadable, not replaced by other words)."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "ea9c43614a6d7c04ff49f641aae08112e8795916de4d7ce37d2291a4260c5895"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc6-4983-7172-9d2c-3ce5aeaeacba",
+        "seconds": 53
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "6253efe74c421554990a0cbf5dea8fdc33ad49c094f8fa47a918834356473e51",
+        "original_png_sha256": "60d17841aca7a107e00e4c5ae287cc77db55eec9fdfa2821db2933921defc2e8",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.778,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.17,
+        "ssim_luma64": 0.408,
+        "edge_corr64": 0.418,
+        "color_layout_dE8": 25.84,
+        "lab_hist_intersection": 0.275,
+        "L_mean_diff": 4.96,
+        "L_std_diff": -0.48,
+        "chroma_diff": -19.11
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "9369a6e74212fc1ff4caa3ba4f6b5dd55c099cd7f5577e5b28517d498364f50e"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc6-db95-7b32-8ff6-a1860ca9c7d2",
+        "seconds": 60
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "a5a02a26470f7743fe4f1bc5d9d87de851e322c6823d99bc1d87be0162c862f8",
+        "original_png_sha256": "871419c65b6b9781519c330b43059517957fe7154835b645583b24bd852a1e7f",
+        "width": 1672,
+        "height": 941,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.778,
+        "aspect_gen": 1.777,
+        "aspect_ratio_error": 0.001,
+        "ssim_luma64": 0.482,
+        "edge_corr64": 0.461,
+        "color_layout_dE8": 15.51,
+        "lab_hist_intersection": 0.376,
+        "L_mean_diff": 5.5,
+        "L_std_diff": 0.37,
+        "chroma_diff": -8.2
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "35441aa105445d4b53b3aef60148f83ed39b542503ece4de7beacf63fb7d04c1"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcd-d1f7-7303-9bf5-538ab8a7834e",
+        "seconds": 50,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "871d8d683228693f5786afebaa29355a3c5545a881b9dc3276945ee9a46041da",
+        "original_png_sha256": "c75a4ca1e237e1001c4e719075091b9e0e75834abae36a2c541506cf9e58662a",
+        "width": 1672,
+        "height": 941,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.778,
+        "aspect_gen": 1.777,
+        "aspect_ratio_error": 0.001,
+        "ssim_luma64": 0.584,
+        "edge_corr64": 0.407,
+        "color_layout_dE8": 15.65,
+        "lab_hist_intersection": 0.492,
+        "L_mean_diff": -3.9,
+        "L_std_diff": -3.3,
+        "chroma_diff": -12.44
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v5": [
+        {
+          "id": "h0904-1",
+          "status": "pass",
+          "evidence": "apex ~53%, flagpole left, parasols right, on dune",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0904-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.19,0.28,0.93,0.52]; top +12, right +9, left -7; frame is 3:2 not 16:9",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0904-3",
+          "status": "fail",
+          "evidence": "dune is a visible vegetated slope, not a near-black band; sky only upper ~30%",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0904-4",
+          "status": "fail",
+          "evidence": "facade text replaced with other words (STRANDPAVILLON); muted sky",
+          "blindLabel": "A"
+        }
+      ],
+      "v6": [
+        {
+          "id": "h0904-1",
+          "status": "pass",
+          "evidence": "apex ~59%, flagpole left, parasols right",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0904-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.25,0.19,0.97,0.56]; parasol row extends right +13",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0904-3",
+          "status": "fail",
+          "evidence": "dune and foreground clearly visible, not near-black",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0904-4",
+          "status": "pass",
+          "evidence": "deep blue sky, warm lights with starbursts along eaves, MARIEN HÖHE",
+          "blindLabel": "B"
+        }
+      ],
+      "v6-calibrated": [
+        {
+          "id": "h0904-1",
+          "status": "pass",
+          "evidence": "apex ~56%, flagpole left, parasols right",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0904-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.20,0.13,0.92,0.51]; left -6, right +8; area ok",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0904-3",
+          "status": "pass",
+          "evidence": "blue sky upper ~45%, near-black dune band, dark ground strip",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0904-4",
+          "status": "pass",
+          "evidence": "deep blue sky, warm lights with starbursts, MARIEN HÖHE",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v6",
+          "v6-calibrated",
+          "v5"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6",
+          "v6-calibrated",
+          "v5"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "id": "h0908",
+  "category": "风景",
+  "title": "工业区湖面暮色",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Sunset_over_Trommekilen_from_Norrkila_6.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Sunset_over_Trommekilen_from_Norrkila_6.jpg/1920px-Sunset_over_Trommekilen_from_Norrkila_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "W.carter",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "width": 1920,
+    "height": 1280,
+    "sha256": "9476e3882fec1843211c998a63702a0e79657c30439b2618889e0de64a9911fb",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-09-08; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0908-1",
+      "description": "elements and position",
+      "expected": "A silhouetted industrial plant with several tall thin stacks around 37-55% width and storage tanks to the right on a dark shoreline; one wind turbine at left; one small rowboat at the left on the water; a cluster of thin poles with netting near the center."
+    },
+    {
+      "id": "h0908-2",
+      "description": "rowboat bbox",
+      "expected": {
+        "bbox": [
+          0.04,
+          0.61,
+          0.28,
+          0.7
+        ],
+        "areaPercent": 2
+      },
+      "tolerance": {
+        "bboxEdgePercentagePoints": 4,
+        "areaPercentagePoints": 2
+      }
+    },
+    {
+      "id": "h0908-3",
+      "description": "layout",
+      "expected": "Sky in the top ~33% with dark purple clouds upper left over a pink glow band; a near-black land band roughly 33-50% height across the full width; calm reflecting water below; dark rocks at lower left."
+    },
+    {
+      "id": "h0908-4",
+      "description": "light and color",
+      "expected": "Dusk after sunset: magenta, pink and violet palette; black silhouettes; small warm plant lights with vertical reflections; calm water."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "f1b611382337f9a2696245fd7104ee9b0fcbbe9ba2b0d1837f85b0486540f701"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc9-fa98-7b00-b94a-08907ee0533d",
+        "seconds": 50
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "cdf421293ee1ec199070e5dae747619093d5aeb502e56a3d8c8d30347835e996",
+        "original_png_sha256": "610823c816ed06d165e6307f70e1768a4c40730c6fea3ad4b9dca2ad5c5435b1",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.5,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.238,
+        "edge_corr64": 0.059,
+        "color_layout_dE8": 19.42,
+        "lab_hist_intersection": 0.589,
+        "L_mean_diff": 5.38,
+        "L_std_diff": -8.08,
+        "chroma_diff": 5.29
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "a3c86c6f309d2f6c07ad642f53d26246701fc816014db6075595d547180d30ad"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc9-1cce-7150-92ee-b0b2a9dd78d9",
+        "seconds": 62
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "e7ceb81b7133473bc16a0f2e16623b4502423d450917afd5b38791f79f903816",
+        "original_png_sha256": "af60e18743cb6f1874eccea6be056b11fec79c2a1d5b611d168fb6caf74a94b2",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.5,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.278,
+        "edge_corr64": 0.064,
+        "color_layout_dE8": 18.55,
+        "lab_hist_intersection": 0.521,
+        "L_mean_diff": -3.31,
+        "L_std_diff": -12.1,
+        "chroma_diff": -1.36
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "8da9971cb2b4a410148797b3867a547522e7a5414a2637f4a433822a0f42b0c9"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fd2-fbdf-7573-91bd-870d1d6ecd6c",
+        "seconds": 55,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "4e8ccd5b3e1de1126f00f3c07959b7111ef8fb17770f4764d0d1b15e3f88947e",
+        "original_png_sha256": "d53bc661672199a966450932e63ff6f0b5b93c2cac533ba856c5faa5a49954d0",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.5,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.34,
+        "edge_corr64": 0.164,
+        "color_layout_dE8": 13.61,
+        "lab_hist_intersection": 0.687,
+        "L_mean_diff": -0.3,
+        "L_std_diff": -8.47,
+        "chroma_diff": -0.73
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v6-calibrated": [
+        {
+          "id": "h0908-1",
+          "status": "fail",
+          "evidence": "two wind turbines instead of one; stacks, tanks, rowboat and net poles present",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0908-2",
+          "status": "fail",
+          "evidence": "boat ~[0.04,0.57,0.40,0.66]; right +12",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0908-3",
+          "status": "fail",
+          "evidence": "land band thin at ~40-47% plus a hill at left; sky fills upper ~45%",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0908-4",
+          "status": "pass",
+          "evidence": "magenta-violet dusk, black silhouettes, warm lights with vertical reflections, calm water",
+          "blindLabel": "A"
+        }
+      ],
+      "v6": [
+        {
+          "id": "h0908-1",
+          "status": "fail",
+          "evidence": "two wind turbines",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0908-2",
+          "status": "fail",
+          "evidence": "boat ~[0.03,0.55,0.28,0.60]; top -6, bottom -10",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0908-3",
+          "status": "pass",
+          "evidence": "dark clouds over pink band, near-black land band ~33-45% full width, calm water, rocks lower left",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0908-4",
+          "status": "fail",
+          "evidence": "orange-peach dominant palette rather than magenta-violet",
+          "blindLabel": "B"
+        }
+      ],
+      "v5": [
+        {
+          "id": "h0908-1",
+          "status": "fail",
+          "evidence": "two wind turbines",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0908-2",
+          "status": "fail",
+          "evidence": "boat ~[0.10,0.60,0.37,0.66]; left +6, right +9",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0908-3",
+          "status": "fail",
+          "evidence": "thin land band ~41-48%, sky upper ~40%",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0908-4",
+          "status": "uncertain",
+          "evidence": "pink-orange mix with purple clouds; between source magenta-violet and orange",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v6-calibrated",
+          "v5",
+          "v6"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

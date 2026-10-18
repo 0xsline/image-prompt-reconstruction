@@ -1,0 +1,286 @@
+{
+  "id": "h0906",
+  "category": "动物",
+  "title": "迎面走来的犀牛",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Indian_rhinoceros_(Rhinoceros_unicornis)_1.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Indian_rhinoceros_%28Rhinoceros_unicornis%29_1.jpg/1920px-Indian_rhinoceros_%28Rhinoceros_unicornis%29_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Charles J. Sharp",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "width": 1920,
+    "height": 2485,
+    "sha256": "6678ed4b35c46d7f8d7803f6534b66b6ea7736255619ba0a07ca60b6f4efe9f8",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-09-06; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0906-1",
+      "description": "count and pose",
+      "expected": "One rhinoceros walking straight at the viewer in frontal view, centered, viewer-left foreleg lifted mid-stride, ears up."
+    },
+    {
+      "id": "h0906-2",
+      "description": "rhino bbox",
+      "expected": {
+        "bbox": [
+          0.24,
+          0.2,
+          0.84,
+          0.93
+        ],
+        "areaPercent": 44
+      }
+    },
+    {
+      "id": "h0906-3",
+      "description": "layout",
+      "expected": "Portrait frame; flat dry grassland behind the animal up to a hazy horizon at ~28-32% height; pale hazy sky above; ground with short grass and pebbles at the bottom."
+    },
+    {
+      "id": "h0906-4",
+      "description": "light, color, texture",
+      "expected": "Soft hazy daylight, muted low-saturation palette; gray-brown armored skin with deep folds and bumpy studded texture; small single horn."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "cc4860e7e4d7b8c9c0a7d9cefacfcbfb1c4ca2613991b653cc313f19d5269f1b"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc8-4e59-77c0-8daf-42bda1d4a411",
+        "seconds": 55
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "d7da3ea3a47db3f2707d3aca54e6253486c06b7f2783d473aa00d9ba9405e8f3",
+        "original_png_sha256": "62a1887a24740237fcdf72ef470fa45921da593e91c738d5cb5f11bb3c11982a",
+        "width": 1024,
+        "height": 1536,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 0.773,
+        "aspect_gen": 0.667,
+        "aspect_ratio_error": 0.148,
+        "ssim_luma64": 0.266,
+        "edge_corr64": 0.216,
+        "color_layout_dE8": 16.11,
+        "lab_hist_intersection": 0.568,
+        "L_mean_diff": -2.67,
+        "L_std_diff": 0.78,
+        "chroma_diff": 5.12
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "86cc35e08aa6d3486c7577119cbcce4afc9252e84a0f0ce195368e1f0bcd4246"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc8-d089-7812-8d2d-a465249878a0",
+        "seconds": 48
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "ef9a08c49cb68d5508e25e9b379a5e4659ea3ca857dc631f9fb95f12b8e6f636",
+        "original_png_sha256": "8cc57b444817bf2f00d542669ff7c77e09a69e124c027fcef5bc930ac3afbc33",
+        "width": 1086,
+        "height": 1448,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 0.773,
+        "aspect_gen": 0.75,
+        "aspect_ratio_error": 0.03,
+        "ssim_luma64": 0.272,
+        "edge_corr64": 0.205,
+        "color_layout_dE8": 12.4,
+        "lab_hist_intersection": 0.657,
+        "L_mean_diff": -1.03,
+        "L_std_diff": 1.52,
+        "chroma_diff": 5.41
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "583869b507a38e780a2719180ab0bff7b68f1b1df6734e518435eca5e35721b4"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fd1-51c2-7931-b757-bfaf32f1c3a2",
+        "seconds": 54,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "3065923cc2ae3be7daacff1e52ea40879899bfe74e1d16183651017c34f34fa7",
+        "original_png_sha256": "67bc543d6b283aa02da8119e3c09428a63eb6d63f5b0cc245b50cf314f30fc69",
+        "width": 1086,
+        "height": 1448,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 0.773,
+        "aspect_gen": 0.75,
+        "aspect_ratio_error": 0.03,
+        "ssim_luma64": 0.287,
+        "edge_corr64": 0.107,
+        "color_layout_dE8": 11.68,
+        "lab_hist_intersection": 0.718,
+        "L_mean_diff": -4.16,
+        "L_std_diff": 1.03,
+        "chroma_diff": -2.08
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v6-calibrated": [
+        {
+          "id": "h0906-1",
+          "status": "fail",
+          "evidence": "frontal walk, left foreleg raised, ears up, but body centered ~63% width (right of center)",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0906-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.33,0.08,0.93,0.88]; left +9, top -12, right +9",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0906-3",
+          "status": "uncertain",
+          "evidence": "hazy horizon ~36-38%, at the edge of ~28-32% (+5)",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0906-4",
+          "status": "pass",
+          "evidence": "soft hazy muted light, armored folded skin, small horn",
+          "blindLabel": "A"
+        }
+      ],
+      "v5": [
+        {
+          "id": "h0906-1",
+          "status": "pass",
+          "evidence": "frontal walk centered, left foreleg raised, ears up",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0906-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.15,0.13,0.85,0.90]; left -9, top -7, area ~54%",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0906-3",
+          "status": "fail",
+          "evidence": "low horizon ~55%, blue sky with clouds",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0906-4",
+          "status": "fail",
+          "evidence": "warm saturated light, smooth skin, large horn",
+          "blindLabel": "B"
+        }
+      ],
+      "v6": [
+        {
+          "id": "h0906-1",
+          "status": "fail",
+          "evidence": "body centered ~62% width (right of center)",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0906-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.33,0.17,0.92,0.88]; left +9, right +8",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0906-3",
+          "status": "pass",
+          "evidence": "hazy horizon ~33-37%, dry grassland, pale sky, pebbly ground",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0906-4",
+          "status": "fail",
+          "evidence": "warm golden light rather than muted haze; skin and small horn correct",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v6",
+          "v6-calibrated",
+          "v5"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

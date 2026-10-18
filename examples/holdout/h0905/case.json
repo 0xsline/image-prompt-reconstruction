@@ -1,0 +1,290 @@
+{
+  "id": "h0905",
+  "category": "城市风景",
+  "title": "晨雾中的老城",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Tallinna_vanalinn_p%C3%A4ikeset%C3%B5usu_ajal.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Tallinna_vanalinn_p%C3%A4ikeset%C3%B5usu_ajal.jpg/1920px-Tallinna_vanalinn_p%C3%A4ikeset%C3%B5usu_ajal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Hendrik Mändla",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "width": 1920,
+    "height": 1282,
+    "sha256": "d14f994bc8da3b3de348734fe806b58b2bebb42a63b6245bccb28953a4551437",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-09-05; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0905-1",
+      "description": "landmarks and position",
+      "expected": "Elevated view over an old town in fog; the tallest element is one slender dark spire at ~50-58% width reaching ~13-20% height; a round stone tower with a red conical roof at ~40-48% width; two pointed towers at the left; a birch tree at the right edge."
+    },
+    {
+      "id": "h0905-2",
+      "description": "red-roofed round tower bbox",
+      "expected": {
+        "bbox": [
+          0.4,
+          0.35,
+          0.48,
+          0.6
+        ],
+        "areaPercent": 2
+      },
+      "tolerance": {
+        "bboxEdgePercentagePoints": 4,
+        "areaPercentagePoints": 2
+      }
+    },
+    {
+      "id": "h0905-3",
+      "description": "depth layers",
+      "expected": "Foreground: dark green trees at lower left, a round tree crown at lower center, a pale yellow building at bottom center, a mossy rock outcrop at lower right; middle: rooftops and towers emerging from fog; background: fog bank and pale sky in roughly the top 35-40%."
+    },
+    {
+      "id": "h0905-4",
+      "description": "light and color",
+      "expected": "Soft sunrise glow from the upper right (warm peach-cream sky right, cooler blue-gray upper left); dense white mist veiling the middle distance; low-contrast pastel palette; no harsh direct sun."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "9b2f9921d45a00432415e6f9b2f55f45c33f765baacfe38b58dd4227dc1b988f"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc6-bd8a-76c0-a291-e4b36ec6f2de",
+        "seconds": 54
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "66e2b05e8ebfd82ea421d109836a80b4c6163b30c7eccd8c9371b0befc9697ba",
+        "original_png_sha256": "e1df413aeab17c9b3b93c434bb8c60335723c52e142ff9390617f5ae20da30c6",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.498,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.002,
+        "ssim_luma64": 0.221,
+        "edge_corr64": 0.203,
+        "color_layout_dE8": 18.04,
+        "lab_hist_intersection": 0.518,
+        "L_mean_diff": -6.97,
+        "L_std_diff": -0.95,
+        "chroma_diff": 7.88
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "3e59aa6a9f2d54c2448cf4a887929be61085d0595c46f1e6d6be2a5cfa695e40"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc6-fb0b-7720-aab7-0a999295b02c",
+        "seconds": 43
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "33c89b85364ea8c9f994c89cf7bdcb32dc8f7f3a6743355e7f62e974f7d55b4d",
+        "original_png_sha256": "7e3e6498c0497ebd48fc5985291d50fd5ef6ef4903467d2f510b99a1a7c4def3",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.498,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.002,
+        "ssim_luma64": 0.262,
+        "edge_corr64": 0.129,
+        "color_layout_dE8": 20.64,
+        "lab_hist_intersection": 0.46,
+        "L_mean_diff": -14.12,
+        "L_std_diff": 0.06,
+        "chroma_diff": 4.74
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "5b43ab2dd86f15b2caab4e65eef3fd31c094302021e17e8d8bda19a7696de7f2"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcf-85a0-7622-866a-c64271f5ea07",
+        "seconds": 50,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "bfae9a6004c75350da74adce2a9c71691070fb3beec543f5b740ee0ac395dd14",
+        "original_png_sha256": "169ed2c33663eaddf80062b07fd52874b5eb5e84fc33dd8511cc724a59b1e587",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.498,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.002,
+        "ssim_luma64": 0.312,
+        "edge_corr64": 0.244,
+        "color_layout_dE8": 15.1,
+        "lab_hist_intersection": 0.574,
+        "L_mean_diff": -10.51,
+        "L_std_diff": -0.48,
+        "chroma_diff": -1.05
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v6": [
+        {
+          "id": "h0905-1",
+          "status": "fail",
+          "evidence": "spire at ~60% width with tip ~7% height, outside 50-58% / 13-20%",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0905-2",
+          "status": "fail",
+          "evidence": "round tower ~[0.38,0.29,0.46,0.55]; top -6, bottom -5",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0905-3",
+          "status": "fail",
+          "evidence": "clear town, only a thin distant fog band; no mist veiling the middle",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0905-4",
+          "status": "fail",
+          "evidence": "crisp saturated sunny look, no dense mist",
+          "blindLabel": "A"
+        }
+      ],
+      "v6-calibrated": [
+        {
+          "id": "h0905-1",
+          "status": "pass",
+          "evidence": "spire ~57% tip ~15%, red round tower ~42%, two pointed towers left, birch right",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0905-2",
+          "status": "pass",
+          "evidence": "round tower ~[0.38,0.32,0.46,0.58]; all edges within 4",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0905-3",
+          "status": "pass",
+          "evidence": "trees lower left, crown lower center, pale yellow building bottom center, rock lower right, mist band, pale sky",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0905-4",
+          "status": "pass",
+          "evidence": "warm glow upper right, cooler upper left, mist over middle distance (lighter than source), low-contrast pastel",
+          "blindLabel": "B"
+        }
+      ],
+      "v5": [
+        {
+          "id": "h0905-1",
+          "status": "fail",
+          "evidence": "spire ~61% width, tip ~9% height",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0905-2",
+          "status": "fail",
+          "evidence": "round tower ~[0.36,0.33,0.43,0.62]; right -5",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0905-3",
+          "status": "fail",
+          "evidence": "little fog; clear blue sky with clouds",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0905-4",
+          "status": "fail",
+          "evidence": "golden sunny high-contrast look, no dense mist",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

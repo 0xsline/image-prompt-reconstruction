@@ -1,0 +1,286 @@
+{
+  "id": "h0901",
+  "category": "交通工具",
+  "title": "海岸沉船",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Wreck_of_Cabo_de_Santa_Maria,_2010_December_-_4.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Wreck_of_Cabo_de_Santa_Maria%2C_2010_December_-_4.jpg/1920px-Wreck_of_Cabo_de_Santa_Maria%2C_2010_December_-_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Ximonic (Simo Räsänen)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "width": 1920,
+    "height": 1280,
+    "sha256": "44c227b497be3e0001e636c66a55e1530aff9cae42f8a075633d3d231674f23c",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-09-01; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0901-1",
+      "description": "count and position",
+      "expected": "Exactly one large wrecked ship, its mass centered slightly left of the frame center; no other vessels."
+    },
+    {
+      "id": "h0901-2",
+      "description": "wreck bbox incl. the leaning beam, excluding low debris on the water",
+      "expected": {
+        "bbox": [
+          0.21,
+          0.28,
+          0.75,
+          0.69
+        ],
+        "areaPercent": 22
+      }
+    },
+    {
+      "id": "h0901-3",
+      "description": "layout and depth",
+      "expected": "Sky fills roughly the upper 60%; the wreck stands in the middle distance on the waterline at about 65-70% height; breaking white surf and sea occupy the lower ~30% in front of it."
+    },
+    {
+      "id": "h0901-4",
+      "description": "light, color, structure",
+      "expected": "Soft overcast daylight with a cool blue-gray cloudy sky (no sunset); rust-brown hull with rows of rectangular openings, collapsing toward the right with a tilted beam at the right end; teal-green water with white surf."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "a16ebc35b8d05f843c10ceb9cdcc1c95475179d6e948f603abe52ccd6fcc2c6c"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc4-da34-7602-b2ab-45090f62c55c",
+        "seconds": 37
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "df5b56cf61e9970cffd7fdb4df9bb59f740a17adb87d4b067b4dda432cd29b9d",
+        "original_png_sha256": "e91957bc83570d745a5173fea4fe04571f3fd730c5f42ffb0f0166478ee4538a",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.5,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.216,
+        "edge_corr64": 0.269,
+        "color_layout_dE8": 17.57,
+        "lab_hist_intersection": 0.484,
+        "L_mean_diff": 5.99,
+        "L_std_diff": -3.88,
+        "chroma_diff": 4.27
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "f1b5fc522b8c7b3c6c1a7bd2809910a142b7c1644e0f7069e385ac14ffcbe06d"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fc4-da37-7e01-8231-87643b75fe53",
+        "seconds": 51
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "950debc34e1ee23e85e66b967b8c59c950e51d1bb501f46770061427fbb7d286",
+        "original_png_sha256": "844f91e9b12135921fe1cd6fa98c9551b9e6e55ce9a0f43f8699c61d1d8c8a99",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.5,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.226,
+        "edge_corr64": 0.113,
+        "color_layout_dE8": 14.47,
+        "lab_hist_intersection": 0.571,
+        "L_mean_diff": 1.0,
+        "L_std_diff": -6.15,
+        "chroma_diff": 3.24
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "f2c48a26c24c514e38cfe37654a8ad2458789c5e676311c7b3d25a23b4455dcf"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fca-0b17-7e81-b29f-7281b9d6f353",
+        "seconds": 61,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "375162b4b40044ad9eb601a27b82ec308384a68205b06fb71c83aca61f75d7ef",
+        "original_png_sha256": "79ed0b2ee8ecaf7a9752031db7740f4a0cf597b16a381e87fcbdeee71571b29f",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.5,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.0,
+        "ssim_luma64": 0.286,
+        "edge_corr64": 0.309,
+        "color_layout_dE8": 15.17,
+        "lab_hist_intersection": 0.573,
+        "L_mean_diff": 0.21,
+        "L_std_diff": 1.19,
+        "chroma_diff": 3.16
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v5": [
+        {
+          "id": "h0901-1",
+          "status": "pass",
+          "evidence": "one wreck, mass left of center",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0901-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.10,0.20,0.77,0.60]; left -11, top -8, bottom -9",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0901-3",
+          "status": "fail",
+          "evidence": "waterline ~60%, sea fills lower ~45%",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0901-4",
+          "status": "fail",
+          "evidence": "sunny blue sky with cumulus, not overcast; structure and tilted beam present",
+          "blindLabel": "A"
+        }
+      ],
+      "v6": [
+        {
+          "id": "h0901-1",
+          "status": "pass",
+          "evidence": "one wreck, left of center",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0901-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.10,0.24,0.69,0.62]; left -11, right -6, bottom -7; area ok",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0901-3",
+          "status": "fail",
+          "evidence": "waterline ~61%, sea lower ~40%",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0901-4",
+          "status": "pass",
+          "evidence": "cool blue-gray cloudy sky, soft light, rusty hull with openings, tilted beam at right",
+          "blindLabel": "B"
+        }
+      ],
+      "v6-calibrated": [
+        {
+          "id": "h0901-1",
+          "status": "pass",
+          "evidence": "one wreck, near center",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0901-2",
+          "status": "fail",
+          "evidence": "bbox ~[0.14,0.15,0.76,0.72]; top -13, left -7; area ~35%",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0901-3",
+          "status": "pass",
+          "evidence": "horizon ~67%, waterline ~70%, surf lower ~30%",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0901-4",
+          "status": "fail",
+          "evidence": "bright sunny daylight, light clouds; structure and tilted beam present",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6",
+          "v6-calibrated",
+          "v5"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

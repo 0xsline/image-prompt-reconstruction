@@ -1,0 +1,286 @@
+{
+  "id": "h0807",
+  "category": "绘画插画",
+  "title": "1913 年电影海报",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:Biograph_poster2.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Biograph_poster2.jpg/1920px-Biograph_poster2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Cleveland : A.B.C. Co. (poster publisher)",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "width": 1920,
+    "height": 2837,
+    "sha256": "577b89143a09148b22871f44fecf5259143351324a797eb3efe8bffa19b5926f",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-08-07; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0807-1",
+      "description": "text",
+      "expected": "Large red hand-lettered title 'THREE FRIENDS' in two lines across the top third; the word 'BIOGRAPH' in white capitals across the bottom with a circular AB monogram at lower left."
+    },
+    {
+      "id": "h0807-2",
+      "description": "title block bbox",
+      "expected": {
+        "bbox": [
+          0.05,
+          0.03,
+          0.96,
+          0.35
+        ],
+        "areaPercent": 29
+      }
+    },
+    {
+      "id": "h0807-3",
+      "description": "figures and layout",
+      "expected": "Three men in hats (dark bowlers at left and right, a gray fedora in the middle) seated around a small round table in the lower half, shaking hands; a beer glass, a bowl and a stemmed glass on a red tray; sketchier standing figures at a bar in the left middle; flat bright yellow background."
+    },
+    {
+      "id": "h0807-4",
+      "description": "medium",
+      "expected": "Early-1900s lithographic poster: flat saturated yellow, red outlined lettering, painterly modelled faces, cream paper border; not a photograph."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "2c5aca8a0141967afa61ce5f50451c7ecc6f4fe5c54c740b2322233275b10e93"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcc-338d-7ec3-ba05-73f0ff4e4744",
+        "seconds": 48
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "9b1f9019e78d015298e9d0d554b27b90c84e83e8f2007812b75478e4377516a6",
+        "original_png_sha256": "dc924d24ac10324ee23f1be80e2f4aa72be78f6ce4ff666ee147f0325735cf78",
+        "width": 1024,
+        "height": 1536,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 0.677,
+        "aspect_gen": 0.667,
+        "aspect_ratio_error": 0.015,
+        "ssim_luma64": 0.146,
+        "edge_corr64": 0.342,
+        "color_layout_dE8": 20.76,
+        "lab_hist_intersection": 0.603,
+        "L_mean_diff": -5.74,
+        "L_std_diff": 1.2,
+        "chroma_diff": -1.04
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "cc32efeeddfafa496154a08e28e8bf0810491ba606c478747c26b56f749ba791"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcc-65ad-7853-8d04-9cca9035407b",
+        "seconds": 68
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "af893158496eff025afbb1a450f6b627b40d6686664a087e2d3cd5ad369ea92b",
+        "original_png_sha256": "0848890abe2f9f92b405091aef21b761e4140871cc65ae3c9a1ef43c2b7db93e",
+        "width": 1024,
+        "height": 1536,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 0.677,
+        "aspect_gen": 0.667,
+        "aspect_ratio_error": 0.015,
+        "ssim_luma64": 0.304,
+        "edge_corr64": 0.43,
+        "color_layout_dE8": 19.05,
+        "lab_hist_intersection": 0.519,
+        "L_mean_diff": -4.62,
+        "L_std_diff": -1.77,
+        "chroma_diff": -0.9
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "c5521b384cf4d6ba049f5d7c48018ba6f0f49c43db56bd87c4aad41d86c1ed2e"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fd1-2c09-75b2-a8eb-2dc823f365e8",
+        "seconds": 88,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "c10effaa522642e121e2ba72cbe37a6ee7d01f19e0c1f0f593ad0cc6c1745fed",
+        "original_png_sha256": "bbeed1eecdbd10d746161e4274fed70108c276552240205c2646f375280ad843",
+        "width": 1024,
+        "height": 1536,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 0.677,
+        "aspect_gen": 0.667,
+        "aspect_ratio_error": 0.015,
+        "ssim_luma64": 0.229,
+        "edge_corr64": 0.244,
+        "color_layout_dE8": 18.72,
+        "lab_hist_intersection": 0.464,
+        "L_mean_diff": 1.74,
+        "L_std_diff": 0.92,
+        "chroma_diff": 10.44
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v6": [
+        {
+          "id": "h0807-1",
+          "status": "pass",
+          "evidence": "THREE FRIENDS in two lines at top; BIOGRAPH across bottom with circular AB monogram lower left",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0807-2",
+          "status": "pass",
+          "evidence": "title ~[0.06,0.02,0.92,0.32]; all edges within 5",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0807-3",
+          "status": "fail",
+          "evidence": "left man wears a fedora not a bowler; no stemmed glass; detailed bar background instead of flat bright yellow",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0807-4",
+          "status": "fail",
+          "evidence": "muted aged ochre instead of flat saturated yellow",
+          "blindLabel": "A"
+        }
+      ],
+      "v6-calibrated": [
+        {
+          "id": "h0807-1",
+          "status": "fail",
+          "evidence": "BIOGRAPH is a small label at bottom right, not across the bottom",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0807-2",
+          "status": "fail",
+          "evidence": "title ~[0.04,0.02,0.95,0.27]; bottom -8, area ~23%",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0807-3",
+          "status": "fail",
+          "evidence": "left man wears a gray fedora, not a dark bowler",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0807-4",
+          "status": "pass",
+          "evidence": "flat saturated yellow, red outlined lettering, painterly faces, thin cream border",
+          "blindLabel": "B"
+        }
+      ],
+      "v5": [
+        {
+          "id": "h0807-1",
+          "status": "fail",
+          "evidence": "title on one line; monogram at lower right",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0807-2",
+          "status": "fail",
+          "evidence": "title ~[0.03,0.03,0.96,0.20]; bottom -15",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0807-3",
+          "status": "fail",
+          "evidence": "muted ochre bar background, no stemmed glass",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0807-4",
+          "status": "fail",
+          "evidence": "muted ochre rather than flat saturated yellow",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6",
+          "v6-calibrated",
+          "v5"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

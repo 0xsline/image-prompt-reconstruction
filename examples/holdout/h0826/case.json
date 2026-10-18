@@ -1,0 +1,286 @@
+{
+  "id": "h0826",
+  "category": "绘画插画",
+  "title": "1843 年军舰失火版画",
+  "set": "v6 holdout",
+  "source": {
+    "page": "https://commons.wikimedia.org/wiki/File:The_Burning_of_the_USS_Missouri_in_Gibraltar.jpg",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/The_Burning_of_the_USS_Missouri_in_Gibraltar.jpg/1920px-The_Burning_of_the_USS_Missouri_in_Gibraltar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "author": "Thomas Goldsworthy Dutton / Edward Duncan / George Pechell Mends / Adam Cuerden",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "width": 1920,
+    "height": 1606,
+    "sha256": "59e628789f228f3e2738f7f9fdb4df520006b0f25e7af3da6465970ea83ff45c",
+    "selection": "Wikimedia Commons Picture of the Day, 2026-08-26; see references/evaluation.md"
+  },
+  "checks": [
+    {
+      "id": "h0826-1",
+      "description": "elements",
+      "expected": "One large burning sailing steamship with a side paddle wheel at center; several rowing boats crowded with sailors in the foreground; smaller ships in the left and right distance; a large rock mountain at right background."
+    },
+    {
+      "id": "h0826-2",
+      "description": "frigate bbox incl. masts and flames, excluding the smoke column",
+      "expected": {
+        "bbox": [
+          0.13,
+          0.29,
+          0.83,
+          0.7
+        ],
+        "areaPercent": 29
+      }
+    },
+    {
+      "id": "h0826-3",
+      "description": "layout",
+      "expected": "Dark smoky sky in the top ~30%; fire in the middle; dark water with pink reflections below; a cream paper margin with an engraved title block and a small flag emblem across the bottom ~10%."
+    },
+    {
+      "id": "h0826-4",
+      "description": "medium",
+      "expected": "19th-century hand-colored lithograph/aquatint: muted brown-gray tones, orange-pink flames, a white smoke burst at center, fine engraved line work; not a photograph or modern digital painting."
+    }
+  ],
+  "runs": {
+    "v5": {
+      "prompt": {
+        "file": "v5/prompt.txt",
+        "sha256": "7261da1f822810b85dbb58c364807b28ff1613913acad94710d63a55e27d26c3"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v5 通用指令",
+        "instruction_sha256": "ab35acc2b4704f9a6371a9e382afee008a79f90ae8dbfc33cb60787ee057d6d9",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcd-83c5-7080-8ed2-5fae851e6354",
+        "seconds": 52
+      },
+      "generation": {
+        "file": "v5/generated.webp",
+        "sha256": "5b8c9e9cb830ff5e7874e24571178edd871a39a3eb8b7f2e91bcaadfed011588",
+        "original_png_sha256": "f309c943d242e18cf9a01e05c1157e2e3368381b21b26ab80684132e14b44941",
+        "width": 1536,
+        "height": 1024,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.196,
+        "aspect_gen": 1.5,
+        "aspect_ratio_error": 0.227,
+        "ssim_luma64": 0.31,
+        "edge_corr64": 0.398,
+        "color_layout_dE8": 10.93,
+        "lab_hist_intersection": 0.851,
+        "L_mean_diff": 0.63,
+        "L_std_diff": -0.25,
+        "chroma_diff": 2.68
+      }
+    },
+    "v6": {
+      "prompt": {
+        "file": "v6/prompt.txt",
+        "sha256": "09d567748e67553eef46b285d04656936d555ecb2b66c2811d6efc74a431b4a8"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 通用指令",
+        "instruction_sha256": "5dfc7bfd93194893e1b2e1635ff830fb5e5274b4614662b1e4a1f273711d2ac3",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcc-edf1-7c63-a231-435f7c8f41de",
+        "seconds": 60
+      },
+      "generation": {
+        "file": "v6/generated.webp",
+        "sha256": "aa7e0f1d9cbf7c67ed9053ec43a913b001f935364011ce887c4632071ae2f85d",
+        "original_png_sha256": "c51d85456cad97fe96a0831f31fef8799a7e907ce7f082bd101aeb0e290e799f",
+        "width": 1374,
+        "height": 1145,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.196,
+        "aspect_gen": 1.2,
+        "aspect_ratio_error": 0.004,
+        "ssim_luma64": 0.341,
+        "edge_corr64": 0.37,
+        "color_layout_dE8": 15.67,
+        "lab_hist_intersection": 0.588,
+        "L_mean_diff": -12.58,
+        "L_std_diff": -0.89,
+        "chroma_diff": 2.57
+      }
+    },
+    "v6-calibrated": {
+      "prompt": {
+        "file": "v6-calibrated/prompt.txt",
+        "sha256": "41a2332022cd0cb04240c4aa1d10b7783f68df1dfe6f59b519049f922a6aa52d"
+      },
+      "reverse": {
+        "instruction": "SKILL.md v6 校准指令",
+        "instruction_sha256": "09d5c0e216f31f5ad126e579f58f907a3a85cc32e7ed20e5ccdc80dba382c1eb",
+        "executor": "codex exec (tool-assisted agent)",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "xhigh",
+        "codex_thread": "01a14fcf-0c7b-7320-aa4e-9d3ae13f9d8e",
+        "seconds": 64,
+        "compared_with": "v6/generated.webp (its PNG original)"
+      },
+      "generation": {
+        "file": "v6-calibrated/generated.webp",
+        "sha256": "655a67c345ce15768d09764e5849f4cd6411a87d9a6a8496bcd42d773581ffb0",
+        "original_png_sha256": "dcd1d6a1e20212484ce90a74f374ddb468b6fb8597d402e25b67c727e0ecd861",
+        "width": 1374,
+        "height": 1145,
+        "tool": "Codex built-in image_gen (prompt only; no size, quality or seed control)",
+        "c2pa_software_agent": {
+          "name": "ChatGPT",
+          "version": "gpt-image"
+        },
+        "sent_equals_prompt": true,
+        "reference_image": false,
+        "seed": null,
+        "samples": 1,
+        "license": "CC-BY-SA-4.0"
+      },
+      "metrics": {
+        "aspect_src": 1.196,
+        "aspect_gen": 1.2,
+        "aspect_ratio_error": 0.004,
+        "ssim_luma64": 0.377,
+        "edge_corr64": 0.374,
+        "color_layout_dE8": 8.09,
+        "lab_hist_intersection": 0.732,
+        "L_mean_diff": -0.68,
+        "L_std_diff": -4.58,
+        "chroma_diff": 2.87
+      }
+    }
+  },
+  "review": {
+    "generationChecks": {
+      "v6-calibrated": [
+        {
+          "id": "h0826-1",
+          "status": "pass",
+          "evidence": "burning paddle steamer center, crowded rowing boats, distant ships both sides, rock mountain right",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0826-2",
+          "status": "fail",
+          "evidence": "ship ~[0.18,0.20,0.80,0.60]; top -9, bottom -10",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0826-3",
+          "status": "pass",
+          "evidence": "dark smoky sky, fire middle, dark water with reflections, cream margin with engraved title and flag",
+          "blindLabel": "A"
+        },
+        {
+          "id": "h0826-4",
+          "status": "pass",
+          "evidence": "hand-colored lithograph look, muted brown-gray, orange flames, pale smoke at center, fine line work",
+          "blindLabel": "A"
+        }
+      ],
+      "v5": [
+        {
+          "id": "h0826-1",
+          "status": "pass",
+          "evidence": "burning paddle steamer, boats with sailors, distant ships both sides, ridge at right",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0826-2",
+          "status": "fail",
+          "evidence": "ship ~[0.22,0.18,0.83,0.57]; left +9, top -11, bottom -13; frame 3:2",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0826-3",
+          "status": "pass",
+          "evidence": "layout matches, but the engraved caption names a different ship, city and date",
+          "blindLabel": "B"
+        },
+        {
+          "id": "h0826-4",
+          "status": "fail",
+          "evidence": "saturated orange flames, dark smoke, no white smoke burst",
+          "blindLabel": "B"
+        }
+      ],
+      "v6": [
+        {
+          "id": "h0826-1",
+          "status": "fail",
+          "evidence": "large rock mountain sits left/center, not right",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0826-2",
+          "status": "fail",
+          "evidence": "ship ~[0.27,0.25,0.78,0.52]; left +14, bottom -18, area ~14%",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0826-3",
+          "status": "pass",
+          "evidence": "dark sky, fire middle, dark water with pink reflections, cream margin with engraved title and flag",
+          "blindLabel": "C"
+        },
+        {
+          "id": "h0826-4",
+          "status": "pass",
+          "evidence": "muted hand-colored print, orange flames, pale smoke column, fine line work",
+          "blindLabel": "C"
+        }
+      ]
+    },
+    "blindRankings": {
+      "opus": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      },
+      "fable": {
+        "ranking": [
+          "v6-calibrated",
+          "v6",
+          "v5"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "sourceLicenseChecked": "2026-10-18 (Commons API extmetadata)",
+    "sourceModification": "Wikimedia proportional thumbnail; no project cropping, retouching or re-encoding.",
+    "reviewLimitations": "AI visual estimates and blind AI rankings, not human annotation or segmentation.",
+    "generationRights": "Generated images: only rights this project can license are offered under CC BY-SA 4.0; source credit and conditions remain."
+  }
+}

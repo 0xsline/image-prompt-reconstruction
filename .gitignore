@@ -6,3 +6,4 @@
 /reconstruction/
 /prompt_en.txt
 /record.json
+__pycache__/
